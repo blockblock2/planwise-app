@@ -2,7 +2,8 @@
 
 The whole PlanWise family as one Mac app, with all three sites in one window:
 
-- **PlanWise** (`planwise.html`), the shared trip board, opens first
+- **Home screen** (`home.html`) opens first, with dark mode
+- **PlanWise** (`planwise.html`), the shared trip board
 - **PlanwiseER** (`planwiseer.html`), destination and stay ideas
 - **Plany** (`plany.html`), the place finder, with Plany Live (`plany/live.html`) for voice
 
