@@ -914,10 +914,31 @@ $daysel.addEventListener("change", () => {
 });
 
 // the pin — every failure mode gets its own honest answer
+// In the BananaPeel app the window can't use GPS, so go by the internet connection
+// instead (city-level, no permission needed). Two free services, in case one is down.
+async function pinByNetwork(){
+  const tries = [
+    async () => { const j = await (await fetch("https://ipwho.is/")).json();
+      if(j.success === false) throw 0; return { city: j.city, region: j.region || j.country }; },
+    async () => { const j = await (await fetch("https://ipapi.co/json/")).json();
+      if(j.error) throw 0; return { city: j.city, region: j.region || j.country_name }; }
+  ];
+  for(const t of tries){
+    try { const r = await t(); const place = [r.city, r.region].filter(Boolean).join(", "); if(place) return place; } catch {}
+  }
+  return null;
+}
+async function pinFallback(done){
+  const place = await pinByNetwork();
+  done();
+  if(!place){ say(pick(VOICE.pinLost)); return; }
+  $where.value = place; $what.focus();
+  say("Going by your internet connection, you're around <b>" + esc(place) + "</b>. Close enough? Change it if not.");
+}
 $pin.addEventListener("click", () => {
-  if(!navigator.geolocation){ say(pick(VOICE.pinBlocked)); return; }
   $pin.textContent = "…";
   const done = () => { $pin.textContent = "📍"; };
+  if(!navigator.geolocation || location.protocol === "file:"){ pinFallback(done); return; }
   navigator.geolocation.getCurrentPosition(async pos => {
     const { latitude: lat, longitude: lng } = pos.coords;
     let place = lat.toFixed(4) + ", " + lng.toFixed(4);
@@ -931,6 +952,7 @@ $pin.addEventListener("click", () => {
     $where.value = place; done(); $what.focus();
     say(fill(pick(VOICE.pinOk), { place: esc(place) }));
   }, err => {
+    if(err && err.code !== 1){ pinFallback(done); return; } // no fix or too slow: use the network instead
     done();
     // 1 PERMISSION_DENIED, 2 POSITION_UNAVAILABLE, 3 TIMEOUT.
     // A blocked iframe reports 1 without ever asking you — don't accuse the user of saying no.
