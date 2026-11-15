@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Plany Live</title>
+<meta name="description" content="Talk to Plany. Say what you feel like doing, it finds the place, asks first, then opens it in Maps or sends it to your Tesla.">
+<meta name="theme-color" content="#101E28">
+<link rel="icon" type="image/png" href="data:image/png;base64,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">
+<link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAYAAADDPmHLAAAPi0lEQVR42u1dW2ycx3X+vjPzLymRIqkbZUk2dalsOYqsqHUFuBASRols5S1AAwMq0BpoG6QIjKIPbfrUorb7UjRtgKIIggYOCrgFIsDIQ94qR4iqGAUECG4dWZYl2bFlRpeKlcyLSIm7/8ycPvz/LlcUL0uK5N7mALKB5f7c5ZxvzuU7Z84QjyYEBg1wxpVf2LLlQFeps3QAii8p8SyUOxW6jeB2QDV7Jso8ogCp0OsEb4B6lYp3QPyiMFU4f+vW+cnptw5a4IzPnlmyApf63IsCvOkBAHv2dPQVzQsQfh3gV6C6kyLMvpbm/9Oo2kWtMHPlECCgISjIq4D+HEF/Otrh38JHHxWzN79ogDfDUoCwFAAYAB4Aunbt32Kd/zaJ4xTZm+k5lJXtq34/485fiiWoKFQBGJAgJXshhMuqOOGs+cHkJxduzdTNCgFg0Gbmfl+hb0D/EsCfUqQfGqCZ5gNAASBRfysilTUmKaBAQxgG8M+jQ/x74GJpWkfLC4DyDg49j+89Job/SJrPqwYgBJfDMip9tcGgGiBiSYGqfz94/fPxa5dP5rrQWlyCqeGDKr+s94m9rxhjXifYr+odAII00bzXJ0rIN55CgyfNYyLy+x09G1gcv3N6hu6WbAEEQOgdeGY94X5MkWMafKj6WZSGcg8AxYiGcFJhf29s6L2Rsg6XAoAq5acnKeaQepeCTOJaN3LoqCmNTTT4c4rk2EIgkKj8lksfE/UupZhDRHqyd+CZ9bnypVYAEICu2/b0xirlu6j8pgOBK4Ng3banN+axAGsBgABQY/UETWXn27iqTQcCq96lNOaQsXoiB4DMD4DBQQvA9z6x9xWKPaoumv2mtwTOpRR7tPeJva8A8LmOZw0CDQDfO/C5o0K+pRpCjWlilMYXT4oE1RfGhj44hSrGUKr9PvbtK1DD98FI3bYeZwBSw/exb1+hOh6Q6qi/767/Do19Sr13Mc9vKRH13tHYp/ru+u9UZwWVnd699amNNpHLINfnxZxoAVqMIQAJqI64NOyduHnlTr7zBw0AtYm8TDEbEIKPym9RNxCCp5gNNpGXMzcwaAiAjz/+XOeEjF4AuQuqGs1/y0oASah+0h369l+7dnZKAOikGTtCyu6o/NaPBaCqpOyeNGNHAKgAgKp+I+tC0hDXqNUjAQ0gVVW/AQDcvHlfd2mNf5+UgdwCRP/f+sEgVcNQ4b75vEwVwn6C26Ly2ygYVFWC26YKYb9Yo1+kiM1ajaK0iREIFLHW6BdFFc89QldxlCb2BKp4TkAOZPpnNP/t4wWyln1yQBTYWvENUdonDgCgwFYhuF0j9dt2AFBVENwu8chOe5MCEnd+e1uCSPu2uUQARABEiQCIEgEQJQIgSgRAlHaTtjjxI0tkOoJGALSE3HMBfjHdDgoYAp1GIgCaWUjgvlf8wzMDOLChC8F7yAIoCFCIMTj/2ST+4sKvscawpcny1gYAAKeK5zZ04dmt64HULVz1VgUSi7X5swRbului5V0AAUy4AJ86+NTBLAAArwqTP9MORZK2CQINCZALAgDI3ittUiKLaWDkAaJEAERpW2m5GKDadwuzf9nwg4zYWci1B812Bauen/nzCIAGFc2j9/IRFyFQTEOWzgmRJAs3QAkUEMKpopiGaaVrlkGuMdJS2QH7Bp5uekyX8/2exOD139qFLmugmh2HLwXFs5t68B83PsMPfzWM3sTCz5HZGxBjqcO3fqMfX9u2Ae/cHkdBMiKIJCadxzf/+xOMpx6WrcEP2Fba/QmJ5/t7YQp2utdVFbAGv7o7hdP/O4qujgRuDmrPkpgspvhqfw/6OhN89bG+aeKIhC85JGwtYqjlXMBY6tBLZBYgtwwFI3BQIChKQecEQGBm7x0UqopS6io7ncysQ6uxgi0XBJqc7CnXfkiCPuDo5l7gCwNYawzCHGoUEPe8x9HNvaAPSEQq05ZZI4kUAdCIea4PONzfg8Nb+2p7yAfAh7bIkdtmAmhwAcH5GkHTPlRw2wCABKSmE3DaVsdk2wcAQlBk4ZPweSDYFu1A7QAArwqTWJy4Oowffvx/tfEAuzfj+M7+msrHEQD1COwIsMqUE9noy9mUpfkDH04UcfrmCDoW4AGKxRRH+nsAmT3fL2cZZgYfoNCmNBpNB4BKg0eVEsv5vuXcFr7TEDaxWJ/YeQFwOyg6DeflGcaq+IFqYHQZaTqewDab8sstXr2FBBqygK1CBVuDZA6T7QLgQsBUCPMCwIUAN8e0pDLTOO6mqWDVLL4YK6X4n9F7TUcRNxcACEzlTZ6HtvYBpaoev3LJz2cXV86EwVojWF+w2FCY3wJQFWtndANn4zQUXVbw4995cvqz8tdRsDh3cxSHz3yAdba5mkibMga45wJCGuBdeMjvz8zfLQmUHP5k92a8tGPTguROALDGZM/YWaxJmGEevCoMA+655hyy1rRBoBBQ1n7oo9PInL59Vm+vc3/2zLhAiKYljtqGB1BFPguzNlfTLlxQWzGB5KNbgAiAJpUpH3Dfa80xQKdIBEAriFOF7UjwLxev49WL17BhASLos2KKv9n3OP5s33a4YjprIBgB0IyZgw8YKTkoOS8ARksO93z7jE1uGwBYAawIOkXmBYAVgW2jZvk2igEULnUYkfktgEsdprxGANRbDPlQKibM2brFRP8AEBRPdnfgyNb1NVUDn+zuAIIu+nMsCUs+dE23Ag/ULiIAaljM0dTBzyyvEYALKC2i7GZIwHkcH9iE4zs3194P4PyiSsGloLhfTHHfP9xzYITosaYhM8uGA0C5l/9bu/qxo7sTwYcKy0YAxaDY090JBIUsQkEaFOoDausIqt3KCAnk3+m1AwPoqCojBwXECD6dmMIbQ7crZwwaar0b7WCIEBh3Aee+vA8Ht80x1MH5RXfsBMWc3cAPfYel9AQKATvjquV82MS7N0Zw6D8vosdKw/UMNLQLcMV01q4cs8g4AADECqTWmT95V/BiRIPCF9MHf40qTFCMpq5hqeWGDgIt+cj9+AGZGf6v4XGcGh6r7VxAfy8O9/dk7meRQeDM10yDnydo+TQwqEKM4GfDY3j13U8hHQnCHI5YSIRiCj24A4e39iE4v6g4I6aBDSxdVmA7EmxagAq+nb838gAtJqqZOwjQOV1AyP+10x0qbQOAUlCE1OOumZ8KDqlfFM8QAdDgUiaC/mBgEw5v7EYyTy5OAmlQ7O7qXDQRFAHQoFKmgnd0d2BHz5oaI8ewaCo4AqDRswGvCN7VxhnEw6GrI7MtcvVgp2X9LAGk5qx+eVvC5ho4NZ2qtikAZpviXT3YaTmlni1hDw2cqsJZvaeS16UWUJnivf+Jh6d4M2NhD/atRV/BVka9PMri244E/1SHlrDyZJHRksO7o/dgyuNG0DhTyetiAWqa4j3HCZ8lW5s6tISVTxT1FSy+PHM6SYNMJa+bC1hoircsoeAz7x9ax5YwVUVIHwxAG2Uqed2DwMVM8X60GKB+LWHlotBsHEW9s4224QFWuiUspoENKqvVEhYB0OCyUi1hEQDNBIKq/y7oNiIAWiwWEMKIqe3NeS0gAqBFdj2F+HSiiI8np2quBu7o7shG0EQANLd4VVhr8W9Dt/HXvxzCms75mcD7Uyn+9gsD+KsDA/DxcOjy5PqzvSarPIShIIQkBuvs/ERQMTEorGJyXu9C0YoDYDULPvMuNLPB0QLOWRAq/2w1N329C0V2JRd8zmtbqwo+8GFVOm8nXYArphgGFuwKnlyFgU/CbBEO9nXh9ODn6lYositp2la74DPfQj/f3wse3FHzuYCVBmajFIpW1AWsdsFndqWioe8LqHehyJYzpZUMAler4DNvat+g9wXUuVCkNrPLrU96xPsCZl8Vq9DrQm5X1RW1BHX/U+N9AQ+gnCSD6nVL4CaA7SvtCupJBMX7AmYxc5lRvGmhOgThb2djNNmSf+ly3hfQIquS+bmgQ5bEWYC/u2LBl2a7sF4zcrwqqIqCECax6KvhvoCCsPKdWafvDF3pCygIEmet83zbIDiAZiV2X7cVmMTClCOxVRaT59TVSp0LjMwXvwwWE7Su37nbrtQFFBQNwXnPt21nSS6U1vgbpAxgGQNBzXfU2c8mcQ94kAlczd2ELAb4cKIIu4BZVwA2dxdv3xzJYoA6fOdqJnAFLqBQkFQNNzpL5gIBoG/g6R9RzB+qdx7kspJDU/7hWkA9AoGCMBvSVEMSUMqvmK33d16RWoCqo7FGg//X0aFLf2wzy8yfQPWPQC47+bW2IYYtEKpa005SZGDpqCbn6yjLHgeQAlWS/AmQMYHs8r2nJ2T0Y5C7oBqA5WNBGyOd1kW/W1tzSkTIzf/H3aHv9AhAAQbNtWtn7wN4gxTmAIjSmtlfIIUA3sh0PmhY9s7dW5/aaBO5DHJ9XntkXLEWo0RIQHXEpWHvxM0rd5CbegUgEzev3Ibq93Ir4ON6tdzu97luvzdx88rtsu6l4hsAGV1nvqveXaExNn8tSov4fhpj1bsro+vMd3PlB1QFe1midvFiSSkvIwuYNa5bC5l/hSrlZVy8WELVzYfyAGcyOGjHhj44FYJ/jWIMVNO4dk1v+lOKMSH418aGPjiFwUELwFfzHjPFAPB9A3t/RmOPqnMpyCSuZJMq39pEvTs1OnT5+bJuq98is+aKAL3jcfX+HI1NoOriajad8h2NTdT7c97xOKYvWcdCAFAAvHvj0h1FckyDP0djbXQHTbbzjbUa/DlFcuzujUt38OCNx/MCoJIVjA29N1IFgiSCoGmUn5SVPzb03kh11F8rAGYBQThJYxNMj9SN0mCpXpbu2URDOFmL8ssB3/zpAyDFseH7U2O3/71j3QaKmCMkiayHgIiMYf1TPKgnjSHJEPyrY7++9M3i2PDUQsqvBQDTHAEgxfE7pwvrNpyl4Dcp9jFkZTaXN01EIKz2jlf1EDEUI4rwfvDhpfFrl380g9/BowKgCgiDtjj+zodTY/2vd/ZoCcB+GrOOlQhTfY6DCIYVM/PZGpMUihGoDkP170aH5KXi+KUrwKAFPq2Zyl+Koiq5ZNeu/Vus898mcZwie7MYJJQH7vuq3x9dxZJMe2UHKwADstKyoSFcVsUJZ80PJj+5cGumblYSAPlzLwrwZvZhe/Z09BXNCxB+HeBXoLqTUm6/yRsxNDLLi1vh8rG5zL5qCAryKqA/R9Cfjnb4t/DRR8XszS8a4M2AJdD3j7orCQwa4EyFKNqy5UBXqbN0AIovKfEslDsVuo3g9hwF0RIsuPNJhV4neAPUq1S8A+IXhanC+Vu3zk9Ov3XQAmc8HqFu8/9pRttMe2UEvQAAAABJRU5ErkJggg==">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Instrument+Sans:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --night:#101E28; --card:#172A36; --card-2:#1E3444;
+    --line:rgba(241,233,222,.14);
+    --bone:#F1E9DE; --bone-dim:rgba(241,233,222,.62); --bone-faint:rgba(241,233,222,.38);
+    --coral:#FF6B5A; --jade:#5FD6A5; --amber:#F0B429;
+    --display:'Bricolage Grotesque',system-ui,sans-serif;
+    --body:'Instrument Sans',system-ui,sans-serif;
+    --mono:'Space Mono',ui-monospace,monospace;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{
+    background:radial-gradient(1000px 700px at 50% 110%, rgba(255,107,90,.12), transparent 60%), var(--night);
+    color:var(--bone);font-family:var(--body);line-height:1.55;min-height:100dvh;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:640px;margin:0 auto;padding:18px 18px 32px;min-height:100dvh;display:flex;flex-direction:column}
+  [hidden]{display:none!important}
+
+  header{display:flex;align-items:center;gap:10px;margin-bottom:8px}
+  .mark img{width:32px;height:32px;border-radius:9px;display:block}
+  .brand{font-family:var(--display);font-weight:800;font-size:20px;letter-spacing:-.02em;line-height:1}
+  .brand em{font-style:normal;color:var(--coral)}
+  .brand span{color:var(--bone-faint);font-weight:600}
+  header .spacer{flex:1}
+  .ghost-link{font-size:12px;font-weight:600;color:var(--bone-dim);text-decoration:none;border:1px solid var(--line);border-radius:99px;padding:6px 11px;white-space:nowrap}
+  .ghost-link:hover{color:var(--bone);border-color:var(--coral)}
+
+  .ctx{font-family:var(--mono);font-size:10.5px;color:var(--bone-faint);letter-spacing:.04em;margin-bottom:14px;display:flex;gap:6px;flex-wrap:wrap;align-items:center}
+  .ctx b{color:var(--jade);font-weight:700}
+  .ctx select{background:var(--night);color:var(--bone-dim);border:1px solid var(--line);border-radius:7px;padding:3px 6px;font-family:var(--mono);font-size:10.5px;max-width:180px}
+
+  /* transcript */
+  .talk{flex:1;display:flex;flex-direction:column;gap:10px;justify-content:flex-end;padding-bottom:18px;overflow-y:auto}
+  .bub{max-width:88%;padding:11px 14px;border-radius:16px;animation:rise .3s cubic-bezier(.2,.7,.3,1) backwards}
+  @keyframes rise{from{opacity:0;transform:translateY(8px)}}
+  .bub.you{align-self:flex-end;background:var(--card-2);border:1px solid var(--line);border-bottom-right-radius:5px;font-size:15px}
+  .bub.me{align-self:flex-start;border-bottom-left-radius:5px;background:none;padding-left:0;max-width:100%}
+  .bub.me p{margin:0;font-family:var(--display);font-weight:600;font-size:clamp(19px,4.4vw,26px);line-height:1.3;letter-spacing:-.02em;border-left:3px solid var(--coral);padding-left:14px}
+  .bub.me .hi{color:var(--coral)}
+  .bub.you .who{font-family:var(--mono);font-size:9.5px;color:var(--bone-faint);letter-spacing:.12em;text-transform:uppercase;display:block;margin-bottom:2px}
+  .interim{opacity:.5;font-style:italic}
+  .caret{display:inline-block;width:.5ch;height:1em;background:var(--coral);vertical-align:-.12em;margin-left:2px;animation:blink .9s steps(1) infinite}
+  @keyframes blink{50%{opacity:0}}
+
+  /* the card under an answer */
+  .found{align-self:flex-start;width:100%;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:13px 14px;margin-top:2px;animation:rise .3s cubic-bezier(.2,.7,.3,1) backwards}
+  .found h3{font-family:var(--display);font-weight:600;font-size:17px;margin:0 0 4px;letter-spacing:-.015em}
+  .found h3 a{color:var(--coral);text-decoration:none}
+  .found h3 a:hover{text-decoration:underline}
+  .stars{position:relative;display:inline-block;font-size:13px;line-height:1;letter-spacing:1.5px}
+  .stars .track{color:rgba(241,233,222,.2)}
+  .stars .fill{position:absolute;top:0;left:0;overflow:hidden;white-space:nowrap;color:var(--amber)}
+  .score{font-family:var(--mono);font-size:12px;font-weight:700;color:var(--amber);margin-left:6px}
+  .revs{font-family:var(--mono);font-size:11px;color:var(--bone-faint);margin-left:5px}
+  .addr{font-size:12.5px;color:var(--bone-faint);margin:5px 0 0}
+  .dist{font-family:var(--mono);font-size:11.5px;font-weight:700;color:var(--jade)}
+  .acts{display:flex;gap:6px;flex-wrap:wrap;margin-top:11px}
+  .act{background:none;border:1px solid var(--line);color:var(--bone-dim);border-radius:9px;padding:7px 11px;font-size:12.5px;font-family:var(--body);cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:5px;transition:.14s}
+  .act:hover:not(:disabled){color:var(--coral);border-color:var(--coral)}
+  .act.yes{border-color:var(--coral);color:var(--coral);font-weight:600}
+  .act.yes:hover{background:var(--coral);color:#111E27}
+  .act:disabled{opacity:.5;cursor:default}
+  .act.done{border-color:rgba(95,214,165,.5);color:var(--jade)}
+
+  /* mic */
+  .dock{position:sticky;bottom:0;padding-top:12px;background:linear-gradient(transparent,var(--night) 34%)}
+  .microw{display:flex;align-items:center;gap:12px}
+  .mic{
+    width:74px;height:74px;border-radius:50%;flex:none;border:0;cursor:pointer;position:relative;
+    background:var(--coral);color:#111E27;display:grid;place-items:center;transition:transform .16s;
+  }
+  .mic:hover{transform:scale(1.04)}
+  .mic:disabled{opacity:.45;cursor:default}
+  .mic svg{width:30px;height:30px}
+  .mic .ring{position:absolute;inset:-6px;border-radius:50%;border:2px solid var(--coral);opacity:0}
+  body.listening .mic .ring{animation:ping 1.4s cubic-bezier(0,.4,.6,1) infinite}
+  body.listening .mic{background:var(--jade)}
+  @keyframes ping{0%{transform:scale(.9);opacity:.8}100%{transform:scale(1.45);opacity:0}}
+  body.speaking .mic{background:var(--card-2);color:var(--coral)}
+  .hintrow{flex:1;min-width:0}
+  .status{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--bone-faint);margin:0 0 4px}
+  body.listening .status{color:var(--jade)}
+  .hint{font-size:12.5px;color:var(--bone-faint);margin:0}
+  .typed{display:flex;gap:7px;margin-top:12px}
+  .typed input{flex:1;background:var(--card);border:1px solid var(--line);border-radius:10px;color:var(--bone);font-family:var(--body);font-size:15px;padding:10px 12px;outline:none}
+  .typed input:focus{border-color:var(--coral)}
+  .typed button{background:var(--card);border:1px solid var(--line);color:var(--bone-dim);border-radius:10px;padding:0 14px;cursor:pointer;font-family:var(--body);font-size:13px}
+  .typed button:hover{color:var(--coral);border-color:var(--coral)}
+  .note{font-size:11.5px;color:var(--bone-faint);margin:12px 0 0;line-height:1.6}
+  .note a{color:var(--bone-dim)}
+  @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}.caret{display:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <span class="mark"><img src="data:image/png;base64,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" alt="" width="32" height="32"></span>
+    <div class="brand">Plan<em>y</em> <span>Live</span></div>
+    <div class="spacer"></div>
+    <a class="ghost-link" href="../plany.html">Plany ↗</a>
+    <a class="ghost-link" href="../planwise.html">PlanWise ↗</a>
+  </header>
+
+  <div class="ctx" id="ctx"></div>
+
+  <main class="talk" id="talk"></main>
+
+  <div class="dock">
+    <div class="microw">
+      <button class="mic" id="mic" type="button" aria-label="Talk to Plany">
+        <span class="ring"></span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"/>
+          <path d="M19 10v2a7 7 0 0 1-14 0v-2"/><path d="M12 19v3"/>
+        </svg>
+      </button>
+      <div class="hintrow">
+        <p class="status" id="status">Tap to talk</p>
+        <p class="hint" id="hint">Try: “find me good coffee near the hotel”</p>
+      </div>
+    </div>
+    <div class="typed">
+      <input id="ti" type="text" placeholder="…or type it here" autocomplete="off">
+      <button id="tsend" type="button">Send</button>
+    </div>
+    <p class="note" id="note"></p>
+  </div>
+</div>
+
+<script>
+(function(){
+"use strict";
+
+/* ============================================================
+   Plany Live — the cousin, out loud.
+   Talk. It finds the place. It ASKS before it does anything,
+   then opens your Maps app or sends the address to your Tesla.
+   ============================================================ */
+
+const DB = "https://planwise-73ada-default-rtdb.firebaseio.com";
+const PROXY = "https://planer.acute-percent5v.workers.dev";
+const SESSION_KEY = "planwise_session";
+const CATS = ["Eat & drink","Sights","Neighborhoods","Day trips","Nightlife","Where to stay"];
+
+const LS = { get(k){ try{ return JSON.parse(localStorage.getItem(k)); }catch{ return null; } } };
+const esc = s => String(s==null?"":s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const norm = s => String(s||"").normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase().replace(/[^a-z0-9]+/g," ").trim();
+const commas = n => String(n).replace(/\B(?=(\d{3})+(?!\d))/g,",");
+const strip = h => String(h).replace(/<[^>]+>/g,"");
+const pick = a => a[Math.floor(Math.random()*a.length)];
+const fill = (t,v) => String(t).replace(/\{(\w+)\}/g,(m,k)=> v[k]==null?"":String(v[k]));
+
+async function fbGet(p){ const r = await fetch(DB+"/"+p+".json"); if(!r.ok) throw new Error("read failed"); return r.json(); }
+async function fbGetSafe(p){ try{ return await fbGet(p); }catch{ return null; } }
+async function fbPush(p,b){
+  const r = await fetch(DB+"/"+p+".json",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(b)});
+  if(!r.ok) throw new Error("write failed"); return r.json();
+}
+
+const state = {
+  user:null, tripId:null, trip:null, day:"TBD",
+  planTitles:new Set(),
+  where:"", anchor:null,          // {lat,lng}
+  results:[], idx:0,
+  pending:null,                   // {type:'open'|'tesla'|'add', place}
+  listening:false, busy:false, voiceOn:true
+};
+
+const $ = id => document.getElementById(id);
+const $talk=$("talk"), $mic=$("mic"), $status=$("status"), $hint=$("hint"),
+      $ctx=$("ctx"), $ti=$("ti"), $note=$("note");
+
+/* ---------------- voice ---------------- */
+const VOICE = {
+  hello:[ "I'm listening. What do you feel like doing?",
+          "Talk to me. What are we after?",
+          "Go on — what do you want to do?" ],
+  helloUser:[ "Hey {who}. What are we after?",
+              "{who}. Say the word.",
+              "You're on {trip}. What do you feel like?" ],
+  thinking:[ "Hang on, looking…", "Let me look…", "Checking who's good…", "One second…" ],
+  great:[ "<span class=\"hi\">{name}</span>. {rating} stars, {reviews} reviews, {dist} away. Want me to open it?",
+          "Go to <span class=\"hi\">{name}</span> — {rating} from {reviews} reviews. Shall I open it?",
+          "Easy: <span class=\"hi\">{name}</span>, {rating} stars, {dist} from you. Want directions?" ],
+  good:[ "<span class=\"hi\">{name}</span> is your best bet — {rating} stars, {dist} away. Open it?",
+         "I'd go to <span class=\"hi\">{name}</span>. {rating}, decent. Want me to open it?" ],
+  meh:[ "Best I've got is <span class=\"hi\">{name}</span> at {rating}. Not thrilling. Still want it?",
+        "<span class=\"hi\">{name}</span>, {rating} stars. I'd keep expectations low. Open it anyway?" ],
+  none:[ "I don't think I can find that on the map. Want to try somewhere else?",
+         "Nothing near {where}. Try something else?",
+         "That's a no — no {what} around {where}. Give me another idea." ],
+  next:[ "Then try <span class=\"hi\">{name}</span> — {rating} stars, {dist} away. This one?",
+         "Alright. <span class=\"hi\">{name}</span>, {rating}. Want that instead?" ],
+  noMore:[ "That's everything I found. Ask me for something else.",
+           "I'm out of options for that one. New idea?" ],
+  opened:[ "Opening <span class=\"hi\">{name}</span> in Maps. Go.",
+           "There you go — <span class=\"hi\">{name}</span> is in your Maps app." ],
+  tesla:[ "Sending <span class=\"hi\">{name}</span> over. Pick your car's app in the share sheet and it lands in the dash.",
+          "Here's the share sheet — choose Tesla and <span class=\"hi\">{name}</span> goes straight to the car.",
+          "Passing <span class=\"hi\">{name}</span> to the share sheet. Your car app takes it from there." ],
+  teslaNo:[ "This browser won't open a share sheet, so I can't reach your car. I've copied the address — send it from your phone.",
+            "No share sheet on a desktop. Address is on your clipboard; do it from the phone and the car app will take it." ],
+  added:[ "<span class=\"hi\">{name}</span> is on the {trip} board under {day}.",
+          "Done — <span class=\"hi\">{name}</span> is on the board." ],
+  dupe:[ "<span class=\"hi\">{name}</span> is already on that board.", "Already there. No need for two." ],
+  noTrip:[ "You're not on a trip, so there's no board to add to. I can still open it or send it to the car.",
+           "No trip loaded — log into Plany first if you want that saved." ],
+  dropped:[ "Fine. What else?", "Alright, forget it. What do you want instead?", "No problem. Try me again." ],
+  huh:[ "I didn't catch that. Say it again?", "Didn't get that one. Once more?",
+        "Sorry — say that again?" ],
+  nowhere:[ "Where, though? Say “near” and a place.", "I need a where. Say “near the hotel” or name a city." ],
+  micNo:[ "This browser won't do speech. Type it instead — I still work.",
+          "No microphone access here. The box below does the same job." ],
+  micDenied:[ "You blocked the mic, which is fair. Type it and I'll carry on." ],
+  error:[ "That broke on my end. Try again?", "Couldn't reach the map. Once more?" ]
+};
+
+/* ---------------- speaking ---------------- */
+let voices = [];
+function loadVoices(){ try{ voices = speechSynthesis.getVoices()||[]; }catch{} }
+if(window.speechSynthesis){ loadVoices(); speechSynthesis.onvoiceschanged = loadVoices; }
+function bestVoice(){
+  const en = voices.filter(v => /^en(-|_)/i.test(v.lang));
+  const nice = en.find(v => /Samantha|Daniel|Serena|Google UK English Male|Google US English/i.test(v.name));
+  return nice || en[0] || null;
+}
+function speak(text, done){
+  if(!window.speechSynthesis || !state.voiceOn){ if(done) done(); return; }
+  try {
+    speechSynthesis.cancel();
+    const u = new SpeechSynthesisUtterance(strip(text));
+    const v = bestVoice(); if(v) u.voice = v;
+    u.rate = 1.04; u.pitch = 1;
+    document.body.classList.add("speaking");
+    setStatus("Talking");
+    u.onend = u.onerror = () => { document.body.classList.remove("speaking"); if(done) done(); };
+    speechSynthesis.speak(u);
+  } catch { if(done) done(); }
+}
+
+/* ---------------- transcript ---------------- */
+function scroll(){ $talk.scrollTop = $talk.scrollHeight; }
+function youSaid(text, interim){
+  let b = interim ? $talk.querySelector(".bub.you.interim") : null;
+  if(!b){
+    b = document.createElement("div");
+    b.className = "bub you" + (interim ? " interim" : "");
+    b.innerHTML = '<span class="who">You</span><span class="t"></span>';
+    $talk.appendChild(b);
+  }
+  b.querySelector(".t").textContent = text;
+  if(!interim) b.classList.remove("interim");
+  scroll();
+}
+function clearInterim(){ const b = $talk.querySelector(".bub.you.interim"); if(b) b.remove(); }
+
+let typer = null;
+function planySays(html, opts){
+  opts = opts || {};
+  if(typer){ clearInterval(typer); typer = null; }
+  const wrap = document.createElement("div");
+  wrap.className = "bub me";
+  wrap.innerHTML = "<p></p>";
+  $talk.appendChild(wrap);
+  const p = wrap.querySelector("p");
+  const reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if(reduce){ p.innerHTML = html; scroll(); }
+  else {
+    let i = 0;
+    typer = setInterval(() => {
+      if(i >= html.length){ clearInterval(typer); typer = null; p.innerHTML = html; scroll(); return; }
+      i++;
+      if(html[i-1] === "<"){ const c = html.indexOf(">", i); i = c === -1 ? html.length : c+1; }
+      p.innerHTML = html.slice(0,i) + '<span class="caret"></span>';
+      scroll();
+    }, 15);
+  }
+  speak(html, opts.then);
+  return wrap;
+}
+const setStatus = t => { $status.textContent = t; };
+
+/* ---------------- geo + places ---------------- */
+const toRad = d => d*Math.PI/180;
+function haversineKm(a,b,c,d){
+  const R=6371, dLat=toRad(c-a), dLon=toRad(d-b);
+  const x = Math.sin(dLat/2)**2 + Math.cos(toRad(a))*Math.cos(toRad(c))*Math.sin(dLon/2)**2;
+  return R*2*Math.atan2(Math.sqrt(x), Math.sqrt(1-x));
+}
+let useMiles = true;
+function fmtDist(km){
+  if(km == null) return "";
+  if(useMiles){ const mi = km*0.621371;
+    if(mi < 0.2) return Math.round(mi*5280)+" ft";
+    return (mi<10?mi.toFixed(1):Math.round(mi))+" mi"; }
+  if(km < 1) return Math.round(km*1000)+" m";
+  return (km<10?km.toFixed(1):Math.round(km))+" km";
+}
+async function geocode(t){
+  try{
+    const r = await fetch("https://nominatim.openstreetmap.org/search?format=json&limit=1&addressdetails=1&q="+encodeURIComponent(t));
+    const j = await r.json();
+    if(!j || !j.length) return null;
+    return { lat:parseFloat(j[0].lat), lng:parseFloat(j[0].lon), country:(j[0].address&&j[0].address.country_code)||"" };
+  }catch{ return null; }
+}
+function safeUrl(u){
+  if(!u) return null;
+  let s = String(u).trim(); if(!s) return null;
+  if(/^[a-z][a-z0-9+.-]*:/i.test(s)){ try{ const x=new URL(s); return /^https?:$/.test(x.protocol)?x.href:null; }catch{ return null; } }
+  s = s.startsWith("//") ? "https:"+s : "https://"+s;
+  try{ const x = new URL(s); return (/^https?:$/.test(x.protocol) && x.hostname.includes(".")) ? x.href : null; }catch{ return null; }
+}
+function confidence(p){ const m=60,C=4.2,v=p.reviews||0,R=(p.rating==null?C:p.rating); return (v/(v+m))*R+(m/(v+m))*C; }
+function planyScore(p){ let s = confidence(p); if(p.km!=null) s -= Math.min(p.km,12)*0.035; return s; }
+const CAT_HINTS = [
+  ["Nightlife",["bar","pub","night club","nightclub","lounge","brewery","cocktail","rooftop","wine"]],
+  ["Where to stay",["hotel","hostel","motel","resort","inn","lodging"]],
+  ["Eat & drink",["restaurant","cafe","café","coffee","bakery","ice cream","gelato","deli","food","pizzeria","brunch","breakfast","diner","sushi","taco","ramen","burger","steak","tea"]],
+  ["Sights",["museum","gallery","park","attraction","monument","zoo","aquarium","theater","golf","bowling","arcade","amusement","garden","beach","playground","landmark","historic","escape","skating","trampoline","karts","spa","library","bookstore"]]
+];
+function guessCat(q,t){
+  const hay = (String(t||"")+" "+String(q||"")).toLowerCase();
+  for(const [cat,ws] of CAT_HINTS) for(const w of ws) if(hay.includes(w)) return cat;
+  return "Sights";
+}
+
+/* ---------------- where a place opens ---------------- */
+const isApple = () => /iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent) && !/Chrome/.test(navigator.userAgent);
+const addrOf = p => p.address || p.title;
+// Universal: works on any phone, any OS. Used for anything that leaves this device —
+// the shared PlanWise board and the share sheet — since a family member on Android
+// shouldn't receive an Apple Maps link just because I'm on an iPhone.
+function gmapsUrl(p){
+  const q = encodeURIComponent(p.title + (p.address ? ", " + p.address : ""));
+  if(p.lat != null && p.lng != null)
+    return "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(p.lat+","+p.lng) +
+           (p.place_id ? "&query_place_id=" + encodeURIComponent(p.place_id) : "");
+  return "https://www.google.com/maps/search/?api=1&query=" + q;
+}
+// Native: for the Open button on this device only. Apple devices hand off to Apple Maps.
+function mapsUrl(p){
+  if(isApple()){
+    const q = encodeURIComponent(p.title + (p.address ? ", " + p.address : ""));
+    return "https://maps.apple.com/?q=" + q + (p.lat!=null ? "&ll="+p.lat+","+p.lng : "");
+  }
+  return gmapsUrl(p);
+}
+
+/* ---------------- actions (only ever after a yes) ---------------- */
+function openInMaps(p){
+  window.open(mapsUrl(p), "_blank", "noopener");
+  planySays(fill(pick(VOICE.opened), { name: esc(p.title) }));
+  markDone("open");
+}
+async function sendToTesla(p){
+  // Send to car = the OS share sheet. No car maker exposes a public URL scheme for this;
+  // Tesla's Fleet API needs OAuth, a registered app and a verified domain. But every car app
+  // (Tesla included) registers as a share target with "send to vehicle" built in, so handing
+  // the address to the share sheet is the one path that actually works from a web page.
+  const text = p.title + (p.address ? ", " + p.address : "");
+  if(navigator.share){
+    try{
+      await navigator.share({ title: p.title, text, url: gmapsUrl(p) });
+      planySays(fill(pick(VOICE.tesla), { name: esc(p.title) }));
+      markDone("tesla");
+      return;
+    }catch(e){
+      if(e && e.name === "AbortError"){ planySays(pick(VOICE.dropped)); return; }  // they closed the sheet
+    }
+  }
+  try{ await navigator.clipboard.writeText(text); }catch{}
+  planySays(pick(VOICE.teslaNo));
+  markDone("tesla");
+}
+async function addToBoard(p){
+  if(!state.user || !state.tripId){ planySays(pick(VOICE.noTrip)); return; }
+  const nk = norm(p.title);
+  if(state.planTitles.has(nk)){ planySays(fill(pick(VOICE.dupe), { name: esc(p.title) })); return; }
+  const me = (state.user.username||"").toLowerCase();
+  const note = [
+    p.rating!=null ? p.rating.toFixed(1)+"★ from "+commas(p.reviews||0)+" Google reviews" : null,
+    p.type||null, p.price||null, p.address||null,
+    p.km!=null ? fmtDist(p.km)+" from "+state.where : null
+  ].filter(Boolean).join(" · ");
+  const plan = {
+    title:p.title, cat:guessCat(state.lastWhat, p.type), note,
+    addedBy:me, addedByName:state.user.displayName, via:"plany-live",
+    day:state.day||"TBD", createdAt:Date.now(), votes:{ [me]:true }
+  };
+  const link = safeUrl(p.website) || gmapsUrl(p);   // universal — the board is shared
+  if(link) plan.link = link;
+  try{
+    await fbPush("plans/"+state.tripId, plan);
+    state.planTitles.add(nk);
+    planySays(fill(pick(VOICE.added), { name: esc(p.title), trip: esc(state.trip.name||"the"), day: esc(state.day) }));
+    markDone("add");
+  }catch{ planySays(pick(VOICE.error)); }
+}
+function markDone(kind){
+  const card = $talk.querySelector(".found:last-of-type");
+  if(!card) return;
+  const b = card.querySelector('[data-act="'+kind+'"]');
+  if(b){ b.classList.add("done"); b.disabled = true;
+    b.textContent = kind==="open" ? "✓ Opened" : kind==="tesla" ? "✓ Sent to car" : "✓ On the board"; }
+}
+
+/* ---------------- the found card ---------------- */
+function showCard(p){
+  const site = safeUrl(p.website);
+  const href = site || mapsUrl(p);
+  const el = document.createElement("div");
+  el.className = "found";
+  const pct = p.rating!=null ? Math.max(0,Math.min(100,(p.rating/5)*100)) : 0;
+  el.innerHTML =
+    '<h3><a href="'+esc(href)+'" target="_blank" rel="noopener noreferrer">'+esc(p.title)+'</a></h3>' +
+    (p.rating!=null
+      ? '<span class="stars" role="img" aria-label="'+p.rating+' out of 5"><span class="track">★★★★★</span>' +
+        '<span class="fill" style="width:'+pct.toFixed(1)+'%">★★★★★</span></span>' +
+        '<span class="score">'+p.rating.toFixed(1)+'</span>' +
+        (p.reviews?'<span class="revs">'+commas(p.reviews)+' reviews</span>':'')
+      : '<span class="revs">no rating yet</span>') +
+    (p.km!=null?' <span class="dist">· '+fmtDist(p.km)+'</span>':'') +
+    (p.address?'<p class="addr">'+esc(p.address)+'</p>':'') +
+    '<div class="acts">' +
+      '<button class="act yes" type="button" data-act="open">🗺️ Open in Maps</button>' +
+      '<button class="act" type="button" data-act="tesla">🚗 Send to car</button>' +
+      (state.tripId?'<button class="act" type="button" data-act="add">＋ Add to trip</button>':'') +
+      '<button class="act" type="button" data-act="next">↷ Something else</button>' +
+    '</div>';
+  $talk.appendChild(el);
+  el.querySelector('[data-act="open"]').addEventListener("click", ()=>{ state.pending=null; openInMaps(p); });
+  el.querySelector('[data-act="tesla"]').addEventListener("click", ()=>{ state.pending=null; sendToTesla(p); });
+  const add = el.querySelector('[data-act="add"]'); if(add) add.addEventListener("click", ()=>{ state.pending=null; addToBoard(p); });
+  el.querySelector('[data-act="next"]').addEventListener("click", ()=> nextResult());
+  scroll();
+}
+
+/* ---------------- understanding what you said ---------------- */
+const YES = /\b(yes|yeah|yep|yup|sure|ok|okay|alright|please|do it|go on|sounds good|perfect|open it|let's go|lets go|go for it|why not)\b/i;
+const NO  = /\b(no|nope|nah|don't|do not|cancel|forget it|never mind|nevermind|stop)\b/i;
+const NEXT= /\b(next|another|something else|other one|different|what else|anything else)\b/i;
+// Loose NEXT is fine while answering a question; standalone it must be the whole sentence,
+// so "another taco place" stays a search rather than paging the old results.
+const NEXT_ONLY = /^(next|another( one)?|something else|anything else|what else|a different one|the other one|other one)$/i;
+const TESLA=/\b(tesla|the car|my car|the vehicle|send it to the car|send to car|in the car|to the dash)\b/i;
+const MAPS =/\b(maps?|directions|navigate|take me|drive|walk me)\b/i;
+const BOARD=/\b(trip|board|plan|planwise|save it|add it to the trip)\b/i;
+
+// "ok what about sushi instead" says ok, but it is not a yes — it's a new request.
+// A yes only counts if there's nothing else left in the sentence once the
+// yes/no words and filler particles come out.
+const PARTICLES = /\b(yes|yeah|yep|yup|sure|ok|okay|alright|please|do it|go on|sounds good|perfect|open it|let's go|lets go|go for it|why not|no|nope|nah|don't|do not|cancel|forget it|never mind|nevermind|stop|thanks|thank you|it|that|one|then|there)\b/gi;
+function residue(t){
+  return String(t).toLowerCase().replace(/[^a-z\s']/g," ").replace(PARTICLES," ").replace(/\s+/g," ").trim();
+}
+const isJustAnAnswer = t => residue(t).split(/\s+/).filter(Boolean).length <= 1;
+
+const FILLER = /^(hey |hi |ok |okay |alright |plany[, ]*|please |can you |could you |i want (to )?|i'd like (to )?|i wanna |i feel like |let's |lets |find me |find |get me |show me |where can i (get|find) |where's |wheres |is there |what about |how about |any |a |an |some |good |the best )+/i;
+const VERBS  = /^(?:go\s+(?:and\s+)?)?(play|see|visit|do|eat|drink|grab|get|try|check\s+out|watch|buy|shop\s+for|go\s+to|go)\s+/i;
+const QUALS  = /^(the\s+)?(nearest|closest|best|top|good|great|nice|cheap|decent)\s+/i;
+// "yes but find me tacos" / "no I want a museum" — the answer word is just throat-clearing
+// in front of a real request, and "sushi instead" shouldn't search for the word "instead".
+const LEAD   = /^(yes|yeah|yep|yup|no|nope|nah|ok|okay|sure|alright|well)\b[\s,]*(but\s+)?/i;
+const TRAIL  = /[\s,]*\b(instead|please|thanks|thank you|then|though|actually)\b[\s,]*$/i;
+
+function clean(s){
+  let prev;
+  do {
+    prev = s;
+    s = s.replace(LEAD, "").trim();
+    s = s.replace(FILLER, "").trim();
+    s = s.replace(VERBS, "").trim();
+    s = s.replace(QUALS, "").trim();
+    s = s.replace(TRAIL, "").trim();
+  } while(s !== prev && s.length);
+  return s;
+}
+function parse(text){
+  let s = String(text||"").trim().replace(/[.?!]+$/,"");
+  if(!s) return null;
+  let where = null;
+  const m = s.match(/\b(?:near|around|close to|next to|by|in|at)\s+(.+)$/i);
+  if(m){ where = m[1].trim(); s = s.slice(0, m.index).trim(); }
+  s = clean(s);
+  s = s.replace(/\b(place|places|spot|spots|somewhere)\b/gi,"").replace(/\s+/g," ").trim();
+  return { what: s, where };
+}
+function resolveWhere(w){
+  if(!w) return state.where || null;
+  if(/\b(here|me|my location|nearby|around here)\b/i.test(w)) return state.where || null;
+  if(/\b(hotel|the place|where we're staying|our stay|the stay)\b/i.test(w) && state.where) return state.where;
+  return w;
+}
+
+/* ---------------- turn handling ---------------- */
+async function handle(text){
+  if(state.busy) return;
+  youSaid(text);
+  const t = String(text||"").trim();
+  if(!t) return;
+
+  // answering a question Plany asked
+  if(state.pending){
+    const p = state.pending.place;
+    if(TESLA.test(t)){ state.pending=null; return sendToTesla(p); }
+    if(BOARD.test(t)){ state.pending=null; return addToBoard(p); }
+    if(NEXT.test(t)){ return nextResult(); }
+    if(NO.test(t) && isJustAnAnswer(t)){ state.pending=null; planySays(pick(VOICE.dropped), { then: listenAgain }); return; }
+    if(YES.test(t) && isJustAnAnswer(t)){
+      state.pending = null;
+      if(state.pendingKind === "tesla") return sendToTesla(p);
+      return openInMaps(p);
+    }
+    // anything with real words in it is a new request, not an answer — fall through
+  }
+  // standalone commands about the place we're currently on ("send it to my car",
+  // "add it to the trip", "open it in maps"). Without this they fall through and get
+  // searched for as if they were places — which silently swaps out the results.
+  // Gated on a leading command verb so "tacos near the car wash" stays a search.
+  const isCommand = /^(send|open|add|save|put|take me|navigate|show me the way)\b/i.test(t);
+  if(state.results.length){
+    const p = state.results[state.idx];
+    if(p && isCommand){
+      if(TESLA.test(t)) return sendToTesla(p);
+      if(BOARD.test(t)) return addToBoard(p);
+      if(MAPS.test(t) || /^open\b/i.test(t)) return openInMaps(p);
+    }
+    if(NEXT_ONLY.test(t.replace(/[.?!]+$/,"").trim())) return nextResult();
+  }
+
+  const q = parse(t);
+  if(!q || !q.what){ planySays(pick(VOICE.huh), { then: listenAgain }); return; }
+  const where = resolveWhere(q.where);
+  if(!where){ planySays(pick(VOICE.nowhere), { then: listenAgain }); return; }
+  await search(q.what, where);
+}
+
+async function search(what, where){
+  state.busy = true; state.lastWhat = what; state.where = where;
+  setStatus("Looking");
+  planySays(pick(VOICE.thinking));
+  try{
+    const url = PROXY.replace(/\/+$/,"") + "?dest=" + encodeURIComponent(where) + "&q=" + encodeURIComponent(what);
+    const anchor = state.anchor || await geocode(where);
+    const data = await (await fetch(url)).json();
+    if(data.error) throw new Error(data.error);
+    if(anchor && anchor.country) useMiles = ["us","gb","lr","mm"].includes(anchor.country);
+
+    const places = (data.results||[]).filter(p => p && p.title);
+    places.forEach(p => { p.km = (anchor && p.lat!=null && p.lng!=null) ? haversineKm(anchor.lat,anchor.lng,p.lat,p.lng) : null; });
+    places.sort((a,b)=> planyScore(b)-planyScore(a));
+    state.results = places; state.idx = 0;
+
+    if(!places.length){
+      planySays(fill(pick(VOICE.none), { what:esc(what), where:esc(where) }), { then: listenAgain });
+      return;
+    }
+    offer(places[0], null);
+  }catch{
+    planySays(pick(VOICE.error), { then: listenAgain });
+  }finally{ state.busy = false; }
+}
+
+function offer(p, bankOverride){
+  const vars = { name:esc(p.title), rating:p.rating!=null?p.rating.toFixed(1):"—",
+                 reviews:commas(p.reviews||0), dist:fmtDist(p.km), where:esc(state.where) };
+  let bank = bankOverride;
+  if(!bank){
+    if(p.rating!=null && p.rating>=4.7 && (p.reviews||0)>=100) bank = VOICE.great;
+    else if(p.rating!=null && p.rating>=4.2) bank = VOICE.good;
+    else bank = VOICE.meh;
+  }
+  planySays(fill(pick(bank), vars), { then: listenAgain });
+  showCard(p);
+  state.pending = { place: p };     // <- nothing happens until you answer this
+  state.pendingKind = "open";
+}
+function nextResult(){
+  state.idx++;
+  if(state.idx >= state.results.length){
+    state.pending = null;
+    planySays(pick(VOICE.noMore), { then: listenAgain });
+    return;
+  }
+  offer(state.results[state.idx], VOICE.next);
+}
+
+/* ---------------- listening ---------------- */
+const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+let rec = null, wantListen = false;
+
+function buildRec(){
+  if(!SR) return null;
+  const r = new SR();
+  r.lang = "en-US"; r.interimResults = true; r.continuous = false; r.maxAlternatives = 1;
+  r.onstart = () => { state.listening = true; document.body.classList.add("listening"); setStatus("Listening"); };
+  r.onresult = e => {
+    let interim = "", final = "";
+    for(let i = e.resultIndex; i < e.results.length; i++){
+      const t = e.results[i][0].transcript;
+      if(e.results[i].isFinal) final += t; else interim += t;
+    }
+    if(interim) youSaid(interim, true);
+    if(final){ clearInterim(); wantListen = false; handle(final.trim()); }
+  };
+  r.onerror = e => {
+    wantListen = false;
+    if(e.error === "not-allowed" || e.error === "service-not-allowed") planySays(pick(VOICE.micDenied));
+    else if(e.error === "no-speech") setStatus("Tap to talk");
+  };
+  r.onend = () => {
+    state.listening = false; document.body.classList.remove("listening");
+    if(!document.body.classList.contains("speaking")) setStatus("Tap to talk");
+    if(wantListen){ try{ r.start(); }catch{} }
+  };
+  return r;
+}
+function startListening(){
+  if(!rec){ rec = buildRec(); }
+  if(!rec){ planySays(pick(VOICE.micNo)); return; }
+  try{ speechSynthesis && speechSynthesis.cancel(); }catch{}
+  document.body.classList.remove("speaking");
+  wantListen = false;
+  try{ rec.start(); }catch{ /* already running */ }
+}
+function stopListening(){ wantListen = false; try{ rec && rec.stop(); }catch{} }
+// after Plany finishes a sentence that ends in a question, open the mic again
+function listenAgain(){ if(SR && state.voiceOn) setTimeout(() => startListening(), 220); }
+
+$mic.addEventListener("click", () => {
+  if(state.listening){ stopListening(); return; }
+  startListening();
+});
+$("tsend").addEventListener("click", () => { const v = $ti.value.trim(); if(!v) return; $ti.value=""; handle(v); });
+$ti.addEventListener("keydown", e => { if(e.key === "Enter"){ const v = $ti.value.trim(); if(!v) return; $ti.value=""; handle(v); } });
+
+/* ---------------- boot ---------------- */
+function renderCtx(){
+  const bits = [];
+  if(state.user) bits.push("<span>"+esc(state.user.displayName)+"</span>");
+  if(state.trip) bits.push("<span>on <b>"+esc(state.trip.name||"trip")+"</b></span>");
+  if(state.where) bits.push("<span>near <b>"+esc(state.where)+"</b></span>");
+  if(!bits.length) bits.push("<span>not logged in · say “near” and a place</span>");
+  $ctx.innerHTML = bits.join("<span>·</span>");
+}
+async function boot(){
+  $note.innerHTML = SR
+    ? "Speech runs in your browser. Plany asks before it opens or sends anything."
+    : "This browser has no speech recognition (Firefox doesn't). Typing works exactly the same.";
+
+  const s = LS.get(SESSION_KEY);
+  if(s && s.username){
+    const u = await fbGetSafe("users/"+encodeURIComponent(String(s.username).toLowerCase()));
+    if(u){
+      state.user = { username:u.username, displayName:u.displayName||u.username };
+      // find their most recent trip and use its stay as the anchor
+      const [fams, trips] = await Promise.all([fbGetSafe("families"), fbGetSafe("trips")]);
+      const me = String(u.username).toLowerCase();
+      const ids = new Set(Object.values(fams||{}).filter(f => f && f.members && f.members[me]).map(f => f.tripId));
+      const mine = Object.values(trips||{}).filter(t => t && ids.has(t.id)).sort((a,b)=>(b.createdAt||0)-(a.createdAt||0));
+      if(mine.length){
+        state.trip = mine[0]; state.tripId = mine[0].id;
+        const plans = await fbGetSafe("plans/"+state.tripId) || {};
+        state.planTitles = new Set(Object.values(plans).map(p => norm(p.title)));
+        const stay = await fbGetSafe("trips/"+state.tripId+"/stay");   // PlanwiseER writes this
+        if(stay && stay.name){
+          state.where = stay.name;
+          if(stay.lat != null && stay.lon != null) state.anchor = { lat:stay.lat, lng:stay.lon };
+        } else if(mine[0].destination) state.where = mine[0].destination;
+      }
+    }
+  }
+  renderCtx();
+  const who = state.user ? state.user.displayName : null;
+  if(who) planySays(fill(pick(VOICE.helloUser), { who:esc(who), trip:esc((state.trip&&state.trip.name)||"a trip") }));
+  else planySays(pick(VOICE.hello));
+  if(state.where) $hint.textContent = "Try: “find me good coffee near " + state.where + "”";
+}
+boot();
+
+})();
+</script>
+</body>
+</html>

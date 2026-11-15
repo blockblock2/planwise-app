@@ -1,0 +1,1158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PlanwiseER</title>
+<meta name="description" content="The PlanWise idea assistant. Connects to your PlanWise trip, finds real places nearby, and adds the ones you like straight to the board.">
+<link rel="icon" type="image/png" href="data:image/png;base64,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">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cream:#F9F4ED; --paper:#ffffff; --ink:#2A211C; --muted:#7a6f66; --faint:#a89c92;
+  --coral:#E2643B; --coral-d:#c9502a; --jade:#1F7A6D; --gold:#E9B44C; --line:#e7ddd1;
+  --shadow:0 10px 30px rgba(60,40,25,.10); --shadow-sm:0 4px 14px rgba(60,40,25,.08);
+  --serif:'Fraunces',Georgia,serif; --sans:'Inter',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{
+  font-family:var(--sans); color:var(--ink); background:var(--cream);
+  -webkit-font-smoothing:antialiased; line-height:1.5;
+}
+.greca{
+  height:26px; width:100%;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='26' viewBox='0 0 48 26'%3E%3Cpath d='M0 13 H6 V4 H24 V22 H42 V13 H48' fill='none' stroke='%23E2643B' stroke-width='5'/%3E%3C/svg%3E") repeat-x center;
+  background-size:auto 26px;
+}
+header{background:var(--paper); border-bottom:1px solid var(--line)}
+.bar{max-width:960px; margin:0 auto; padding:16px 20px; display:flex; align-items:center; gap:14px; flex-wrap:wrap}
+.mark{width:40px; height:40px; flex:0 0 auto}
+.brand h1{font-family:var(--serif); font-weight:700; font-size:22px; margin:0; letter-spacing:-.01em}
+.brand h1 .er{color:var(--coral)}
+.brand p{margin:1px 0 0; font-size:12.5px; color:var(--muted)}
+.status{margin-left:auto; display:flex; align-items:center; gap:10px; font-size:13px; color:var(--muted); flex-wrap:wrap}
+.pill{display:inline-flex; align-items:center; gap:7px; background:var(--cream); border:1px solid var(--line); border-radius:999px; padding:5px 12px; font-weight:600; color:var(--ink); font-size:12.5px}
+.pill .dot{width:7px; height:7px; border-radius:50%; background:var(--jade)}
+.who{font-weight:600; color:var(--ink); font-size:13px}
+.home-link{display:inline-flex; align-items:center; gap:4px; text-decoration:none; font-weight:700; font-size:12.5px; color:var(--coral); border:1px solid var(--coral); border-radius:999px; padding:5px 12px}
+.home-link:hover{background:var(--coral); color:#fff}
+.btn-link{background:none; border:0; color:var(--coral); font-weight:600; cursor:pointer; font-size:13px; padding:2px; font-family:inherit}
+.btn-link:hover{text-decoration:underline}
+main{max-width:960px; margin:0 auto; padding:30px 20px 70px}
+.pwe-trip-grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(230px,1fr)); gap:14px}
+.pwe-trip{display:flex; flex-direction:column; text-align:left; background:var(--paper); border:1px solid var(--line); border-radius:16px; overflow:hidden; cursor:pointer; font-family:inherit; color:inherit; padding:0; box-shadow:var(--shadow-sm); transition:transform .1s ease, border-color .1s ease}
+.pwe-trip:hover{transform:translateY(-2px); border-color:var(--coral)}
+.pwe-trip:focus-visible{outline:2px solid var(--ink); outline-offset:2px}
+.pwe-trip-band{height:8px; background:linear-gradient(90deg,var(--coral),var(--jade))}
+.pwe-trip-body{display:flex; flex-direction:column; gap:3px; padding:15px 17px 17px}
+.pwe-pill{align-self:flex-start; font-size:11px; font-weight:700; color:var(--jade); background:var(--cream); border:1px solid var(--line); border-radius:999px; padding:3px 9px; margin-bottom:5px}
+.pwe-trip-name{font-family:var(--serif); font-weight:600; font-size:19px; line-height:1.15}
+.pwe-trip-dest{font-size:13.5px; color:var(--muted)}
+.pwe-trip-meta{font-size:12.5px; color:var(--faint); margin-top:2px}
+.code-fallback summary{cursor:pointer; font-weight:600; font-size:13.5px; color:var(--coral); width:fit-content}
+.code-fallback summary:hover{text-decoration:underline}
+.xrow{display:flex; gap:12px; flex-wrap:wrap}
+.xf{flex:1; min-width:170px}
+.xf select{width:100%; font-family:inherit; font-size:15px; color:var(--ink); padding:11px 13px; border:1px solid var(--line); border-radius:11px; background:var(--paper); cursor:pointer}
+.xf select:focus{outline:2px solid var(--coral); outline-offset:1px}
+.demo{border-color:var(--coral)}
+.dayrow{display:flex; align-items:flex-end; gap:12px; flex-wrap:wrap; margin:0 0 16px}
+.daypick{display:flex; flex-direction:column; gap:5px}
+.daypick span{font-size:11.5px; letter-spacing:.14em; text-transform:uppercase; color:var(--coral); font-weight:700}
+.daypick select{font-family:inherit; font-size:14.5px; font-weight:600; color:var(--ink); padding:9px 12px; border:1px solid var(--line); border-radius:10px; background:var(--paper); cursor:pointer}
+.daypick select:focus{outline:2px solid var(--coral); outline-offset:1px}
+.rating{display:flex; align-items:center; gap:6px; margin:0 0 6px; font-size:13.5px; font-weight:600; color:var(--ink)}
+.rstars{color:var(--gold); letter-spacing:1px}
+.rcount{color:var(--faint); font-weight:400}
+
+.eyebrow{font-size:11.5px; letter-spacing:.14em; text-transform:uppercase; color:var(--coral); font-weight:700; margin:0 0 8px}
+h2.h{font-family:var(--serif); font-weight:600; font-size:30px; line-height:1.12; margin:0 0 10px; letter-spacing:-.015em}
+h3.h{font-family:var(--serif); font-weight:600; font-size:20px; margin:0 0 12px}
+.lede{color:var(--muted); font-size:15.5px; max-width:56ch; margin:0 0 22px}
+
+.card{background:var(--paper); border:1px solid var(--line); border-radius:16px; box-shadow:var(--shadow-sm)}
+.pad{padding:22px}
+.fld{display:block; margin-bottom:14px}
+.fld span{display:block; font-size:13px; font-weight:600; margin-bottom:6px}
+.fld input,.fld textarea{
+  width:100%; font-family:inherit; font-size:15px; color:var(--ink);
+  padding:11px 13px; border:1px solid var(--line); border-radius:11px; background:var(--paper);
+}
+.fld input:focus,.fld textarea:focus{outline:2px solid var(--coral); outline-offset:1px; border-color:transparent}
+.hint{font-size:12.5px; color:var(--faint); margin-top:-6px}
+
+.btn{font-family:inherit; font-weight:600; font-size:14.5px; border-radius:11px; padding:11px 18px; cursor:pointer; border:1px solid transparent; transition:transform .06s ease, background .15s ease}
+.btn:active{transform:translateY(1px)}
+.btn:focus-visible{outline:2px solid var(--ink); outline-offset:2px}
+.btn-primary{background:var(--ink); color:#fff}
+.btn-primary:hover{background:#3c302a}
+.btn-coral{background:var(--coral); color:#fff}
+.btn-coral:hover{background:var(--coral-d)}
+.btn-ghost{background:var(--paper); color:var(--ink); border-color:var(--line)}
+.btn-ghost:hover{background:var(--cream)}
+.btn-sm{padding:8px 14px; font-size:13px; border-radius:9px}
+.btn[disabled]{opacity:.55; cursor:default; transform:none}
+.row{display:flex; gap:10px; flex-wrap:wrap}
+
+.recent{display:flex; gap:8px; flex-wrap:wrap; margin-top:6px}
+.recent button{background:var(--cream); border:1px solid var(--line); border-radius:999px; padding:6px 13px; font-weight:600; font-size:13px; color:var(--ink); cursor:pointer; font-family:inherit}
+.recent button:hover{border-color:var(--coral); color:var(--coral)}
+
+.chips{display:flex; gap:8px; flex-wrap:wrap; margin:2px 0 24px}
+.chip{background:var(--paper); border:1px solid var(--line); border-radius:999px; padding:8px 15px; font-weight:600; font-size:13.5px; color:var(--muted); cursor:pointer; font-family:inherit; transition:all .12s ease}
+.chip:hover{border-color:var(--coral); color:var(--coral)}
+.chip[aria-pressed="true"]{background:var(--coral); border-color:var(--coral); color:#fff}
+
+.trip-hero{display:flex; align-items:flex-end; justify-content:space-between; gap:16px; flex-wrap:wrap; margin-bottom:6px}
+.trip-hero .place{color:var(--muted); font-size:15px; margin-top:2px}
+.board-note{font-size:13.5px; color:var(--muted); background:var(--cream); border:1px solid var(--line); border-radius:11px; padding:10px 14px; display:inline-flex; align-items:center; gap:8px; margin-bottom:20px}
+
+.grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(250px,1fr)); gap:16px}
+.sug{display:flex; flex-direction:column; padding:18px; min-height:0}
+.sug .cat{font-size:11px; letter-spacing:.1em; text-transform:uppercase; font-weight:700; color:var(--jade); margin-bottom:8px}
+.sug h4{font-family:var(--serif); font-weight:600; font-size:18px; margin:0 0 6px; line-height:1.2}
+.sug .note{font-size:13.5px; color:var(--muted); margin:0 0 16px; flex:1; text-transform:capitalize}
+.sug .add{align-self:flex-start}
+.sug.added{border-color:#cfe6df; background:#f4fbf8}
+.sug .added-tag{display:inline-flex; align-items:center; gap:7px; color:var(--jade); font-weight:700; font-size:14px}
+
+.thinking{display:flex; align-items:center; gap:12px; color:var(--muted); font-size:15px; padding:14px 0}
+.dots{display:inline-flex; gap:5px}
+.dots i{width:8px; height:8px; border-radius:50%; background:var(--coral); animation:bounce 1s infinite ease-in-out}
+.dots i:nth-child(2){animation-delay:.15s; background:var(--gold)}
+.dots i:nth-child(3){animation-delay:.3s; background:var(--jade)}
+@keyframes bounce{0%,80%,100%{transform:translateY(0);opacity:.5}40%{transform:translateY(-6px);opacity:1}}
+
+.notice{border:1px solid var(--line); background:var(--cream); border-radius:13px; padding:16px 18px; font-size:14.5px; color:var(--ink)}
+.notice.warn{border-color:#f0d3b0; background:#fdf5e9}
+.center{text-align:center}
+.more-wrap{text-align:center; margin-top:26px}
+.footer-greca{margin-top:50px}
+.preview-flag{display:inline-block; background:var(--gold); color:#4a3410; font-weight:700; font-size:11px; letter-spacing:.05em; text-transform:uppercase; padding:3px 9px; border-radius:999px; margin-left:8px}
+a.link{color:var(--coral); font-weight:600; text-decoration:none}
+a.link:hover{text-decoration:underline}
+@media (max-width:520px){ h2.h{font-size:25px} .bar{padding:14px 16px} main{padding:24px 16px 60px} }
+@media (prefers-reduced-motion:reduce){ .dots i{animation:none} .btn{transition:none} }
+</style>
+</head>
+<body>
+<div class="greca"></div>
+<header>
+  <div class="bar">
+    <svg class="mark" viewBox="0 0 48 48" aria-hidden="true">
+      <rect x="2" y="2" width="44" height="44" rx="11" fill="var(--coral)"/>
+      <path d="M9 30 H15 V16 H33 V30" fill="none" stroke="var(--cream)" stroke-width="4" stroke-linejoin="round"/>
+      <circle cx="24" cy="33" r="4" fill="var(--jade)"/>
+    </svg>
+    <div class="brand">
+      <h1>Planwise<span class="er">ER</span></h1>
+      <p>Your PlanWise idea assistant</p>
+    </div>
+    <div class="status" id="status"></div>
+  </div>
+</header>
+<main id="app"></main>
+<div class="greca footer-greca"></div>
+
+<script>
+"use strict";
+
+/* ---------------- state + storage ---------------- */
+const LS = {
+  get(k){ try { return JSON.parse(localStorage.getItem(k)); } catch { return null; } },
+  set(k,v){ try { localStorage.setItem(k, JSON.stringify(v)); } catch {} },
+  del(k){ try { localStorage.removeItem(k); } catch {} }
+};
+const CATS = ["Eat & drink","Sights","Neighborhoods","Day trips","Nightlife","Where to stay"];
+const CHIP_ORDER = ["Sights","Eat & drink","Neighborhoods","Day trips","Nightlife","Where to stay"];
+
+// PlanWise's own Firebase Realtime Database (project: planwise-73ada)
+const DEFAULT_DB = "https://planwise-73ada-default-rtdb.firebaseio.com";
+// Paste your Cloudflare Worker URL here to turn on real Google star ratings.
+// Leave "" and PlanwiseER just ranks by Wikidata fame, exactly as it does now.
+const RATINGS_PROXY = "https://planer.acute-percent5v.workers.dev";
+const EXPLORE_TYPES = ["restaurants","tourist attractions","hotels","bars and nightlife",
+  "neighborhoods","day trips","museums","cafes"];
+const exploreUrl = (place, type) => RATINGS_PROXY.replace(/\/+$/,"") +
+  "?dest=" + encodeURIComponent(place) + "&q=" + encodeURIComponent(type);
+const demoUsed = () => !!LS.get("pwe_demo_used");
+function exploreForm(idp, ids, place, type){
+  return `<div class="xrow">
+    <label class="fld xf"><span>Place</span><input id="${idp}" value="${esc(place||"")}" placeholder="Lima, Peru" autocomplete="off"></label>
+    <label class="fld xf"><span>Looking for</span><select id="${ids}">${
+      EXPLORE_TYPES.map(o=>`<option${o===type?" selected":""}>${esc(o)}</option>`).join("")}</select></label>
+  </div>`;
+}
+const CAT_TERM = { "Eat & drink":"restaurants", "Sights":"tourist attractions",
+  "Neighborhoods":"neighborhoods", "Day trips":"day trips",
+  "Nightlife":"bars and nightlife", "Where to stay":"hotels" };
+// PlanWise and PlanwiseER share this origin (blockblock2.github.io), so they share
+// localStorage. Using PlanWise's own session key means logging into either logs you
+// into both, and logging out of either logs you out of both.
+const SESSION_KEY = "planwise_session";
+
+const state = {
+  db: LS.get("pwe_db") || DEFAULT_DB,   // Firebase Realtime Database URL
+  user: null,                           // logged-in PlanWise account {username, displayName} (resolved on boot)
+  code: null, fid: null, fam: null,
+  stay: null,                      // {name, lat, lon} \u2014 where they're staying, if given (biases suggestions closer to it)
+  plans: {},                      // existing plans on the board (id -> plan)
+  planTitles: new Set(),          // normalized existing titles (for dedupe)
+  geo: null,                      // {lat, lon, name}
+  cat: "Sights",
+  day: "TBD",                     // which trip day we're adding to (also filters by what's open)
+  days: [],                       // the trip's real dates, from PlanWise
+  ratings: {},                    // cat -> { normalized title -> full Google record }
+  seeded: {},                     // cat -> have Google's rated places been merged in yet?
+  seen: {},                       // cat -> Set of normalized titles already shown/added (across batches)
+  radius: {},                     // cat -> current search radius in meters (widens if a batch comes up short)
+  buffer: {},                     // cat -> not-yet-served fresh results from the last network fetch
+  byNk: {},                       // normalized title -> suggestion object (lookup for "Add to trip")
+  added: new Set(),               // normalized titles added this session
+  preview: false, previewDest: ""
+};
+
+const app = document.getElementById("app");
+const statusEl = document.getElementById("status");
+const esc = s => String(s==null?"":s).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const norm = s => String(s||"").toLowerCase().replace(/[^a-z0-9]+/g," ").trim();
+
+/* ---------------- Firebase REST ---------------- */
+function normalizeDbUrl(raw){
+  if(!raw) return null;
+  let s = raw.trim();
+  // pasted a whole config object? pull databaseURL out of it
+  const m = s.match(/databaseURL['"]?\s*[:=]\s*['"]([^'"]+)['"]/);
+  if(m) s = m[1];
+  s = s.trim().replace(/\/+$/,"");
+  if(!/^https?:\/\//.test(s)) s = "https://" + s;
+  if(!/firebaseio\.com|firebasedatabase\.app/.test(s)) return null;
+  return s;
+}
+async function fbGet(path){
+  const r = await fetch(state.db + "/" + path + ".json");
+  if(!r.ok) throw new Error("Firebase read failed (" + r.status + ")");
+  return r.json();
+}
+async function fbPush(path, body){
+  const r = await fetch(state.db + "/" + path + ".json", {
+    method:"POST", headers:{"Content-Type":"application/json"}, body: JSON.stringify(body)
+  });
+  if(!r.ok) throw new Error("Firebase write failed (" + r.status + ")");
+  return r.json();
+}
+async function fbPut(path, body){
+  const r = await fetch(state.db + "/" + path + ".json", {
+    method:"PUT", headers:{"Content-Type":"application/json"}, body: JSON.stringify(body)
+  });
+  if(!r.ok) throw new Error("Firebase write failed (" + r.status + ")");
+  return r.json();
+}
+
+/* ---------------- login against PlanWise accounts ---------------- */
+async function sha256(text){
+  const buf = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(text));
+  return Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2,"0")).join("");
+}
+async function doLogin(usernameRaw, pass){
+  const input = usernameRaw.trim();
+  if(!input) return "Enter your name.";
+  if(!pass) return "Enter your password.";
+  const lower = input.toLowerCase();
+  let u = null;
+  // 1. direct lookup: users/{username}
+  try { u = await fbGet("users/" + encodeURIComponent(lower)); } catch(e){ return "Couldn't reach PlanWise. Check your connection."; }
+  // 2. fallback: they may have typed their display name
+  if(!u){
+    try {
+      const all = await fbGet("users");
+      if(all) for(const rec of Object.values(all)){
+        if(rec && (String(rec.username).toLowerCase() === lower || String(rec.displayName).toLowerCase() === lower)){ u = rec; break; }
+      }
+    } catch {}
+  }
+  if(!u) return "No PlanWise account with that name.";
+  const hash = await sha256(pass);
+  if(u.pass && u.pass !== hash) return "Wrong password. Try again.";
+  const session = { username: u.username, displayName: u.displayName || u.username };
+  state.user = session;
+  LS.set(SESSION_KEY, { username: u.username }); // shared with PlanWise (matches its format)
+  LS.del("pwe_session");                          // retire the old PlanwiseER-only key
+  return null;
+}
+function logout(){
+  state.user = null;
+  LS.del(SESSION_KEY);   // logs you out of PlanWise too
+  LS.del("pwe_session");
+  state.fam = null; state.fid = null; state.preview = false;
+  state.seen = {}; state.radius = {}; state.buffer = {}; state.byNk = {}; state.seeded = {}; state.added = new Set();
+  renderLogin();
+}
+
+/* ---------------- resolve a PlanWise trip code -> trip + shared plan board ---------------- */
+async function fbGetSafe(path){ try { return await fbGet(path); } catch { return null; } }
+const up = s => String(s==null?"":s).toUpperCase();
+
+// Load a trip straight from its id (used by the "your trips" list and by code lookup).
+async function connectTripById(tripId){
+  const trip = await fbGet("trips/" + tripId);
+  if(!trip) throw new Error("That trip no longer exists.");
+  const tripName = trip.name || "Trip";
+  const destination = trip.destination || "";
+  if(!destination) throw new Error("This trip doesn't have a destination set in PlanWise yet \u2014 add one there, then come back.");
+
+  // families are just for display (whose board this is) \u2014 prefer the one the logged-in user belongs to
+  const me = (state.user.username || "").toLowerCase();
+  const famIds = Object.keys(trip.families || {});
+  let famId = null, fam = null;
+  for(const id of famIds){ const f = await fbGetSafe("families/" + id); if(f && f.members && f.members[me]){ famId = id; fam = f; break; } }
+  if(!fam && famIds.length){ famId = famIds[0]; fam = await fbGetSafe("families/" + famId); }
+
+  // plans live under the trip id in PlanWise (one shared board per trip, across all families)
+  const plans = (await fbGetSafe("plans/" + tripId)) || {};
+
+  state.tripId = tripId;
+  state.fid = famId;
+  state.code = up(trip.code || "");
+  state.fam = { name: tripName, destination, famName: fam && fam.name,
+                startDate: trip.startDate || "", endDate: trip.endDate || "" };
+  state.days = dateList(trip.startDate, trip.endDate);
+  // Trips made before real dates existed only have numbered days — still offer those,
+  // so the day picker and calendar button don't just silently vanish.
+  if(!state.days.length){
+    state.days = Object.keys(trip.days||{}).sort((a,b)=>parseInt(a)-parseInt(b)).map(d=>"Day "+d);
+  }
+  state.hasRealDates = !!(trip.startDate && dateList(trip.startDate, trip.endDate).length);
+  state.day = "TBD";
+  state.plans = plans;
+  state.planTitles = new Set(Object.values(plans).map(p => norm(p.title)));
+  state.seen = {}; state.radius = {}; state.buffer = {}; state.byNk = {}; state.added = new Set();
+  return state.fam;
+}
+
+async function connectTrip(codeRaw){
+  const raw = codeRaw.trim();
+  const variants = raw === up(raw) ? [raw] : [raw, up(raw)];
+  let tripId = null;
+
+  // 1. trip invite code  (PlanWise: tripcodes/{CODE} -> tripId)
+  for(const k of variants){ const v = await fbGetSafe("tripcodes/" + encodeURIComponent(k)); if(typeof v === "string" && v){ tripId = v; break; } }
+  // 2. fallback: scan trips by their own .code field (in case the index is stale)
+  if(!tripId){
+    const trips = await fbGetSafe("trips");
+    if(trips) for(const [id,t] of Object.entries(trips)){ if(t && up(t.code) === up(raw)){ tripId = id; break; } }
+  }
+  if(!tripId) throw new Error("That code didn't match a trip in PlanWise. Double-check it \u2014 trip codes look like TRIP-XXXXXX.");
+
+  await connectTripById(tripId);
+
+  const recent = (LS.get("pwe_recent") || []).filter(x => x.code !== state.code);
+  recent.unshift({ code: state.code, name: state.fam.name, dest: state.fam.destination });
+  LS.set("pwe_recent", recent.slice(0,6));
+  return state.fam;
+}
+
+// Every trip the logged-in user is on (mirrors how PlanWise builds its dashboard):
+// find the families they're a member of, collect those trip ids, return the trips.
+async function loadMyTrips(){
+  const me = (state.user.username || "").toLowerCase();
+  const [fams, trips] = await Promise.all([fbGetSafe("families"), fbGetSafe("trips")]);
+  const famVals = Object.values(fams || {});
+  const myTripIds = new Set(famVals.filter(f => f && f.members && f.members[me]).map(f => f.tripId));
+  const mine = Object.values(trips || {}).filter(t => t && myTripIds.has(t.id));
+  mine.sort((a,b) => (b.createdAt||0) - (a.createdAt||0));
+  return mine.map(t => {
+    const fs = famVals.filter(f => f && f.tripId === t.id);
+    const travelers = new Set(); fs.forEach(f => Object.keys(f.members||{}).forEach(x => travelers.add(x)));
+    return { id:t.id, name:t.name||"Trip", destination:t.destination||"", owner:t.owner===me,
+             fams:fs.length, travelers:travelers.size };
+  });
+}
+
+// After connecting to a trip: check PlanWise's database for a stay location this
+// user already saved for this trip. If found, skip straight to suggestions
+// (still changeable via "Change stay"); otherwise ask.
+// One shared stay per trip, saved on the trip itself so every traveler sees the same one.
+async function resolveStayAndGo(){
+  const me = (state.user.username || "").toLowerCase();
+  let shared = await fbGetSafe("trips/" + state.tripId + "/stay");
+
+  // migrate a stay saved by the older per-user format up to the shared location
+  if(!(shared && shared.lat != null)){
+    const old = await fbGetSafe("stays/" + state.tripId + "/" + me);
+    if(old && old.lat != null && old.lon != null){
+      shared = { name: old.name || "", lat: old.lat, lon: old.lon, byName: state.user.displayName };
+      try { await fbPut("trips/" + state.tripId + "/stay", shared); } catch(e){}
+    }
+  }
+
+  if(shared && shared.lat != null && shared.lon != null){
+    state.stay = { name: shared.name || "", lat: shared.lat, lon: shared.lon, byName: shared.byName || "" };
+    state.geo = { lat: shared.lat, lon: shared.lon, name: shared.name || "" };
+    renderSuggest();
+    return;
+  }
+  // no shared stay yet \u2014 if this user already chose to skip on this device, don't nag them
+  const skipped = (LS.get("pwe_skipstay") || {})[state.tripId];
+  if(skipped){ state.stay = null; renderSuggest(); return; }
+  state.stay = null;
+  renderStayStep();
+}
+
+/* ---------------- trip dates ---------------- */
+const isISO = v => /^\d{4}-\d{2}-\d{2}$/.test(v);
+function dateList(start,end){
+  const out=[]; if(!start) return out;
+  const s=new Date(start+"T12:00:00"), e=new Date((end||start)+"T12:00:00");
+  if(isNaN(s)||isNaN(e)||e<s) return out;
+  for(let d=new Date(s); d<=e && out.length<90; d.setDate(d.getDate()+1)) out.push(d.toISOString().slice(0,10));
+  return out;
+}
+const fmtDate = iso => { const d=new Date(iso+"T12:00:00");
+  return isNaN(d) ? iso : d.toLocaleDateString("en-US",{weekday:"short",month:"short",day:"numeric"}); };
+const dowOf = iso => { const d=new Date(iso+"T12:00:00"); return isNaN(d) ? -1 : d.getDay(); };
+
+/* ---------------- "is it open that day?" ----------------
+   OpenStreetMap stores hours in an opening_hours mini-language ("Mo-Fr 09:00-17:00; Su off").
+   Full parsing is a rabbit hole, so this reads the day rules only, and deliberately
+   returns null ("can't tell") rather than guessing — unknown places are never hidden. */
+const DOW = ["Su","Mo","Tu","We","Th","Fr","Sa"];
+function opensOn(oh, dow){
+  if(!oh || dow < 0) return null;
+  const s = String(oh).trim();
+  if(/24\/7/.test(s)) return true;
+  const day = DOW[dow];
+  let verdict = null;
+  s.split(";").forEach(rule => {
+    rule = rule.trim(); if(!rule) return;
+    if(/^(PH|SH|easter)/i.test(rule)) return;         // holiday rules — not our business
+    const off = /\boff\b|\bclosed\b/i.test(rule);
+    const m = rule.match(/^((?:Mo|Tu|We|Th|Fr|Sa|Su)(?:\s*-\s*(?:Mo|Tu|We|Th|Fr|Sa|Su))?(?:\s*,\s*(?:Mo|Tu|We|Th|Fr|Sa|Su)(?:\s*-\s*(?:Mo|Tu|We|Th|Fr|Sa|Su))?)*)/);
+    if(!m){ if(verdict === null) verdict = !off; return; }  // no day spec => every day
+    let hit = false;
+    m[1].split(",").forEach(tok => {
+      tok = tok.trim();
+      const r = tok.match(/^(Mo|Tu|We|Th|Fr|Sa|Su)\s*-\s*(Mo|Tu|We|Th|Fr|Sa|Su)$/);
+      if(r){
+        const a = DOW.indexOf(r[1]), b = DOW.indexOf(r[2]);
+        for(let i=0;i<7;i++){ const d=(a+i)%7; if(DOW[d]===day) hit=true; if(d===b) break; }
+      } else if(tok === day) hit = true;
+    });
+    if(hit) verdict = !off;   // later rules win, same as the spec
+  });
+  return verdict;
+}
+
+/* ---------------- real ratings (via the Worker proxy) ---------------- */
+async function loadRatings(cat){
+  if(!RATINGS_PROXY || state.ratings[cat]) return;
+  state.ratings[cat] = {}; // don't retry on failure
+  const dest = state.fam.destination || state.previewDest;
+  if(!dest) return;
+  try{
+    const u = RATINGS_PROXY.replace(/\/+$/,"") + "?dest=" + encodeURIComponent(dest) +
+              "&q=" + encodeURIComponent(CAT_TERM[cat] || cat);
+    const r = await fetch(u);
+    const j = await r.json();
+    const map = {};
+    (j.results||[]).forEach(x => { if(x && x.title) map[norm(x.title)] = x; });
+    state.ratings[cat] = map;
+  }catch(e){}
+}
+// Bayesian average, so 5.0-from-3-reviews can't outrank 4.5-from-8000, then reward real volume.
+function ratingScore(r){
+  const v = r.reviews||0, R = r.rating||0, m = 50, C = 4.0;
+  const w = (v/(v+m))*R + (m/(v+m))*C;
+  return w * Math.log10(v+10) * 40;
+}
+const stars = n => "\u2605".repeat(Math.round(n)) + "\u2606".repeat(5-Math.round(n));
+
+/* ---------------- calendar (always the current vote winners) ---------------- */
+const icsEsc = s => String(s||"").replace(/\\/g,"\\\\").replace(/;/g,"\\;").replace(/,/g,"\\,").replace(/\r?\n/g,"\\n");
+function plusDay(iso){ const d=new Date(iso+"T12:00:00"); d.setDate(d.getDate()+1); return d.toISOString().slice(0,10); }
+function downloadItinerary(){
+  const plans = Object.values(state.plans||{});
+  const wins = [];
+  state.days.forEach(day => {
+    const onDay = plans.filter(p => (p.day||"TBD") === day && Object.keys(p.votes||{}).length);
+    if(!onDay.length) return;
+    onDay.sort((a,b)=>Object.keys(b.votes||{}).length - Object.keys(a.votes||{}).length || (a.createdAt||0)-(b.createdAt||0));
+    wins.push({ day, plan:onDay[0], votes:Object.keys(onDay[0].votes||{}).length });
+  });
+  if(!wins.length){
+    alert(state.hasRealDates
+      ? "Nothing to add yet \u2014 plans need a date and at least one vote. Vote in PlanWise, then try again."
+      : "This trip uses numbered days, so there are no real dates to put on a calendar. Set a start and end date in PlanWise first.");
+    return;
+  }
+  const L = ["BEGIN:VCALENDAR","VERSION:2.0","PRODID:-//PlanwiseER//EN","CALSCALE:GREGORIAN","METHOD:PUBLISH"];
+  wins.forEach((w,i)=>{
+    L.push("BEGIN:VEVENT","UID:pwe-"+state.tripId+"-"+w.day+"-"+i+"@planwise",
+      "DTSTAMP:"+new Date().toISOString().replace(/[-:]/g,"").split(".")[0]+"Z",
+      "DTSTART;VALUE=DATE:"+w.day.replace(/-/g,""),
+      "DTEND;VALUE=DATE:"+plusDay(w.day).replace(/-/g,""),
+      "SUMMARY:"+icsEsc(w.plan.title),
+      "DESCRIPTION:"+icsEsc([w.plan.note, w.votes+" vote(s) \u2014 winning this day", state.fam.name].filter(Boolean).join("\n")),
+      "LOCATION:"+icsEsc(state.fam.destination||""),"END:VEVENT");
+  });
+  L.push("END:VCALENDAR");
+  const blob = new Blob([L.join("\r\n")], {type:"text/calendar;charset=utf-8"});
+  const a = document.createElement("a"); a.href = URL.createObjectURL(blob);
+  a.download = (state.fam.name||"trip").replace(/[^a-z0-9]+/gi,"-").toLowerCase()+".ics";
+  document.body.appendChild(a); a.click(); a.remove();
+  setTimeout(()=>URL.revokeObjectURL(a.href), 2000);
+}
+
+/* ---------------- geocode + place search (keyless) ---------------- */
+function haversine(la1,lo1,la2,lo2){
+  const R=6371, d=x=>x*Math.PI/180;
+  const a=Math.sin(d(la2-la1)/2)**2 + Math.cos(d(la1))*Math.cos(d(la2))*Math.sin(d(lo2-lo1)/2)**2;
+  return R*2*Math.atan2(Math.sqrt(a),Math.sqrt(1-a));
+}
+async function geocode(place){
+  const cache = LS.get("pwe_geo") || {};
+  const key = norm(place);
+  if(cache[key]) return cache[key];
+  const u = "https://nominatim.openstreetmap.org/search?format=json&limit=1&q=" + encodeURIComponent(place);
+  const r = await fetch(u, { headers:{ "Accept":"application/json" } });
+  const j = await r.json();
+  if(!j || !j.length) throw new Error('I couldn\u2019t find "' + place + '" on the map. Try a nearby city name.');
+  const g = { lat:+j[0].lat, lon:+j[0].lon, name:j[0].display_name };
+  cache[key] = g; LS.set("pwe_geo", cache);
+  return g;
+}
+
+const CAT_QUERY = {
+  "Eat & drink":   { r:3500,  ql:a=>`node[amenity~"restaurant|cafe|bar|bakery|ice_cream"][name](${a});` },
+  "Sights":        { r:6000,  ql:a=>`(node[tourism~"attraction|museum|artwork|viewpoint|gallery|zoo|aquarium|theme_park"][name](${a});node[historic~"monument|memorial|castle|ruins|archaeological_site|building"][name](${a}););` },
+  "Neighborhoods": { r:7000,  ql:a=>`node[place~"neighbourhood|suburb|quarter"][name](${a});` },
+  "Day trips":     { r:55000, ql:a=>`(node[tourism~"attraction|theme_park|zoo|viewpoint"][name](${a});node[place~"town|village"][name](${a}););` },
+  "Nightlife":     { r:4500,  ql:a=>`node[amenity~"bar|pub|nightclub|biergarten"][name](${a});` },
+  "Where to stay": { r:5000,  ql:a=>`node[tourism~"hotel|guest_house|hostel"][name](${a});` }
+};
+const OVERPASS = [
+  "https://overpass-api.de/api/interpreter",
+  "https://overpass.kumi.systems/api/interpreter",
+  "https://maps.mail.ru/osm/tools/overpass/api/interpreter"
+];
+async function overpass(ql){
+  let lastErr;
+  for(const ep of OVERPASS){
+    try {
+      const r = await fetch(ep, { method:"POST", headers:{ "Content-Type":"application/x-www-form-urlencoded" }, body:"data=" + encodeURIComponent(ql) });
+      if(!r.ok) { lastErr = new Error("map service " + r.status); continue; }
+      const j = await r.json();
+      return j.elements || [];
+    } catch(e){ lastErr = e; }
+  }
+  throw lastErr || new Error("Couldn't reach the map service.");
+}
+
+function toSuggestion(el, cat, geo){
+  const t = el.tags || {}; const name = t.name;
+  if(!name) return null;
+  const nk = norm(name);
+  if(nk === norm(geo.name.split(",")[0])) return null; // skip the destination itself
+  let note = "";
+  if(cat === "Eat & drink"){
+    const kind = t.cuisine ? t.cuisine.split(";")[0].replace(/_/g," ") : (t.amenity || "spot");
+    note = kind;
+  } else if(cat === "Sights"){
+    note = (t.tourism || t.historic || "point of interest").replace(/_/g," ");
+  } else if(cat === "Neighborhoods"){
+    note = "neighborhood to wander";
+  } else if(cat === "Day trips"){
+    note = t.place ? ("nearby " + t.place) : (t.tourism || "day trip").replace(/_/g," ");
+  } else if(cat === "Nightlife"){
+    note = (t.amenity || "spot").replace(/_/g," ");
+  } else if(cat === "Where to stay"){
+    note = (t.tourism || "stay").replace(/_/g," ");
+  }
+  const lat = el.lat ?? (el.center && el.center.lat), lon = el.lon ?? (el.center && el.center.lon);
+  if(lat && lon && geo){
+    const d = haversine(geo.lat, geo.lon, lat, lon);
+    if(d > 1.2) note += (note?" \u00b7 ":"") + (d<10 ? d.toFixed(1) : Math.round(d)) + " km away";
+  }
+  return { title:name, cat, note, nk, score: popularity(t), oh: t.opening_hours || "",
+           wd: (t.wikidata && /^Q\d+$/.test(t.wikidata)) ? t.wikidata : null };
+}
+
+// A keyless popularity proxy from OpenStreetMap tags. Real fame (via Wikidata) is
+// layered on top in fetchRaw. Higher = more likely to be a well-known, popular place.
+function popularity(t){
+  let s = 0;
+  if(t.wikipedia) s += 40;
+  if(t.wikidata) s += 40;
+  if(t.wikimedia_commons) s += 10;
+  if(t.heritage) s += 30;
+  if(t.website || t["contact:website"]) s += 10;
+  if(t.image) s += 6;
+  if(t.stars){ s += (parseInt(t.stars) || 0) * 8; }
+  let langs = 0; for(const k in t){ if(k.indexOf("name:") === 0) langs++; }
+  s += Math.min(langs, 10) * 5;                       // named in many languages => internationally known
+  const notable = /attraction|museum|gallery|viewpoint|monument|castle|memorial|artwork|theme_park|zoo|aquarium|ruins|archaeological/;
+  if((t.tourism && notable.test(t.tourism)) || (t.historic && notable.test(t.historic))) s += 15;
+  s += Math.min(Object.keys(t).length, 20);           // richly documented places tend to matter more
+  return s;
+}
+
+// How famous is a Wikidata entity? Count its Wikipedia language editions (sitelinks).
+// Wikidata's API allows browser calls (origin=*), needs no key, and is cached per session.
+const wdCache = {};
+async function wikidataFame(ids){
+  const need = ids.filter(id => wdCache[id] === undefined);
+  for(let i = 0; i < need.length; i += 45){
+    const chunk = need.slice(i, i + 45);
+    try {
+      const u = "https://www.wikidata.org/w/api.php?action=wbgetentities&props=sitelinks&format=json&origin=*&ids=" + chunk.join("|");
+      const r = await fetch(u);
+      const j = await r.json();
+      const ents = (j && j.entities) || {};
+      chunk.forEach(id => { const e = ents[id]; wdCache[id] = (e && e.sitelinks) ? Object.keys(e.sitelinks).length : 0; });
+    } catch(e){ chunk.forEach(id => { if(wdCache[id] === undefined) wdCache[id] = 0; }); }
+  }
+}
+
+function shuffle(a){ for(let i=a.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]]; } return a; }
+
+// One network call: searches around the current radius and returns every valid,
+// not-yet-seen result (deduped, shuffled). Widens the radius for next time if this
+// pass came up thin, so a sparse area doesn't keep re-querying the same small circle.
+async function fetchRaw(cat){
+  const q = CAT_QUERY[cat];
+  const r = state.radius[cat];
+  const around = "around:" + r + "," + state.geo.lat + "," + state.geo.lon;
+  const ql = "[out:json][timeout:25];" + q.ql(around) + "out center " + (cat==="Day trips"?90:150) + ";";
+  const els = await overpass(ql);
+  const fresh = [];
+  const dupCheck = new Set();
+  for(const el of els){
+    const s = toSuggestion(el, cat, state.geo);
+    if(!s) continue;
+    if(dupCheck.has(s.nk)) continue;
+    if(state.seen[cat].has(s.nk)) continue;       // already shown in an earlier batch
+    if(state.planTitles.has(s.nk)) continue;      // already on the board
+    if(state.added.has(s.nk)) continue;            // added this session
+    dupCheck.add(s.nk); fresh.push(s);
+  }
+  // Rank by popularity: pull real fame for notable places, then sort most-popular first.
+  const wdIds = [...new Set(fresh.filter(s => s.wd).map(s => s.wd))];
+  if(wdIds.length){
+    try { await wikidataFame(wdIds); } catch(e){}
+    fresh.forEach(s => { if(s.wd && wdCache[s.wd]) s.score += Math.min(wdCache[s.wd], 200); });
+  }
+  fresh.sort((a,b) => b.score - a.score);
+  if(fresh.length < 12) state.radius[cat] = Math.round(r * 1.6); // cast a wider net if this pass was thin
+  return fresh;
+}
+
+// Serves `need` results, pulling from the local buffer (instant) and only hitting
+// the network when the buffer actually runs out \u2014 keeps "more ideas" fast while
+// still surfacing genuinely fresh spots as they're needed.
+async function fetchBatch(cat, need){
+  if(!state.seen[cat]) state.seen[cat] = new Set();
+  if(!state.radius[cat]) state.radius[cat] = CAT_QUERY[cat].r;
+  if(!state.buffer[cat]) state.buffer[cat] = [];
+
+  await loadRatings(cat);
+
+  // Google's list (top places city-wide) and OpenStreetMap's list (whatever sits near
+  // the stay) barely overlap, so matching names finds almost nothing. Put Google's rated
+  // places straight into the pool instead, and let OSM's deeper cuts queue behind them.
+  if(!state.seeded[cat]){
+    state.seeded[cat] = true;
+    const map = state.ratings[cat] || {};
+    for(const nk in map){
+      const r = map[nk];
+      if(!r || typeof r.rating !== "number") continue;
+      if(state.planTitles.has(nk) || state.added.has(nk) || state.seen[cat].has(nk)) continue;
+      let note = (r.type || "").toLowerCase();
+      if(r.lat != null && r.lng != null && state.geo){
+        const d = haversine(state.geo.lat, state.geo.lon, r.lat, r.lng);
+        if(d > 1.2) note += (note ? " \u00b7 " : "") + (d < 10 ? d.toFixed(1) : Math.round(d)) + " km away";
+      }
+      state.buffer[cat].push({ title:r.title, cat, note, nk, score:0, oh:"",
+        rated:{ rating:r.rating, reviews:r.reviews||0 }, rscore:ratingScore(r) });
+    }
+  }
+
+  const dow = isISO(state.day) ? dowOf(state.day) : -1;
+  // If they picked a day, drop anything OSM says is shut that day. Unknown hours stay in.
+  const openThatDay = s => dow < 0 || opensOn(s.oh, dow) !== false;
+
+  let guard = 0;
+  while(state.buffer[cat].filter(openThatDay).length < need && guard < 4){
+    guard++;
+    const fresh = await fetchRaw(cat);
+    if(!fresh.length) break; // nothing more to find even after widening \u2014 stop trying
+    state.buffer[cat].push(...fresh);
+  }
+  // the same place can arrive from both sources \u2014 keep one, preferring the rated copy
+  const uniq = {};
+  state.buffer[cat].forEach(s => {
+    const ex = uniq[s.nk];
+    if(!ex || (s.rated && !ex.rated)) uniq[s.nk] = s;
+  });
+  state.buffer[cat] = Object.values(uniq);
+
+  // attach any real Google rating we have for this place
+  const rmap = state.ratings[cat] || {};
+  state.buffer[cat].forEach(s => {
+    if(s.rated === undefined){
+      const r = rmap[s.nk];
+      s.rated = (r && typeof r.rating === "number") ? { rating:r.rating, reviews:r.reviews||0 } : null;
+      s.rscore = s.rated ? ratingScore(r) : null;
+    }
+  });
+  // rated places rank by rating x review count; anything Google doesn't know falls back to fame
+  state.buffer[cat].sort((a,b) =>
+    (b.rscore != null) - (a.rscore != null) ||
+    (b.rscore != null ? b.rscore - a.rscore : b.score - a.score));
+
+  const batch = [];
+  for(let i=0; i<state.buffer[cat].length && batch.length<need; ){
+    if(openThatDay(state.buffer[cat][i])) batch.push(state.buffer[cat].splice(i,1)[0]);
+    else i++;
+  }
+  batch.forEach(s => { state.seen[cat].add(s.nk); state.byNk[s.nk] = s; });
+  return batch;
+}
+
+/* ---------------- renders ---------------- */
+function renderStatus(){
+  const home = `<a class="home-link" href="planwise.html" title="Open PlanWise">PlanWise <span aria-hidden="true">\u2197</span></a>`;
+  if(state.user){
+    const trip = state.fam ? `<span class="pill"><span class="dot"></span>${esc(state.fam.name||"Trip")}</span>` +
+      `<button class="btn-link" data-act="switch">Switch trip</button>` : "";
+    statusEl.innerHTML = home + trip +
+      `<span class="who">${esc(state.user.displayName)}</span>` +
+      `<button class="btn-link" data-act="logout">Log out</button>`;
+  } else {
+    statusEl.innerHTML = home + `<button class="btn-link" data-act="show-login">Log in</button>`;
+  }
+}
+
+function renderLogin(){
+  renderStatus();
+  app.innerHTML = `
+    <p class="eyebrow">Sign in to PlanWise</p>
+    <h2 class="h">Log in to plan with PlanwiseER.</h2>
+    <p class="lede">Use the same name and password as your PlanWise account. PlanwiseER adds ideas to your trips as you, so it needs to know who you are.</p>
+    <div class="card pad" style="max-width:440px">
+      <label class="fld"><span>Your name</span>
+        <input id="lg-user" placeholder="e.g. Mateo" autocomplete="name" spellcheck="false"></label>
+      <label class="fld"><span>Password</span>
+        <input id="lg-pass" type="password" placeholder="\u2022\u2022\u2022\u2022\u2022\u2022" autocomplete="current-password"></label>
+      <button class="btn btn-primary" data-act="login" style="width:100%">Log in</button>
+      <p id="lg-err" class="notice warn" style="display:none;margin-top:16px"></p>
+    </div>
+    <p class="hint" style="margin-top:18px">No account yet? Create one in PlanWise first, then come back here.</p>
+
+    ${RATINGS_PROXY ? `
+    <div class="card pad demo" style="max-width:560px;margin-top:26px">
+      <p class="eyebrow">Try it first \u00b7 no account needed</p>
+      <h3 class="h" style="font-size:21px;margin-bottom:6px">See the top-rated places anywhere.</h3>
+      ${demoUsed()
+        ? `<p class="lede" style="margin-bottom:14px">You\u2019ve used your free look on this device. Log in above for as many as you like.</p>
+           <button class="btn btn-ghost" disabled>Free look used</button>`
+        : `<p class="lede" style="margin-bottom:14px">Real Google ratings and review counts, ranked best-first. One free look on this device.</p>
+           ${exploreForm("dm-place","dm-type","","restaurants")}
+           <p id="dm-err" class="notice warn" style="display:none;margin-bottom:12px"></p>
+           <button class="btn btn-coral" data-act="demo-go">See top-rated places \u2197</button>`}
+    </div>` : ""}
+  `;
+}
+
+function renderTripSelect(){
+  renderStatus();
+  app.innerHTML = `
+    <p class="eyebrow">Hi ${esc(state.user.displayName)} \u00b7 Your trips</p>
+    <h2 class="h">Which trip are we planning?</h2>
+    <p class="lede">Pick one of your PlanWise trips and I'll find ideas for where you're going.</p>
+    <div id="trips-wrap"><div class="thinking"><span class="dots"><i></i><i></i><i></i></span> Loading your trips\u2026</div></div>
+    ${RATINGS_PROXY ? `
+    <div class="card pad" style="max-width:560px;margin-top:30px">
+      <p class="eyebrow">Explore ratings \u00b7 unlimited</p>
+      <h3 class="h" style="font-size:21px;margin-bottom:6px">Look up any place, any time.</h3>
+      <p class="lede" style="margin-bottom:14px">Top-rated spots anywhere, ranked by rating and review count \u2014 as often as you like.</p>
+      ${exploreForm("xp-place","xp-type", (LS.get("pwe_recent")||[])[0]?.dest || "", "restaurants")}
+      <p id="xp-err" class="notice warn" style="display:none;margin-bottom:12px"></p>
+      <button class="btn btn-coral" data-act="explore-go">See top-rated places \u2197</button>
+    </div>` : ""}
+
+    <details class="code-fallback" style="margin-top:28px">
+      <summary>Have a trip code instead?</summary>
+      <div class="card pad" style="max-width:520px;margin-top:12px">
+        <label class="fld"><span>Trip invite code</span>
+          <input id="code-in" placeholder="e.g. TRIP-XXXXXX" autocomplete="off" spellcheck="false" style="text-transform:uppercase; letter-spacing:.12em; font-weight:700"></label>
+        <button class="btn btn-primary" data-act="load-trip">Find trip</button>
+        <p id="code-err" class="notice warn" style="display:none;margin-top:16px"></p>
+      </div>
+    </details>
+  `;
+  paintMyTrips();
+}
+
+async function paintMyTrips(){
+  const wrap = document.getElementById("trips-wrap");
+  if(!wrap) return;
+  try {
+    const trips = await loadMyTrips();
+    if(!trips.length){
+      wrap.innerHTML = `<div class="notice">You're not on any trips yet. Start or join one in <a class="link" href="planwise.html">PlanWise</a>, then come back.</div>`;
+      return;
+    }
+    wrap.innerHTML = `<div class="pwe-trip-grid">${trips.map(tp=>`
+      <button class="pwe-trip" data-trip="${esc(tp.id)}">
+        <span class="pwe-trip-band"></span>
+        <span class="pwe-trip-body">
+          <span class="pwe-pill">${tp.owner?"\u2605 You own this":"Traveler"}</span>
+          <span class="pwe-trip-name">${esc(tp.name)}</span>
+          <span class="pwe-trip-dest">\u{1F4CD} ${esc(tp.destination||"No destination set")}</span>
+          <span class="pwe-trip-meta">${tp.fams} ${tp.fams===1?"family":"families"} \u00b7 ${tp.travelers} ${tp.travelers===1?"traveler":"travelers"}</span>
+        </span>
+      </button>`).join("")}</div>`;
+  } catch(e){
+    wrap.innerHTML = `<div class="notice warn">Couldn't load your trips (${esc(e.message||"connection error")}). <button class="btn-link" data-act="reload-trips">Try again</button></div>`;
+  }
+}
+
+function renderStayStep(prefill){
+  renderStatus();
+  const f = state.fam;
+  app.innerHTML = `
+    <p class="eyebrow">One more thing</p>
+    <h2 class="h">Where are you staying?</h2>
+    <p class="lede">Give me the hotel name or address in ${esc(f.destination)} and I'll find ideas closer to where you'll actually be \u2014 not just the middle of the city.</p>
+    <div class="card pad" style="max-width:520px">
+      <label class="fld"><span>Hotel name or address</span>
+        <input id="stay-in" value="${esc(prefill||"")}" placeholder="e.g. Hotel Le Marais, or 12 Rue de Rivoli" autocomplete="off" spellcheck="false"></label>
+      <div class="row">
+        <button class="btn btn-primary" data-act="save-stay">Continue</button>
+        <button class="btn btn-ghost" data-act="skip-stay">Skip \u2014 just use ${esc(f.destination)}</button>
+      </div>
+      <p id="stay-err" class="notice warn" style="display:none;margin-top:16px"></p>
+    </div>
+  `;
+}
+
+function renderSuggest(){
+  renderStatus();
+  const f = state.fam;
+  const boardCount = Object.keys(state.plans).length;
+  const placeLabel = state.stay ? state.stay.name : (f.destination || state.previewDest);
+  app.innerHTML = `
+    <div class="trip-hero">
+      <div>
+        <p class="eyebrow">PlanwiseER for</p>
+        <h2 class="h" style="margin-bottom:2px">${esc(f.name || "Your trip")}${state.preview?'<span class="preview-flag">Preview</span>':""}</h2>
+        <div class="place">\u{1F4CD} ${esc(placeLabel)}</div>
+      </div>
+      <div class="row" style="gap:8px">
+        ${(!state.preview) ? `<button class="btn btn-ghost btn-sm" data-act="change-stay">${state.stay?'Change stay':'Add where I\u2019m staying'}</button>` : ""}
+        <button class="btn btn-ghost btn-sm" data-act="${state.preview?'preview-change':'switch'}">${state.preview?'Change place':'Switch trip'}</button>
+      </div>
+    </div>
+    <div class="board-note">${state.preview
+      ? "\u2728 Preview mode \u2014 connect a trip to add ideas to a real board."
+      : (boardCount ? `\u2728 ${boardCount} plan${boardCount===1?"":"s"} already on this trip's board \u2014 I'll skip repeats.` : `\u2728 This trip's board is empty \u2014 let's fill it.`)}</div>
+
+    ${(!state.preview && state.days.length) ? `
+    <div class="dayrow">
+      <label class="daypick"><span>Adding to</span>
+        <select id="day-sel">
+          <option value="TBD"${state.day==="TBD"?" selected":""}>TBD (no date yet)</option>
+          ${state.days.map(d=>`<option value="${esc(d)}"${state.day===d?" selected":""}>${esc(fmtDate(d))}</option>`).join("")}
+        </select>
+      </label>
+      <button class="btn btn-ghost btn-sm" data-act="add-cal" title="Exports whatever is winning the vote for each day, right now">\u{1F4C5} Add to calendar</button>
+    </div>
+    ${isISO(state.day) ? `<p class="hint" style="margin:-6px 0 18px">Showing places open ${esc(fmtDate(state.day))} \u2014 anything listed as closed that day is hidden.</p>` : ""}
+    ${!state.hasRealDates ? `<p class="hint" style="margin:-6px 0 18px">This trip still uses numbered days. <a class="link" href="planwise.html">Set real dates in PlanWise</a> to filter by what\u2019s open and use the calendar.</p>` : ""}
+    ` : ""}
+
+    <p class="eyebrow">What kind of ideas?</p>
+    <div class="chips" id="chips">
+      ${CHIP_ORDER.map(c=>`<button class="chip" data-cat="${esc(c)}" aria-pressed="${c===state.cat}">${esc(c)}</button>`).join("")}
+      <button class="chip" data-cat="__surprise" aria-pressed="false">\u2728 Surprise me</button>
+    </div>
+
+    <div id="results"></div>
+  `;
+  loadSuggestions(true);
+}
+
+function suggestionCard(s){
+  const added = state.added.has(s.nk);
+  return `<div class="sug card${added?" added":""}" data-nk="${esc(s.nk)}">
+    <div class="cat">${esc(s.cat)}</div>
+    <h4>${esc(s.title)}</h4>
+    ${s.rated ? `<p class="rating"><span class="rstars">${stars(s.rated.rating)}</span> ${s.rated.rating.toFixed(1)} <span class="rcount">(${s.rated.reviews.toLocaleString()})</span></p>` : ""}
+    <p class="note">${esc(s.note||"")}</p>
+    ${added
+      ? `<span class="added-tag">\u2713 Added to trip</span>`
+      : (state.preview
+          ? `<button class="btn btn-ghost btn-sm add" disabled title="Connect a trip to add">Add to trip</button>`
+          : `<button class="btn btn-coral btn-sm add" data-add="${esc(s.nk)}">Add to trip</button>`)}
+  </div>`;
+}
+
+const moreBtnHtml = (cat, empty) => empty
+  ? `<div class="more-wrap"><span class="hint">That's every ${esc(cat.toLowerCase())} idea I found nearby. Try another category above.</span></div>`
+  : `<div class="more-wrap"><button class="btn btn-ghost" data-act="more">More ideas</button></div>`;
+
+// Initial load for a category: fetches the first 6 and renders a fresh grid.
+async function loadSuggestions(reset){
+  const box = document.getElementById("results");
+  if(!box) return;
+  const cat = state.cat;
+  const near = state.stay ? state.stay.name : (state.fam.destination||state.previewDest);
+  if(reset){
+    box.innerHTML = `<div class="thinking"><span class="dots"><i></i><i></i><i></i></span> PlanwiseER is looking around ${esc(near)}\u2026</div>`;
+  }
+  try {
+    const batch = await fetchBatch(cat, 6);
+    if(!batch.length){
+      box.innerHTML = `<div class="notice">I couldn't find fresh <b>${esc(cat.toLowerCase())}</b> ideas near ${esc(near)} right now. Try another category, or a bigger nearby city.</div>`;
+      return;
+    }
+    const cardsHtml = batch.map(s=>suggestionCard(s)).join("");
+    box.innerHTML = `<div class="grid" id="grid">${cardsHtml}</div>${moreBtnHtml(cat, false)}`;
+  } catch(e){
+    box.innerHTML = `<div class="notice warn">${esc(e.message || "Something went wrong reaching the map service.")} <button class="btn-link" data-act="retry">Try again</button></div>`;
+  }
+}
+
+// "More ideas" click: runs a brand-new search for the next 6, appended to the grid.
+async function loadMoreBatch(btn){
+  const cat = state.cat;
+  const box = document.getElementById("results");
+  if(btn){ btn.disabled = true; btn.textContent = "Looking\u2026"; }
+  try {
+    const batch = await fetchBatch(cat, 6);
+    const mw = box.querySelector(".more-wrap");
+    if(!batch.length){
+      if(mw) mw.outerHTML = moreBtnHtml(cat, true);
+      return;
+    }
+    const grid = document.getElementById("grid");
+    grid.insertAdjacentHTML("beforeend", batch.map(s=>suggestionCard(s)).join(""));
+    if(mw) mw.outerHTML = moreBtnHtml(cat, false);
+  } catch(e){
+    const mw = box.querySelector(".more-wrap");
+    if(mw) mw.innerHTML = `<span class="hint" style="color:var(--coral-d)">${esc(e.message || "Couldn't reach the map service.")} <button class="btn-link" data-act="more">Try again</button></span>`;
+  }
+}
+
+async function addToTrip(nk, btn){
+  const s = state.byNk[nk];
+  if(!s || state.preview) return;
+  btn.disabled = true; btn.textContent = "Adding\u2026";
+  const me = (state.user.username || "").toLowerCase();
+  const plan = {
+    title: s.title,
+    cat: s.cat,
+    note: s.note || "",
+    addedBy: me,
+    addedByName: state.user.displayName,
+    via: "planwiseer",
+    day: state.day || "TBD",
+    createdAt: Date.now(),
+    votes: { [me]: true }
+  };
+  try {
+    await fbPush("plans/" + state.tripId, plan);
+    state.added.add(s.nk);
+    state.planTitles.add(s.nk);
+    const card = btn.closest(".sug");
+    card.classList.add("added");
+    btn.outerHTML = `<span class="added-tag">\u2713 Added to trip</span>`;
+  } catch(e){
+    btn.disabled = false; btn.textContent = "Add to trip";
+    const card = btn.closest(".sug");
+    card.insertAdjacentHTML("beforeend", `<p class="hint" style="color:var(--coral-d);margin-top:8px">Couldn't add \u2014 ${esc(e.message)}</p>`);
+  }
+}
+
+/* ---------------- flow helpers ---------------- */
+async function startPreview(dest){
+  state.preview = true; state.previewDest = dest;
+  state.fam = { name: dest, destination: dest };
+  state.seen = {}; state.radius = {}; state.buffer = {}; state.byNk = {}; state.added = new Set(); state.planTitles = new Set();
+  try {
+    state.geo = await geocode(dest);
+    renderSuggest();
+  } catch(e){ throw e; }
+}
+
+/* ---------------- events ---------------- */
+document.addEventListener("click", async (ev) => {
+  const t = ev.target.closest("[data-act],[data-recent],[data-cat],[data-add],[data-trip]");
+  if(!t) return;
+
+  // open one of the user's trips
+  if(t.dataset.trip !== undefined){
+    app.innerHTML = `<div class="thinking"><span class="dots"><i></i><i></i><i></i></span> Opening your trip\u2026</div>`;
+    try {
+      await connectTripById(t.dataset.trip);
+      state.preview = false;
+      state.geo = await geocode(state.fam.destination);
+      state.stay = null;
+      await resolveStayAndGo();
+    } catch(e){
+      app.innerHTML = `<div class="notice warn" style="margin-top:26px">${esc(e.message)} <button class="btn-link" data-act="switch">\u2190 Back to your trips</button></div>`;
+    }
+    return;
+  }
+
+  // category chips
+  if(t.dataset.cat !== undefined){
+    let cat = t.dataset.cat;
+    if(cat === "__surprise"){ cat = CHIP_ORDER[Math.floor(Math.random()*CHIP_ORDER.length)]; }
+    state.cat = cat;
+    document.querySelectorAll("#chips .chip").forEach(c=>c.setAttribute("aria-pressed", c.dataset.cat===cat ? "true":"false"));
+    loadSuggestions(true);
+    return;
+  }
+  // add a suggestion
+  if(t.dataset.add !== undefined){ addToTrip(t.dataset.add, t); return; }
+  // recent trip
+  if(t.dataset.recent !== undefined){
+    const err = document.getElementById("code-err");
+    try { await connectTrip(t.dataset.recent); state.preview=false; state.geo = await geocode(state.fam.destination); await resolveStayAndGo(); }
+    catch(e){ if(err){ err.style.display="block"; err.textContent = e.message; } }
+    return;
+  }
+
+  const act = t.dataset.act;
+  if(act === "login"){
+    const err = document.getElementById("lg-err");
+    const btn = t; btn.disabled = true; const orig = btn.textContent; btn.textContent = "Logging in\u2026";
+    err.style.display = "none";
+    const msg = await doLogin(document.getElementById("lg-user").value, document.getElementById("lg-pass").value);
+    if(msg){ btn.disabled = false; btn.textContent = orig; err.style.display = "block"; err.textContent = msg; return; }
+    renderTripSelect();
+  }
+  else if(act === "logout"){ logout(); }
+  else if(act === "show-login"){ renderLogin(); }
+  else if(act === "load-trip"){
+    const err = document.getElementById("code-err");
+    const code = document.getElementById("code-in").value;
+    if(!code.trim()){ err.style.display="block"; err.textContent="Enter a trip code first."; return; }
+    err.style.display="none";
+    const btn = t; btn.disabled=true; const orig=btn.textContent; btn.textContent="Looking\u2026";
+    try {
+      await connectTrip(code);
+      state.preview = false;
+      state.geo = await geocode(state.fam.destination || state.fam.name);
+      state.stay = null;
+      await resolveStayAndGo();
+    } catch(e){
+      btn.disabled=false; btn.textContent=orig;
+      err.style.display="block"; err.textContent = e.message;
+    }
+  }
+  else if(act === "save-stay"){
+    const input = document.getElementById("stay-in");
+    const err = document.getElementById("stay-err");
+    const val = (input.value||"").trim();
+    if(!val){ err.style.display="block"; err.textContent="Enter a hotel name or address, or tap skip."; return; }
+    err.style.display = "none";
+    const btn = t; btn.disabled=true; const orig=btn.textContent; btn.textContent="Looking\u2026";
+    let g;
+    try { g = await geocode(val + ", " + state.fam.destination); }
+    catch(e1){
+      try { g = await geocode(val); }
+      catch(e2){
+        btn.disabled=false; btn.textContent=orig;
+        err.style.display="block"; err.textContent = "Couldn't find that place \u2014 check the spelling, or tap skip to use " + state.fam.destination + " instead.";
+        return;
+      }
+    }
+    state.stay = { name: val, lat: g.lat, lon: g.lon, byName: state.user.displayName };
+    state.geo = g;
+    state.seen = {}; state.radius = {}; state.buffer = {}; // search fresh, centered on the new location
+    const me = (state.user.username || "").toLowerCase();
+    // save one shared stay on the trip so everyone travelling sees it
+    try {
+      await fbPut("trips/" + state.tripId + "/stay",
+        { name: val, lat: g.lat, lon: g.lon, by: me, byName: state.user.displayName, at: Date.now() });
+    } catch(e){
+      btn.disabled = false; btn.textContent = orig;
+      err.style.display = "block";
+      err.textContent = "Found the place, but couldn't save it for the group (" + (e.message||"write failed") + "). Your Firebase rules may block writes here.";
+      return;
+    }
+    renderSuggest();
+  }
+  else if(act === "skip-stay"){
+    state.stay = null;
+    try { state.geo = await geocode(state.fam.destination || state.fam.name); } catch(e){}
+    state.seen = {}; state.radius = {}; state.buffer = {};
+    // skip is a personal choice on this device \u2014 remember it so we don't re-ask this user
+    const sk = LS.get("pwe_skipstay") || {}; sk[state.tripId] = true; LS.set("pwe_skipstay", sk);
+    renderSuggest();
+  }
+  else if(act === "change-stay"){ renderStayStep(state.stay ? state.stay.name : ""); }
+  else if(act === "switch"){ state.fam=null; state.fid=null; state.stay=null; state.preview=false; renderTripSelect(); }
+  else if(act === "reload-trips"){ paintMyTrips(); }
+  else if(act === "add-cal"){ downloadItinerary(); }
+  else if(act === "demo-go" || act === "explore-go"){
+    const demo = act === "demo-go";
+    const place = (document.getElementById(demo?"dm-place":"xp-place").value || "").trim();
+    const err = document.getElementById(demo?"dm-err":"xp-err");
+    if(!place){ err.style.display="block"; err.textContent="Type a place first \u2014 a city works best."; return; }
+    err.style.display="none";
+    const type = document.getElementById(demo?"dm-type":"xp-type").value;
+    // the demo is one per device; logged-in accounts are unlimited
+    if(demo) LS.set("pwe_demo_used", { at: Date.now(), place });
+    window.open(exploreUrl(place, type), "_blank", "noopener");
+    if(demo) renderLogin();
+  }
+  else if(act === "more"){ loadMoreBatch(t); }
+  else if(act === "retry"){ loadSuggestions(true); }
+});
+
+// Changing the day re-filters to what's actually open then
+document.addEventListener("change", (ev) => {
+  if(ev.target && ev.target.id === "day-sel"){
+    state.day = ev.target.value;
+    state.seen = {}; state.radius = {}; state.buffer = {}; state.byNk = {}; state.seeded = {};
+    renderSuggest();
+  }
+});
+
+// Enter key submits the visible form
+document.addEventListener("keydown", (ev) => {
+  if(ev.key !== "Enter") return;
+  const id = ev.target && ev.target.id;
+  if(id === "lg-user" || id === "lg-pass"){ ev.preventDefault(); document.querySelector('[data-act="login"]').click(); }
+  if(id === "dm-place"){ ev.preventDefault(); document.querySelector('[data-act="demo-go"]')?.click(); }
+  if(id === "xp-place"){ ev.preventDefault(); document.querySelector('[data-act="explore-go"]')?.click(); }
+  if(id === "code-in"){ ev.preventDefault(); document.querySelector('[data-act="load-trip"]').click(); }
+  if(id === "stay-in"){ ev.preventDefault(); document.querySelector('[data-act="save-stay"]').click(); }
+});
+
+/* ---------------- boot ---------------- */
+(async function boot(){
+  app.innerHTML = `<div class="thinking"><span class="dots"><i></i><i></i><i></i></span> Loading\u2026</div>`;
+  renderStatus();
+  const s = LS.get(SESSION_KEY) || LS.get("pwe_session"); // shared with PlanWise (old key as fallback)
+  if(s && s.username){
+    try {
+      const u = await fbGet("users/" + encodeURIComponent(String(s.username).toLowerCase()));
+      if(u){
+        state.user = { username: u.username, displayName: u.displayName || u.username };
+        renderTripSelect();
+        return;
+      }
+    } catch(e){}
+  }
+  renderLogin();
+})();
+</script>
+</body>
+</html>

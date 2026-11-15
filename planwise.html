@@ -1,0 +1,1634 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PlanWise — plan trips together</title>
+<link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAYAAADDPmHLAAAABmJLR0QA/wD/AP+gvaeTAAAJz0lEQVR4nO3dfWxVZx0H8O/vnHtvL23paC0LAYtMKWOjL4tjMzbCyhzlLVMXhU2ji1FDBhSG+8NoRFdi1DiWYSylyKIxLhnqZkhgCaXFrsmCJBs4CpQXWcIYiI2UUvp623vv8/OfYQiec++59zzn3Nue3+e/3nPO8/zS873n7TnnXEAIIYQQQgQO5apjBujs809UJJW5wFDqfhioYKbpxFQIQlGu6vISMw8x4RaYBgi4RAZOxcb7zi7eeyKeq5p8DcDZTas/lURiNREtY3A9gJl+9p+nJkD0LrE6qEAHana1n/ezc88D0LOxvliZkXVgPAtgqR99TnInQWguHpp4/b4/dMW87syzlXFqw5pSMuNbAGwBUOZVP1MWUR8UvzIUGfp13c5jY551o7vB4+sfDkcjZd9npm0gTNfdfgBdIaJti5oPv0YA625cawBObWpYSsStAD2os10BAOiAwnerd7df0dmolgD8Ze1a88FZAz9lpm0ADB1tCksDRLyxqrljn64GXQeg+7mGe40Q/xmgeg31CCcYO6pm1v2QmpqU26ZcBeD9rSvnhRN8mMEL3BYiMvaWiuKZ2pfbR9w0knUAejatWJQkbidgtpsCRPYIeCdUGF2z8KUDQy7ayNz7W1fOMxPqqKz8PMD4e9QwV1U2HxrMZvGMD9gurK8vD8VVm6z8PEGoi3HyQE/T2kg2i2cUAG5qMuIFBX8C4f5sOhOeeUxdv9WazYIZBaDnxtEXmfmL2XQkPEb4zplNK7ZmvphD3ZtXLDGYuyDn+flsQjF9vrbl8D+cLuBoZR5f/3DYYLXH6fwiZyImYV/Pxvpipws4WqGRcPkLcnl3cmDwAkXhJqfzp90FnNqwppSM+GUZ2JlU4srAZ2t/034m3YxptwBkxrfIyp90wobiZiczptwC9GysL1ZG5DJkPH9SUsxP1LZ0/C3VPCm3AMqIPA1Z+a4lQBigECZ8PoY2iLanmyflFuB0Y0MXgMc01RMYCoTuUBFOhqbjglmIWxT637QCVpiXHENtcgSPJAZRzElPa2E26mpa2o7ZTQ/ZTfj4Bs6l3pQ1dZ0KFWN/ZCZ6Desrs+Nk4EKoCBdCRThQUI7lE/1YPnETYbge2bVEUN8DYBsA221SEonVkBs4HWMA+yMz0RqdY7vy7xaDgYORcuyYVoF+CntTGGHd+R98yfYg3jYARLTMm4qmHgbwu+hstEeyO1y6Ykaxo3AuBgxPQlAcH42ttptoGQAG6OP79oUDb0XKcSLk7kx5gEL4bcFsxD04UGRgld00y97ObGz4JOShDUeuGQVoi3xCS1sfmlF0hEu1tHUnAlawze7cOm6EhdqrmKL2F8zUevh2JFKGYTI1tggAmHVu0+q5VhOsdwEGyXi/AwMUQo+p9zHGMTJw3OXuxIoyEjVWn1sGwGCeo72CKag7VKz/SQ0A3V4EQFkP5lkGQBHJtX8HPjSjnrR72dDfLkFZHtNZHwMwOx5PDrJBsr2O5soYGRgnzWcDRDOsPrbeBYAK9fY+NcV0r6Q7jOk/ELT8UssdPi6UqIQn7RpetE2cwWmgcGQGexOAEhWH4cnh5f/zZieWR+b//I+ulv/gx8/aTnsgMYouDy7cLFSj2tu0I1sAFx5IjqKA9Y/iPZQY1t6mHQmAC2EoPB6/qbXNWWoc1QlXz3tmRALgUkO8H9M13tTx1Yk+3/b/gATAtSgrrI9dQ0jDSlse70eVj5t/QAKgxfzkKL4V63UVgsWJQTw1fl1jVc5M+bMAvzyaGETZWByvRmdndIXQAGPN+A2sit/Iye1XEgCN5ifH0DR6CUciZegMlyKWYgNrAKhKDOOpiT7MUuP+FXkXCYBm01jhyfE+rJy4gfNmIc6bRbhBYQxRCIWcQAmSuC8ZQ3ViGPd4dCEpExIAj4SZUZ0Y8fWULhtTJgChklJE51amnW/4zLsppxdXPZrybwCIfXQRiUG95/+5MmUCEJ1biVlfb0w7X+++XSmn333p2KrN3n270gZpspDTwICTAAScBCDgJAABJwEIOAlAwEkAAk4CEHASgICTAAScBCDgJAABJwEIOAlAwOXlcHC0Yj5C92T2wqVoxWc8qkZPX4lb/Yhd+cCDatzJywCULlmFokWP5LoMWzO+YPvOJVsjPe/h3687en2vr2QXEHASgICTAAScBCDgJAABJwEIOAlAwEkAAk4CEHASgICTAAScBCDgJAABJwEIOM+Hg62er0/HLNH/9s1cM0tKs/pfeP0YuucBcPLMfhBEK+Zn9b9I9apaHWQXEHASgICTAAScBCDgJAABJwEIOOsfjiTl3/vKRU7Z/Gwc8vv1liJzNuvUZgtAt7ytRviOacjqY8sAENj/F9cLbxGcB4CV0eNtNcJ/dNXqU+tjAJU87WktIgfovNWnlgGobj1yCcB/PK1H+CqM5D+tPrc5BgADaPe0IuGn3oW7Oq5ZTbAdDmZCGzG+6bbnkZ733DahVbRifsrp+VavDgR02k2zDcA0mAdjSI4AKHLTeT4+E5/KZKvXCU4RANtLwZXNhwYZeNObkoSPkmHwIbuJKccCDPCr+usRPnvbbv8PpAlA1a6OowS8o78m4RumlD+fnnY0kBk/01eN8Nn18Xjkr6lmSBuA6pb2DtkKTFKMnYv3HhxNNYuj+wE4aTQCyP2vHIpM3IwaZku6mRwFoLq17RQTUv/emsgzvL2y+dBgurkc3xFkJid+AuCiq5qEX7r7yuNpv/0AMvvB6tONyxcDdBRAJKuyhB8SzMbSmpa2Y05mzuiewOpdHceZ+UfZ1SV8Qfyi05UPZHFTaE1LxysA78l0OeE9BjrP9c74VSbLZHVX8PhE/xYAHdksK7zCZ80wrV33xhvJTJbKKgCL956IR8n8GoCj2SwvtLsKRSsX7Tzcn+mCWT8XUNl8aNBQEyvlIlHOXYVSDdW7269ks7CrB0MW7e4aTkaxCoyDbtoR2eKzUKir3n3kXLYtuH4yqPbl9pGqmXVfYdBLbtsSGWk3wsaSbL/5t2V0HSCd040NTwNoBTD1XvGRPxIAmqrK635JTU3KbWNaAwAAJ597fI4ZCv0eQIPutgW6mY0NmZznp6M9AADAAJ3e3PANYvwCwFwv+giYmwBv7yuPtyxr6tI6KOdJAG679O366FBRwfNE/AKAe73sa4q6DsbOqGG2OBnYyYanAbjt4uZVBeMq+QwTGgEs9qPPSUwB6CSi12LjkTfTjee75UsA7nR2y/LKpKIvA3gSwOcAFPhdQx7qJaCTgc5kItH20J7Of/nVse8BuNPbTfWhsv7IQlJUYxB/mhXPANEMApXksi6vMPMQgGEQRgD6iAxcCCl1IdVNm0IIIYQQQmj3Xynfx+dsFnY5AAAAAElFTkSuQmCC">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Hanken+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F4EFE4; --card:#FBF8F1; --card-2:#F3ECDD;
+    --ink:#23201B; --ink-soft:#726A5C; --ink-faint:#A79E8C;
+    --ocean:#0F6E7E; --ocean-deep:#0A4C57; --gold:#CE912A;
+    --coral:#D64F3C; --coral-deep:#B23D2C; --good:#4E8460;
+    --line:#E1D7C4; --line-strong:#CFC2A9;
+    --shadow:0 1px 0 rgba(35,32,27,.04), 0 10px 30px -18px rgba(35,32,27,.35);
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0}
+  body{background:var(--paper);color:var(--ink);font-family:"Hanken Grotesk",system-ui,sans-serif;font-size:16px;line-height:1.5;-webkit-font-smoothing:antialiased}
+  a{color:var(--ocean)}
+  ::selection{background:#F3D9A2}
+  .wrap{max-width:920px;margin:0 auto;padding:0 20px}
+  .site-head{position:relative;overflow:hidden;background:radial-gradient(120% 90% at 80% -20%, rgba(15,110,126,.16), transparent 60%),linear-gradient(180deg,#EDE5D5 0%, var(--paper) 100%);border-bottom:1px solid var(--line)}
+  .site-head .wrap{padding-top:22px;padding-bottom:20px;position:relative;z-index:2}
+  .brandline{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+  .brand .kicker{font-family:"Space Mono",monospace;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--ocean-deep)}
+  .brand h1{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:clamp(26px,5vw,40px);line-height:.96;margin:0;letter-spacing:-.02em}
+  .brand h1 em{font-style:normal;color:var(--ocean)}
+  .whoami{display:flex;align-items:center;gap:10px;font-size:14px;color:var(--ink-soft)}
+  .whoami .dot{width:30px;height:30px;border-radius:50%;background:var(--ocean);color:#fff;display:grid;place-items:center;font-weight:700;font-size:13px;font-family:"Bricolage Grotesque"}
+  .planwiser-link{display:inline-flex;align-items:center;gap:5px;text-decoration:none;font-weight:700;font-size:12px;color:#fff;background:var(--coral);border-radius:8px;padding:7px 11px;white-space:nowrap}
+  .planwiser-link:hover{background:var(--coral-deep)}
+  .greca{height:12px;margin-top:16px}
+  main{padding:30px 0 90px}
+  .btn{font:inherit;font-weight:600;cursor:pointer;border-radius:11px;padding:11px 18px;border:1px solid transparent;transition:.15s transform,.15s background;display:inline-flex;align-items:center;gap:8px;line-height:1}
+  .btn:active{transform:translateY(1px)}
+  .btn-primary{background:var(--ocean);color:#fff} .btn-primary:hover{background:var(--ocean-deep)}
+  .btn-coral{background:var(--coral);color:#fff} .btn-coral:hover{background:var(--coral-deep)}
+  .btn-ghost{background:transparent;border-color:var(--line-strong);color:var(--ink)} .btn-ghost:hover{background:#00000008}
+  .btn-sm{padding:8px 12px;border-radius:9px;font-size:14px}
+  .btn:disabled{opacity:.5;cursor:not-allowed}
+  .btn-link{background:none;border:none;color:var(--ocean);cursor:pointer;font:inherit;font-weight:600;padding:0}
+  label.fld{display:block;margin-bottom:14px}
+  label.fld span{display:block;font-size:13px;font-weight:600;color:var(--ink-soft);margin-bottom:6px}
+  input,select,textarea{width:100%;font:inherit;color:var(--ink);background:#fff;border:1px solid var(--line-strong);border-radius:10px;padding:11px 13px}
+  input:focus,select:focus,textarea:focus{outline:2px solid var(--ocean);outline-offset:1px;border-color:transparent}
+  textarea{resize:vertical;min-height:60px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow)}
+  .pad{padding:22px}
+  .eyebrow{font-family:"Space Mono",monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin:0 0 4px}
+  .h-sec{font-family:"Bricolage Grotesque";font-weight:700;font-size:22px;letter-spacing:-.01em;margin:0}
+  .muted{color:var(--ink-soft)} .faint{color:var(--ink-faint)}
+  .toast{position:fixed;left:50%;bottom:26px;transform:translateX(-50%) translateY(20px);background:var(--ink);color:#fff;padding:12px 18px;border-radius:12px;font-size:14px;font-weight:500;opacity:0;pointer-events:none;transition:.25s;z-index:50;box-shadow:0 10px 30px -10px #000a;max-width:90vw}
+  .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+  .err{color:var(--coral-deep);font-size:13.5px;min-height:18px;margin:2px 0 10px;font-weight:500}
+  .divider{display:flex;align-items:center;gap:12px;color:var(--ink-faint);font-size:12px;margin:16px 0;text-transform:uppercase;letter-spacing:.1em}
+  .divider::before,.divider::after{content:"";flex:1;height:1px;background:var(--line)}
+  .auth-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:0;overflow:hidden}
+  .auth-poster{background:radial-gradient(140% 120% at 20% 0%, rgba(206,145,42,.18), transparent 55%),linear-gradient(160deg, var(--ocean) 0%, var(--ocean-deep) 100%);color:#EAF4F2;padding:30px;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden;min-height:420px}
+  .auth-poster h2{font-family:"Bricolage Grotesque";font-weight:800;font-size:30px;line-height:1.02;margin:14px 0 10px;letter-spacing:-.02em}
+  .auth-poster p{color:#CFE6E4;max-width:34ch}
+  .auth-poster .steps{list-style:none;padding:0;margin:18px 0 0;display:grid;gap:11px}
+  .auth-poster .steps li{display:flex;gap:11px;align-items:flex-start;font-size:14.5px;color:#DCEEEC}
+  .auth-poster .steps b{display:grid;place-items:center;min-width:24px;height:24px;border-radius:7px;background:#ffffff1f;font-family:"Space Mono";font-size:12px;color:#fff}
+  .auth-form{padding:30px}
+  .tabs{display:inline-flex;background:var(--card-2);border-radius:11px;padding:4px;margin-bottom:20px}
+  .tabs button{border:none;background:none;font:inherit;font-weight:600;color:var(--ink-soft);padding:8px 16px;border-radius:8px;cursor:pointer}
+  .tabs button.on{background:#fff;color:var(--ink);box-shadow:0 1px 4px #0000000f}
+  @media(max-width:680px){.auth-grid{grid-template-columns:1fr}.auth-poster{min-height:0}}
+  .dash-top{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;margin-bottom:18px;flex-wrap:wrap}
+  .trip-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px}
+  .trip-card{cursor:pointer;text-align:left;border:1px solid var(--line);background:var(--card);border-radius:16px;padding:0;overflow:hidden;transition:.15s;box-shadow:var(--shadow);display:block;width:100%;font:inherit;color:inherit}
+  .trip-card:hover{transform:translateY(-2px);border-color:var(--line-strong)}
+  .trip-card .band{height:8px;background:linear-gradient(90deg,var(--ocean),var(--gold))}
+  .trip-card .fc-body{padding:16px 18px 18px}
+  .trip-card h3{font-family:"Bricolage Grotesque";font-weight:700;font-size:19px;margin:6px 0 3px;letter-spacing:-.01em}
+  .pill{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:600;padding:4px 9px;border-radius:20px;background:var(--card-2);color:var(--ink-soft)}
+  .pill.owner{background:#F5E7C6;color:#8A6410}
+  .avatars{display:flex;margin-top:12px}
+  .avatars .av{width:26px;height:26px;border-radius:50%;background:var(--ocean);color:#fff;display:grid;place-items:center;font-size:11px;font-weight:700;border:2px solid var(--card);margin-left:-7px;font-family:"Bricolage Grotesque"}
+  .avatars .av:first-child{margin-left:0}
+  .avatars .av.more{background:var(--card-2);color:var(--ink-soft)}
+  .empty{text-align:center;padding:46px 24px;border:1.5px dashed var(--line-strong);border-radius:16px;background:#fff8}
+  .empty h3{font-family:"Bricolage Grotesque";font-weight:700;font-size:20px;margin:10px 0 4px}
+  .join-row{display:flex;gap:10px;flex-wrap:wrap;align-items:flex-end}
+  .join-row .fld{margin:0;flex:1;min-width:170px}
+  .back{background:none;border:none;color:var(--ink-soft);font:inherit;font-weight:600;cursor:pointer;padding:6px 0;display:inline-flex;gap:7px;align-items:center;margin-bottom:12px}
+  .back:hover{color:var(--ink)}
+  .fam-hero{display:flex;justify-content:space-between;gap:20px;align-items:flex-start;flex-wrap:wrap;margin-bottom:22px}
+  .fam-hero h2{font-family:"Bricolage Grotesque";font-weight:800;font-size:clamp(24px,4vw,34px);margin:6px 0 4px;letter-spacing:-.02em}
+  .layout{display:grid;grid-template-columns:1fr 290px;gap:22px;align-items:start}
+  @media(max-width:760px){.layout{grid-template-columns:1fr}}
+  .code-token{border:1px dashed var(--line-strong);border-radius:13px;padding:14px;background:var(--card-2)}
+  .code-token .code{font-family:"Space Mono";font-size:20px;font-weight:700;letter-spacing:.12em;color:var(--ocean-deep);word-break:break-all}
+  .famblock{border-top:1px solid var(--line);padding:14px 0}
+  .famblock:first-of-type{border-top:none;padding-top:2px}
+  .famhead{display:flex;align-items:baseline;justify-content:space-between;gap:8px;flex-wrap:wrap}
+  .famname{font-family:"Bricolage Grotesque";font-weight:700;font-size:16px}
+  .famcode{font-family:"Space Mono";font-size:12px;color:var(--ocean-deep);letter-spacing:.06em;background:var(--card-2);border:1px solid var(--line);border-radius:8px;padding:6px 9px;margin-top:8px;display:flex;align-items:center;justify-content:space-between;gap:8px}
+  .famacts{display:flex;gap:7px;flex-wrap:wrap;margin-top:8px}
+  .tinybtn{font:inherit;font-weight:600;font-size:12px;border:1px solid var(--line-strong);background:#fff;border-radius:8px;padding:5px 9px;cursor:pointer;color:var(--ink-soft)}
+  .tinybtn:hover{border-color:var(--ocean);color:var(--ocean)}
+  .tinybtn.danger:hover{border-color:var(--coral);color:var(--coral)}
+  .member{display:flex;align-items:center;gap:10px;padding:7px 0}
+  .member .av{width:30px;height:30px;border-radius:50%;background:var(--ocean);color:#fff;display:grid;place-items:center;font-weight:700;font-size:12px;font-family:"Bricolage Grotesque";flex:none}
+  .member .nm{font-weight:600;font-size:14px;line-height:1.15}
+  .member .rm{margin-left:auto;background:none;border:none;color:var(--ink-faint);cursor:pointer;font-size:16px;line-height:1;padding:2px 6px;border-radius:6px}
+  .member .rm:hover{color:var(--coral);background:#0000000a}
+  .addplan textarea{min-height:44px}
+  .chips{display:flex;flex-wrap:wrap;gap:7px;margin-top:2px}
+  .chip{border:1px solid var(--line-strong);background:#fff;border-radius:20px;padding:6px 12px;font-size:13px;font-weight:600;color:var(--ink-soft);cursor:pointer}
+  .chip:hover{border-color:var(--ocean);color:var(--ocean)}
+  .plan{display:flex;gap:14px;padding:16px;border:1px solid var(--line);border-radius:14px;background:var(--card);margin-bottom:12px;align-items:flex-start;box-shadow:var(--shadow)}
+  .plan.top{border-color:var(--gold);box-shadow:0 0 0 1px var(--gold), var(--shadow)}
+  .vote{flex:none;display:flex;flex-direction:column;align-items:center;gap:2px;background:var(--card-2);border:1px solid var(--line);border-radius:12px;padding:8px 4px;min-width:56px;cursor:pointer;transition:.12s;color:var(--ink-soft)}
+  .vote:hover{border-color:var(--coral)}
+  .vote.on{background:#FBE7E2;border-color:var(--coral);color:var(--coral-deep)}
+  .vote .up{font-size:18px;line-height:1}
+  .vote .n{font-family:"Bricolage Grotesque";font-weight:800;font-size:20px;line-height:1}
+  .vote .lbl{font-size:10px;font-weight:600;letter-spacing:.04em;text-transform:uppercase}
+  .plan .body{flex:1;min-width:0}
+  .plan .cat{font-family:"Space Mono";font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:700}
+  .plan h4{font-family:"Bricolage Grotesque";font-weight:700;font-size:18px;margin:3px 0 4px;letter-spacing:-.01em;word-wrap:break-word}
+  .plan .note{font-size:14.5px;color:var(--ink-soft);margin:0 0 8px;word-wrap:break-word}
+  .plan .meta{display:flex;align-items:center;gap:8px;font-size:12.5px;color:var(--ink-faint);flex-wrap:wrap}
+  .plan .meta .who{font-weight:600;color:var(--ink-soft)}
+  .plan .del{margin-left:auto;background:none;border:none;color:var(--ink-faint);cursor:pointer;font-size:13px;font-weight:600;padding:4px 8px;border-radius:7px}
+  .plan .del:hover{color:var(--coral);background:#0000000a}
+  .plan .edit{background:none;border:none;color:var(--ink-faint);cursor:pointer;font-size:13px;font-weight:600;padding:4px 8px;border-radius:7px}
+  .plan .edit:hover{color:var(--ocean);background:#0000000a}
+  .voters{font-size:12px;color:var(--ink-faint)}
+  .crown{color:var(--gold)}
+  .sort-note{font-size:12.5px;color:var(--ink-faint);margin:0 0 14px}
+  .planimg{display:block;width:100%;max-height:190px;object-fit:cover;border-radius:11px;border:1px solid var(--line);margin:2px 0 10px;background:var(--card-2)}
+  .planlink{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:600;color:var(--ocean);text-decoration:none;margin:0 0 9px;max-width:100%;word-break:break-all}
+  .planlink:hover{text-decoration:underline}
+  .imgfield{display:flex;gap:8px;align-items:stretch}
+  .imgfield input{flex:1;min-width:0}
+  .thumbwrap{position:relative;display:inline-block;margin-top:10px}
+  .thumbwrap img{max-height:120px;max-width:100%;border-radius:10px;border:1px solid var(--line-strong);display:block}
+  .thumbwrap button{position:absolute;top:-9px;right:-9px;width:24px;height:24px;border-radius:50%;background:var(--ink);color:#fff;border:none;cursor:pointer;font-size:15px;line-height:1;display:grid;place-items:center}
+  .setup code{background:var(--card-2);padding:2px 6px;border-radius:6px;font-family:"Space Mono";font-size:13px}
+  .setup ol{padding-left:20px;line-height:1.7} .setup li{margin-bottom:6px}
+  .hide{display:none!important}
+  .share-modal{position:fixed;top:0;left:0;right:0;bottom:0;background:#0000008a;display:grid;place-items:center;z-index:100}
+  .share-modal.hide{display:none!important}
+</style>
+</head>
+<body>
+<div class="site-head">
+  <div class="wrap">
+    <div class="brandline">
+      <div class="brand">
+        <div>
+          <div class="kicker">Plan trips together</div>
+          <h1><em>Plan</em>Wise</h1>
+        </div>
+      </div>
+      <div id="whoami" style="display:flex;align-items:center;gap:12px"></div>
+      <div style="display:flex;gap:8px;align-items:center">
+        <a class="planwiser-link" href="planwiseer.html" title="Open PlanwiseER — trip idea assistant">✨ PlanwiseER <span aria-hidden="true">↗</span></a>
+        <select id="lang-picker" style="background:transparent;border:1px solid var(--line-strong);color:var(--ink-soft);padding:6px 10px;border-radius:8px;font:inherit;font-weight:600;font-size:12px;cursor:pointer">
+          <option value="en">English</option>
+          <option value="es">Español</option>
+          <option value="de">Deutsch</option>
+        </select>
+      </div>
+    </div>
+    <svg class="greca" viewBox="0 0 480 12" preserveAspectRatio="none" aria-hidden="true">
+      <defs><pattern id="step" width="48" height="12" patternUnits="userSpaceOnUse">
+        <path d="M0 11 h8 v-3 h6 v-3 h6 v-3 h8 v3 h6 v3 h6 v3 h8" fill="none" stroke="#CE912A" stroke-width="1.4" opacity=".55"/>
+      </pattern></defs>
+      <rect width="480" height="12" fill="url(#step)"/>
+    </svg>
+  </div>
+</div>
+<main><div class="wrap" id="app"></div></main>
+<div class="toast" id="toast"></div>
+<div class="share-modal hide" id="share-modal" style="position:fixed;top:0;left:0;right:0;bottom:0;background:#0000008a;display:grid;place-items:center;z-index:100">
+  <div class="card pad" style="max-width:400px;width:90%">
+    <p class="eyebrow" id="share-eyebrow">Share</p>
+    <h3 class="h-sec" style="margin-bottom:14px;font-size:20px" id="share-title">Share this link</h3>
+    <div style="background:var(--card-2);border:1px solid var(--line);border-radius:10px;padding:12px;margin-bottom:14px">
+      <input id="share-link" style="background:transparent;border:none;padding:0;font-family:'Space Mono';font-size:13px;width:100%;cursor:text" readonly>
+    </div>
+    <div style="display:flex;gap:10px">
+      <button class="btn btn-coral" data-act="copy-share" style="flex:1" id="share-copy-btn">Copy link</button>
+      <button class="btn btn-ghost" data-act="close-share" style="flex:1" id="share-close-btn">Close</button>
+    </div>
+  </div>
+</div>
+<script type="module">
+/* ============================================================
+   Firebase (modular v10 CDN). No build step needed.
+   ---> PASTE YOUR OWN CONFIG in the block below. <---
+   Firebase Console > Project settings > Your apps. Keep databaseURL.
+   ============================================================ */
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+import { getDatabase, ref, get, set, update, remove, onValue }
+  from "https://www.gstatic.com/firebasejs/10.12.0/firebase-database.js";
+const firebaseConfig = {
+  apiKey: "AIzaSyDb7YEiFH8W2hWo8JJ2hUOgy0aaJx_OJtQ",
+  authDomain: "planwise-73ada.firebaseapp.com",
+  databaseURL: "https://planwise-73ada-default-rtdb.firebaseio.com",
+  projectId: "planwise-73ada",
+  storageBucket: "planwise-73ada.firebasestorage.app",
+  messagingSenderId: "962739841833",
+  appId: "1:962739841833:web:686f6fcc6a0a3283b7a538"
+};
+const NEEDS_SETUP = /PASTE_/.test(JSON.stringify(firebaseConfig));
+let db = null;
+if(!NEEDS_SETUP){ db = getDatabase(initializeApp(firebaseConfig)); }
+/* ============ i18n ============ */
+const i18n = {
+  en: {
+    "plan-trips-together": "Plan trips together",
+    "sign-up": "Sign up",
+    "log-in": "Log in",
+    "create-account": "Create account",
+    "your-name": "Your name",
+    "password": "Password",
+    "a-casual-planner": "A casual planner among friends — don't reuse an important password.",
+    "plan-together": "Plan together",
+    "gather-trips": "Gather trips, gather votes, build the itinerary.",
+    "start-trip-friends": "Start a trip with friends and families, add plans, and vote them into the perfect journey.",
+    "step-1": "Create your account.",
+    "step-2": "Start a trip and add your family.",
+    "step-3": "Invite other families with the trip code.",
+    "step-4": "Add plans and vote together.",
+    "your-trips": "Your trips",
+    "plan-the-journey": "Plan the journey",
+    "new-trip": "＋ New trip",
+    "start-a-trip": "Start a trip",
+    "loading": "Loading your trips",
+    "youll-own": "You'll own the trip",
+    "trip-name": "Trip name",
+    "destination": "Destination",
+    "how-many-days": "How many days?",
+    "family-name": "Your family's name",
+    "trip-holds": "A trip holds several families. This creates yours — invite others with the trip code.",
+    "create-trip": "Create trip",
+    "cancel": "Cancel",
+    "got-an-invite": "Got an invite?",
+    "join-with-code": "Join with a code",
+    "family-code-desc": "A family code adds you to a household. A trip code brings a new family onto a trip.",
+    "family-code": "Family code",
+    "join-family": "Join family",
+    "or-bring-family": "or bring a family to a trip",
+    "trip-code": "Trip code",
+    "join-trip": "Join trip",
+    "you-own-this": "You own this trip",
+    "youre-on-this": "You're on this trip",
+    "add-a-family": "Add a family",
+    "trip-invite-code": "Trip invite code",
+    "share-with-families": "Share with other families' organizers",
+    "share": "Share",
+    "copy-code": "Copy code",
+    "new-code": "New code",
+    "enter-code-join": "They enter this and name their own family to join the trip.",
+    "on-this-trip": "On this trip",
+    "admins": "Admins",
+    "make-admin": "Make admin",
+    "grant-admin": "Grant admin powers",
+    "add-plan": "Add plan",
+    "what-should-we-do": "What should we do?",
+    "the-plan": "The plan",
+    "category": "Category",
+    "note": "Note",
+    "optional": "optional",
+    "image": "Image",
+    "upload": "Upload",
+    "link": "Link",
+    "day": "Day",
+    "need-ideas": "Need ideas?",
+    "the-shortlist": "The shortlist",
+    "everyone-votes": "Everyone across all families votes here. Sorted by votes — the leader is gold. Tap ▲ to vote.",
+    "tap-to-vote": "",
+    "no-plans": "No plans yet",
+    "add-first-idea": "Add the first idea — a restaurant, a barrio, a day trip. Then everyone votes.",
+    "vote": "vote",
+    "votes": "votes",
+    "on-board": "on board",
+    "edit": "Edit",
+    "remove": "Remove",
+    "added-this": "added this",
+    "edit-trip": "Edit trip",
+    "update-details": "Update details",
+    "save": "Save",
+    "edit-plan": "Edit plan",
+    "back": "← All trips",
+    "paste-image": "Paste an image URL",
+    "logout": "Log out",
+    "one-step": "One step to go",
+    "connect-firebase": "Connect your Firebase project",
+    "stores-shared": "This planner stores shared accounts, trips, families and votes in Firebase Realtime Database. Add your project's config, then reload.",
+    "step1-firebase": "Create a free project at console.firebase.google.com.",
+    "step2-firebase": "Add a Web app and copy its firebaseConfig object.",
+    "step3-firebase": "Turn on Realtime Database and paste the rules from database.rules.json.",
+    "step4-firebase": "Open planwise.html, replace the firebaseConfig block near the top of the script, and commit.",
+    "full-walkthrough": "Full walkthrough is in README.md.",
+    "tbd": "TBD (no date yet)",
+    "start-date": "Start date",
+    "end-date": "End date",
+    "add-calendar": "📅 Add to calendar",
+    "cal-none": "No dated plans with votes yet — set dates and vote first.",
+    "cal-added": "Downloaded {n} day(s) — the current vote winners",
+    "cal-note": "Exports whatever is winning the vote for each day, right now.",
+    "winning": "★ winning this day",
+    "set-dates": "Set trip dates to schedule plans on real days.",
+    "eat-drink": "Eat & drink",
+    "sights": "Sights",
+    "neighborhoods": "Neighborhoods",
+    "day-trips": "Day trips",
+    "nightlife": "Nightlife",
+    "where-to-stay": "Where to stay",
+    "museum": "Museum or gallery",
+    "market": "Local market",
+    "walking-tour": "Walking tour",
+    "restaurant": "Restaurant recommendation",
+    "sunset": "Sunset viewpoint",
+    "coffee": "Coffee or drinks",
+    "copied": "Copied!",
+    "plan-added": "Plan added",
+    "trip-created": "Trip created — share the trip code!",
+    "youre-in": "You're in!",
+    "family-joined": "Your family joined the trip!",
+    "processing": "Processing image…",
+    "choose-image": "Choose an image file",
+    "couldnt-process": "Couldn't process that image",
+    "give-plan-name": "Give the plan a name first.",
+    "trip-updated": "Trip updated",
+    "plan-updated": "Plan updated",
+    "plan-removed": "Plan removed",
+    "family-removed": "Family removed",
+    "admin-granted": "Admin granted",
+    "admin-removed": "Admin removed",
+    "new-family-code": "New family code ready",
+    "new-trip-code": "New trip code ready",
+    "removed": "Removed",
+    "welcome": "Welcome",
+    "welcome-back": "Welcome back!",
+    "fill-fields": "Fill in every field to continue.",
+    "password-4-chars": "Give your password at least 4 characters.",
+    "name-taken": "That name is taken — try another.",
+    "username-password": "Username or password doesn't match.",
+    "enter-trip-code": "Enter a trip code.",
+    "trip-code-invalid": "That trip code isn't valid.",
+    "trip-no-longer": "That trip no longer exists.",
+    "enter-fam-code": "Enter a family code.",
+    "fam-code-invalid": "That family code isn't valid.",
+    "family-no-longer": "That family no longer exists.",
+    "already-in-family": "You're already in this family.",
+    "give-trip-name": "Give your trip a name.",
+    "give-plan-name2": "Give the plan a name.",
+    "only-owner-admins": "Only trip owner or admins can edit.",
+    "confirm-remove-plan": "Remove this plan for everyone?",
+    "confirm-new-fam-code": "New family code? The old one stops working.",
+    "confirm-new-trip-code": "New trip code? The old one stops working.",
+    "confirm-remove-family": "Remove \"{name}\" and everyone in it from this trip?",
+    "confirm-remove-person": "Remove this person from the family?",
+    "confirm-make-admin": "Make {name} an admin?",
+    "confirm-remove-admin": "Remove {name} from admin?",
+    "trip-no-longer-exists": "This trip no longer exists.",
+    "youre-no-longer-on": "You're no longer on this trip.",
+    "couldnt-reach-db": "Couldn't reach the database. Check your Firebase config and rules.",
+    "language": "Language",
+    "admin-singular": "admin",
+    "admin-plural": "admins",
+    "person": "person",
+    "people": "people",
+    "family": "family",
+    "families": "families",
+    "you-lower": "you",
+    "owner-star": "★ owner",
+    "member": "member",
+    "remove-admin-title": "Remove admin",
+    "remove-title": "Remove",
+    "remove-this-family": "Remove this family",
+    "what-do-in": "What should we do in {place}?",
+    "this-place": "this place",
+    "plan-singular": "plan",
+    "plan-plural": "plans",
+    "day-label": "Day",
+    "leading": "★ leading · ",
+    "idea": "Idea",
+    "loading-dots": "Loading…",
+    "traveler": "traveler",
+    "travelers": "travelers",
+    "share-this-link": "Share this link",
+    "copy-link": "Copy link",
+    "close": "Close"
+  },
+  es: {
+    "plan-trips-together": "Planifica viajes juntos",
+    "sign-up": "Registrarse",
+    "log-in": "Iniciar sesión",
+    "create-account": "Crear cuenta",
+    "your-name": "Tu nombre",
+    "password": "Contraseña",
+    "a-casual-planner": "Un planificador casual entre amigos — no reutilices una contraseña importante.",
+    "plan-together": "Planifica juntos",
+    "gather-trips": "Reúne viajes, reúne votos, construye el itinerario.",
+    "start-trip-friends": "Inicia un viaje con amigos y familias, agrega planes y vótalos para el viaje perfecto.",
+    "step-1": "Crea tu cuenta.",
+    "step-2": "Inicia un viaje y agrega tu familia.",
+    "step-3": "Invita a otras familias con el código del viaje.",
+    "step-4": "Agrega planes y vota juntos.",
+    "your-trips": "Tus viajes",
+    "plan-the-journey": "Planifica el viaje",
+    "new-trip": "＋ Nuevo viaje",
+    "start-a-trip": "Inicia un viaje",
+    "loading": "Cargando tus viajes",
+    "youll-own": "Serás el propietario del viaje",
+    "trip-name": "Nombre del viaje",
+    "destination": "Destino",
+    "how-many-days": "¿Cuántos días?",
+    "family-name": "Nombre de tu familia",
+    "trip-holds": "Un viaje tiene varias familias. Esto crea la tuya — invita a otros con el código del viaje.",
+    "create-trip": "Crear viaje",
+    "cancel": "Cancelar",
+    "got-an-invite": "¿Tienes una invitación?",
+    "join-with-code": "Únete con un código",
+    "family-code-desc": "Un código de familia te agrega a un hogar. Un código de viaje trae una nueva familia al viaje.",
+    "family-code": "Código de familia",
+    "join-family": "Unirse a familia",
+    "or-bring-family": "o trae una familia a un viaje",
+    "trip-code": "Código del viaje",
+    "join-trip": "Unirse al viaje",
+    "you-own-this": "Eres el propietario de este viaje",
+    "youre-on-this": "Estás en este viaje",
+    "add-a-family": "Agrega una familia",
+    "trip-invite-code": "Código de invitación del viaje",
+    "share-with-families": "Comparte con los organizadores de otras familias",
+    "share": "Compartir",
+    "copy-code": "Copiar código",
+    "new-code": "Nuevo código",
+    "enter-code-join": "Ellos ingresan esto y nombran su propia familia para unirse al viaje.",
+    "on-this-trip": "En este viaje",
+    "admins": "Administradores",
+    "make-admin": "Hacer administrador",
+    "grant-admin": "Otorgar poderes de administrador",
+    "add-plan": "Agregar plan",
+    "what-should-we-do": "¿Qué deberíamos hacer?",
+    "the-plan": "El plan",
+    "category": "Categoría",
+    "note": "Nota",
+    "optional": "opcional",
+    "image": "Imagen",
+    "upload": "Subir",
+    "link": "Enlace",
+    "day": "Día",
+    "need-ideas": "¿Necesitas ideas?",
+    "the-shortlist": "La lista corta",
+    "everyone-votes": "Todos votan en todas las familias. Ordenado por votos — el líder es oro. Toca ▲ para votar.",
+    "tap-to-vote": "",
+    "no-plans": "Sin planes aún",
+    "add-first-idea": "Agrega la primera idea — un restaurante, un barrio, un viaje de un día. Luego todos votan.",
+    "vote": "voto",
+    "votes": "votos",
+    "on-board": "de acuerdo",
+    "edit": "Editar",
+    "remove": "Eliminar",
+    "added-this": "agregó esto",
+    "edit-trip": "Editar viaje",
+    "update-details": "Actualizar detalles",
+    "save": "Guardar",
+    "edit-plan": "Editar plan",
+    "back": "← Todos los viajes",
+    "paste-image": "Pega la URL de una imagen",
+    "logout": "Cerrar sesión",
+    "one-step": "Un paso más",
+    "connect-firebase": "Conecta tu proyecto de Firebase",
+    "stores-shared": "Este planificador almacena cuentas compartidas, viajes, familias y votos en Firebase Realtime Database. Agrega la configuración de tu proyecto y recarga.",
+    "step1-firebase": "Crea un proyecto gratuito en console.firebase.google.com.",
+    "step2-firebase": "Agrega una aplicación web y copia su objeto firebaseConfig.",
+    "step3-firebase": "Activa Realtime Database y pega las reglas de database.rules.json.",
+    "step4-firebase": "Abre planwise.html, reemplaza el bloque firebaseConfig cerca de la parte superior del script y guarda.",
+    "full-walkthrough": "El tutorial completo está en README.md.",
+    "tbd": "POR DEFINIR (sin fecha)",
+    "start-date": "Fecha de inicio",
+    "end-date": "Fecha de fin",
+    "add-calendar": "📅 Agregar al calendario",
+    "cal-none": "Aún no hay planes con fecha y votos.",
+    "cal-added": "Descargado {n} día(s) — los ganadores actuales",
+    "cal-note": "Exporta lo que va ganando cada día, ahora mismo.",
+    "winning": "★ gana este día",
+    "set-dates": "Define las fechas del viaje para programar planes.",
+    "eat-drink": "Comida y bebida",
+    "sights": "Puntos de interés",
+    "neighborhoods": "Barrios",
+    "day-trips": "Excursiones de un día",
+    "nightlife": "Vida nocturna",
+    "where-to-stay": "Dónde hospedarse",
+    "museum": "Museo o galería",
+    "market": "Mercado local",
+    "walking-tour": "Tour a pie",
+    "restaurant": "Recomendación de restaurante",
+    "sunset": "Punto de vista del atardecer",
+    "coffee": "Café o bebidas",
+    "copied": "¡Copiado!",
+    "plan-added": "Plan agregado",
+    "trip-created": "Viaje creado — ¡comparte el código del viaje!",
+    "youre-in": "¡Estás dentro!",
+    "family-joined": "¡Tu familia se unió al viaje!",
+    "processing": "Procesando imagen…",
+    "choose-image": "Elige un archivo de imagen",
+    "couldnt-process": "No se pudo procesar esa imagen",
+    "give-plan-name": "Dale un nombre al plan primero.",
+    "trip-updated": "Viaje actualizado",
+    "plan-updated": "Plan actualizado",
+    "plan-removed": "Plan eliminado",
+    "family-removed": "Familia eliminada",
+    "trip-no-longer-exists": "Este viaje ya no existe.",
+    "youre-no-longer-on": "Ya no estás en este viaje.",
+    "confirm-remove-plan": "¿Eliminar este plan para todos?",
+    "confirm-new-fam-code": "¿Nuevo código de familia? El antiguo dejará de funcionar.",
+    "confirm-new-trip-code": "¿Nuevo código de viaje? El antiguo dejará de funcionar.",
+    "confirm-remove-family": "¿Eliminar \"{name}\" y a todos en ella de este viaje?",
+    "confirm-remove-person": "¿Eliminar a esta persona de la familia?",
+    "confirm-make-admin": "¿Hacer a {name} administrador?",
+    "confirm-remove-admin": "¿Eliminar a {name} de administrador?",
+    "only-owner-admins": "Solo el propietario del viaje o los administradores pueden editar.",
+    "admin-granted": "Administrador otorgado",
+    "admin-removed": "Administrador removido",
+    "new-family-code": "Nuevo código de familia listo",
+    "new-trip-code": "Nuevo código de viaje listo",
+    "removed": "Eliminado",
+    "welcome": "Bienvenido",
+    "welcome-back": "¡Bienvenido de vuelta!",
+    "language": "Idioma",
+    "admin-singular": "administrador",
+    "admin-plural": "administradores",
+    "person": "persona",
+    "people": "personas",
+    "family": "familia",
+    "families": "familias",
+    "you-lower": "tú",
+    "owner-star": "★ propietario",
+    "member": "miembro",
+    "remove-admin-title": "Eliminar administrador",
+    "remove-title": "Eliminar",
+    "remove-this-family": "Eliminar esta familia",
+    "what-do-in": "¿Qué deberíamos hacer en {place}?",
+    "this-place": "este lugar",
+    "plan-singular": "plan",
+    "plan-plural": "planes",
+    "day-label": "Día",
+    "leading": "★ líder · ",
+    "idea": "Idea",
+    "loading-dots": "Cargando…",
+    "traveler": "viajero",
+    "travelers": "viajeros",
+    "share-this-link": "Comparte este enlace",
+    "copy-link": "Copiar enlace",
+    "close": "Cerrar"
+  },
+  de: {
+    "plan-trips-together": "Plane Reisen zusammen",
+    "sign-up": "Registrieren",
+    "log-in": "Anmelden",
+    "create-account": "Konto erstellen",
+    "your-name": "Dein Name",
+    "password": "Passwort",
+    "a-casual-planner": "Ein zwangloser Planer für Freunde — verwende kein wichtiges Passwort erneut.",
+    "plan-together": "Zusammen planen",
+    "gather-trips": "Sammeln Sie Reisen, sammeln Sie Stimmen, bauen Sie den Reiseplan auf.",
+    "start-trip-friends": "Starten Sie eine Reise mit Freunden und Familien, fügen Sie Pläne hinzu und stimmen Sie ab.",
+    "step-1": "Erstelle dein Konto.",
+    "step-2": "Starten Sie eine Reise und fügen Sie Ihre Familie hinzu.",
+    "step-3": "Laden Sie andere Familien mit dem Reisecode ein.",
+    "step-4": "Fügen Sie Pläne hinzu und stimmen Sie zusammen ab.",
+    "your-trips": "Deine Reisen",
+    "plan-the-journey": "Planen Sie die Reise",
+    "new-trip": "＋ Neue Reise",
+    "start-a-trip": "Eine Reise starten",
+    "youll-own": "Du wirst die Reise besitzen",
+    "trip-name": "Reisename",
+    "destination": "Ziel",
+    "how-many-days": "Wie viele Tage?",
+    "family-name": "Name deiner Familie",
+    "trip-holds": "Eine Reise hat mehrere Familien. Dies erstellt deine – lade andere mit dem Reisecode ein.",
+    "create-trip": "Reise erstellen",
+    "cancel": "Abbrechen",
+    "got-an-invite": "Hast du eine Einladung?",
+    "join-with-code": "Treten Sie mit einem Code bei",
+    "family-code-desc": "Ein Familiencode fügt dich einem Haushalt hinzu. Ein Reisecode bringt eine neue Familie zur Reise.",
+    "family-code": "Familiencode",
+    "join-family": "Familie beitreten",
+    "or-bring-family": "oder eine Familie zu einer Reise mitnehmen",
+    "trip-code": "Reisecode",
+    "join-trip": "Reise beitreten",
+    "you-own-this": "Du besitzt diese Reise",
+    "youre-on-this": "Du bist auf dieser Reise",
+    "add-a-family": "Eine Familie hinzufügen",
+    "trip-invite-code": "Reise-Einladungscode",
+    "share-with-families": "Mit Veranstaltern anderer Familien teilen",
+    "share": "Teilen",
+    "copy-code": "Code kopieren",
+    "new-code": "Neuer Code",
+    "enter-code-join": "Sie geben dies ein und benennen ihre eigene Familie, um der Reise beizutreten.",
+    "on-this-trip": "Auf dieser Reise",
+    "admins": "Administratoren",
+    "make-admin": "Admin machen",
+    "grant-admin": "Admin-Berechtigungen erteilen",
+    "add-plan": "Plan hinzufügen",
+    "what-should-we-do": "Was sollten wir tun",
+    "the-plan": "Der Plan",
+    "category": "Kategorie",
+    "note": "Notiz",
+    "optional": "optional",
+    "image": "Bild",
+    "upload": "Hochladen",
+    "link": "Link",
+    "day": "Tag",
+    "need-ideas": "Brauchst du Ideen?",
+    "the-shortlist": "Die Shortlist",
+    "everyone-votes": "Jeder stimmt ab. Nach Stimmen sortiert – der Anführer ist gold. Drücke ▲ um abzustimmen.",
+    "no-plans": "Noch keine Pläne",
+    "add-first-idea": "Füge die erste Idee hinzu – ein Restaurant, ein Viertel, einen Tagesausflug. Dann stimmen alle ab.",
+    "vote": "Stimme",
+    "votes": "Stimmen",
+    "on-board": "mit dabei",
+    "edit": "Bearbeiten",
+    "remove": "Entfernen",
+    "added-this": "hat dies hinzugefügt",
+    "edit-trip": "Reise bearbeiten",
+    "update-details": "Details aktualisieren",
+    "save": "Speichern",
+    "edit-plan": "Plan bearbeiten",
+    "back": "← Alle Reisen",
+    "paste-image": "Füge eine Bild-URL ein",
+    "logout": "Abmelden",
+    "one-step": "Noch ein Schritt",
+    "connect-firebase": "Verbinde dein Firebase-Projekt",
+    "stores-shared": "Dieser Planer speichert gemeinsame Konten, Reisen, Familien und Abstimmungen in der Firebase Realtime Database. Füge deine Projektkonfiguration hinzu und aktualisiere.",
+    "step1-firebase": "Erstellen Sie ein kostenloses Projekt auf console.firebase.google.com.",
+    "step2-firebase": "Fügen Sie eine Web-App hinzu und kopieren Sie ihr firebaseConfig-Objekt.",
+    "step3-firebase": "Aktivieren Sie Realtime Database und fügen Sie die Regeln aus database.rules.json ein.",
+    "step4-firebase": "Öffnen Sie planwise.html, ersetzen Sie den firebaseConfig-Block oben im Skript und speichern Sie.",
+    "full-walkthrough": "Die vollständige Anleitung finden Sie in README.md.",
+    "tbd": "ZU KLÄREN (noch kein Datum)",
+    "start-date": "Startdatum",
+    "end-date": "Enddatum",
+    "add-calendar": "📅 Zum Kalender",
+    "cal-none": "Noch keine datierten Pläne mit Stimmen.",
+    "cal-added": "{n} Tag(e) heruntergeladen — die aktuellen Gewinner",
+    "cal-note": "Exportiert, was gerade pro Tag führt.",
+    "winning": "★ führt an diesem Tag",
+    "set-dates": "Lege Reisedaten fest, um Pläne zu planen.",
+    "eat-drink": "Essen und Trinken",
+    "sights": "Sehenswürdigkeiten",
+    "neighborhoods": "Viertel",
+    "day-trips": "Tagesausflüge",
+    "nightlife": "Nachtleben",
+    "where-to-stay": "Unterkunft",
+    "museum": "Museum oder Galerie",
+    "market": "Lokaler Markt",
+    "walking-tour": "Stadtrundgang",
+    "restaurant": "Restaurantempfehlung",
+    "sunset": "Sonnenuntergangsaussichtspunkt",
+    "coffee": "Kaffee oder Getränke",
+    "copied": "Kopiert!",
+    "plan-added": "Plan hinzugefügt",
+    "trip-created": "Reise erstellt — teile den Reisecode!",
+    "youre-in": "Du bist dabei!",
+    "family-joined": "Deine Familie ist der Reise beigetreten!",
+    "processing": "Bild wird verarbeitet…",
+    "choose-image": "Wähle eine Bilddatei",
+    "couldnt-process": "Dieses Bild konnte nicht verarbeitet werden",
+    "give-plan-name": "Gib dem Plan zuerst einen Namen.",
+    "trip-updated": "Reise aktualisiert",
+    "plan-updated": "Plan aktualisiert",
+    "plan-removed": "Plan entfernt",
+    "family-removed": "Familie entfernt",
+    "admin-granted": "Admin gewährt",
+    "admin-removed": "Admin entfernt",
+    "new-family-code": "Neuer Familiencode bereit",
+    "new-trip-code": "Neuer Reisecode bereit",
+    "removed": "Entfernt",
+    "welcome": "Willkommen",
+    "welcome-back": "Willkommen zurück!",
+    "language": "Sprache",
+    "admin-singular": "Admin",
+    "admin-plural": "Admins",
+    "person": "Person",
+    "people": "Personen",
+    "family": "Familie",
+    "families": "Familien",
+    "you-lower": "du",
+    "owner-star": "★ Besitzer",
+    "member": "Mitglied",
+    "remove-admin-title": "Admin entfernen",
+    "remove-title": "Entfernen",
+    "remove-this-family": "Diese Familie entfernen",
+    "what-do-in": "Was sollten wir in {place} tun?",
+    "this-place": "diesem Ort",
+    "plan-singular": "Plan",
+    "plan-plural": "Pläne",
+    "day-label": "Tag",
+    "leading": "★ führend · ",
+    "idea": "Idee",
+    "loading-dots": "Wird geladen…",
+    "traveler": "Reisender",
+    "travelers": "Reisende",
+    "share-this-link": "Teile diesen Link",
+    "copy-link": "Link kopieren",
+    "close": "Schließen",
+    "trip-no-longer-exists": "Diese Reise existiert nicht mehr.",
+    "youre-no-longer-on": "Du bist nicht mehr auf dieser Reise.",
+    "confirm-remove-plan": "Diesen Plan für alle entfernen?",
+    "confirm-new-fam-code": "Neuer Familiencode? Der alte funktioniert nicht mehr.",
+    "confirm-new-trip-code": "Neuer Reisecode? Der alte funktioniert nicht mehr.",
+    "confirm-remove-family": "\"{name}\" und alle darin von dieser Reise entfernen?",
+    "confirm-remove-person": "Diese Person aus der Familie entfernen?",
+    "confirm-make-admin": "{name} zum Admin machen?",
+    "confirm-remove-admin": "{name} als Admin entfernen?",
+    "only-owner-admins": "Nur Reisebesitzer oder Admins können bearbeiten."
+  }
+};
+function detectLang(){
+  const nav = (navigator.language || "en").toLowerCase();
+  if(nav.startsWith("de")) return "de";
+  if(nav.startsWith("es")) return "es";
+  return "en";
+}
+let currentLang = localStorage.getItem('planwise_lang') || detectLang();
+function t(key, replacements = {}) {
+  let text = i18n[currentLang]?.[key] || i18n['en'][key] || key;
+  Object.entries(replacements).forEach(([k, v]) => {
+    text = text.replace(`{${k}}`, v);
+  });
+  return text;
+}
+function setLang(lang) {
+  currentLang = lang;
+  localStorage.setItem('planwise_lang', lang);
+  location.reload();
+}
+/* ============ helpers ============ */
+const $ = s => document.querySelector(s);
+const app = $("#app");
+function esc(s){ return String(s==null?"":s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
+function initials(name){ return String(name||"?").trim().split(/\s+/).map(w=>w[0]).slice(0,2).join("").toUpperCase() || "?"; }
+function uid(){ return Date.now().toString(36)+Math.random().toString(36).slice(2,7); }
+function genCode(){ const a="ABCDEFGHJKMNPQRSTUVWXYZ23456789"; let c=""; for(let i=0;i<6;i++)c+=a[Math.floor(Math.random()*a.length)]; return "TRIP-"+c; }
+let toastT; function toast(msg){ const t=$("#toast"); t.textContent=msg; t.classList.add("show"); clearTimeout(toastT); toastT=setTimeout(()=>t.classList.remove("show"),2200); }
+async function sha256(str){
+  try{ const b=await crypto.subtle.digest("SHA-256", new TextEncoder().encode(str));
+    return [...new Uint8Array(b)].map(x=>x.toString(16).padStart(2,"0")).join(""); }
+  catch(e){ let h=0; for(let i=0;i<str.length;i++){h=(h<<5)-h+str.charCodeAt(i)|0;} return "x"+(h>>>0).toString(16); }
+}
+async function copyText(text){ try{ await navigator.clipboard.writeText(text); toast(t("copied")); }catch(_){ toast(text); } }
+function normalizeLink(v){ v=(v||"").trim(); if(!v) return ""; if(!/^https?:\/\//i.test(v)) v="https://"+v; return v; }
+function hostOf(u){ try{ return new URL(u).hostname.replace(/^www\./,""); }catch(e){ return u; } }
+function compressImage(file, maxDim=800, quality=0.6){
+  return new Promise((resolve,reject)=>{
+    const r=new FileReader();
+    r.onload=()=>{ const img=new Image();
+      img.onload=()=>{ let w=img.width,h=img.height;
+        if(w>h && w>maxDim){ h=Math.round(h*maxDim/w); w=maxDim; }
+        else if(h>maxDim){ w=Math.round(w*maxDim/h); h=maxDim; }
+        const c=document.createElement("canvas"); c.width=w; c.height=h;
+        c.getContext("2d").drawImage(img,0,0,w,h);
+        resolve(c.toDataURL("image/jpeg", quality)); };
+      img.onerror=reject; img.src=r.result; };
+    r.onerror=reject; r.readAsDataURL(file);
+  });
+}
+let uploadData = null;
+const mediaCache = {};
+async function handleImageFile(file){
+  if(!file) return;
+  if(!file.type || !file.type.startsWith("image/")){ toast(t("choose-image")); return; }
+  toast(t("processing"));
+  try{ uploadData = await compressImage(file); const u=$("#p-img"); if(u) u.value=""; refreshImgPreview(); }
+  catch(e){ toast(t("couldnt-process")); }
+}
+function refreshImgPreview(){
+  const box=$("#img-preview"); if(!box) return;
+  const src = uploadData || (($("#p-img")?.value||"").trim());
+  if(!src){ box.innerHTML=""; return; }
+  box.innerHTML = `<div class="thumbwrap"><img alt="preview"><button data-act="clear-img" title="Remove">×</button></div>`;
+  const img=box.querySelector("img");
+  img.onerror=()=>{ if(!uploadData){ box.innerHTML=""; } };
+  img.src=src;
+}
+async function handlePlanImageFile(file){
+  if(!file) return;
+  if(!file.type || !file.type.startsWith("image/")){ toast(t("choose-image")); return; }
+  toast(t("processing"));
+  try{ uploadPlanData = await compressImage(file); const u=$("#ep-img"); if(u) u.value=""; refreshPlanImgPreview(); }
+  catch(e){ toast(t("couldnt-process")); }
+}
+function refreshPlanImgPreview(){
+  const box=$("#plan-img-preview"); if(!box) return;
+  const src = uploadPlanData || (($("#ep-img")?.value||"").trim());
+  if(!src){ box.innerHTML=""; return; }
+  box.innerHTML = `<div class="thumbwrap"><img alt="preview" style="max-width:100%"><button data-act="clear-plan-img" title="Remove">×</button></div>`;
+  const img=box.querySelector("img");
+  img.onerror=()=>{ if(!uploadPlanData){ box.innerHTML=""; } };
+  img.src=src;
+}
+/* ============ dates ============ */
+const isISO = v => /^\d{4}-\d{2}-\d{2}$/.test(v);
+function dateList(start,end){
+  const out=[]; if(!start) return out;
+  const s=new Date(start+"T12:00:00"), e=new Date((end||start)+"T12:00:00");
+  if(isNaN(s)||isNaN(e)||e<s) return out;
+  for(let d=new Date(s); d<=e && out.length<90; d.setDate(d.getDate()+1)) out.push(d.toISOString().slice(0,10));
+  return out;
+}
+function fmtDate(iso){
+  const d=new Date(iso+"T12:00:00"); if(isNaN(d)) return iso;
+  const loc = currentLang==="es"?"es-ES":currentLang==="de"?"de-DE":"en-US";
+  return d.toLocaleDateString(loc,{weekday:"short",month:"short",day:"numeric"});
+}
+// Real dates when the trip has them; falls back to legacy numbered days.
+function tripDays(trip){
+  if(trip && trip.startDate) return dateList(trip.startDate, trip.endDate);
+  return Object.keys((trip&&trip.days)||{}).sort((a,b)=>parseInt(a)-parseInt(b)).map(d=>"Day "+d);
+}
+function dayLabel(v){
+  if(!v || v==="TBD") return t("tbd");
+  if(isISO(v)) return fmtDate(v);
+  return String(v).replace("Day", t("day-label"));
+}
+/* ============ calendar ============ */
+// The calendar is never a frozen snapshot: it always exports whatever plan is
+// currently winning the vote for each day, so it follows the votes as they change.
+function winnersByDay(){
+  const out=[];
+  tripDays(curTrip).forEach(day=>{
+    const plans = curPlans.filter(p=>(p.day||"TBD")===day);
+    if(!plans.length) return;
+    plans.sort((a,b)=>(Object.keys(b.votes||{}).length)-(Object.keys(a.votes||{}).length)||(a.createdAt||0)-(b.createdAt||0));
+    if(!Object.keys(plans[0].votes||{}).length) return;
+    out.push({day, plan:plans[0], votes:Object.keys(plans[0].votes||{}).length});
+  });
+  return out;
+}
+const icsEsc = s => String(s||"").replace(/\\/g,"\\\\").replace(/;/g,"\\;").replace(/,/g,"\\,").replace(/\r?\n/g,"\\n");
+const icsStamp = () => new Date().toISOString().replace(/[-:]/g,"").split(".")[0]+"Z";
+function plusDay(iso){ const d=new Date(iso+"T12:00:00"); d.setDate(d.getDate()+1); return d.toISOString().slice(0,10); }
+function downloadItinerary(){
+  const wins = winnersByDay().filter(w=>isISO(w.day));
+  if(!wins.length){ toast(t("cal-none")); return; }
+  const L=["BEGIN:VCALENDAR","VERSION:2.0","PRODID:-//PlanWise//EN","CALSCALE:GREGORIAN","METHOD:PUBLISH"];
+  wins.forEach((w,i)=>{
+    L.push("BEGIN:VEVENT","UID:pw-"+state.tripId+"-"+w.day+"-"+i+"@planwise","DTSTAMP:"+icsStamp(),
+      "DTSTART;VALUE=DATE:"+w.day.replace(/-/g,""),"DTEND;VALUE=DATE:"+plusDay(w.day).replace(/-/g,""),
+      "SUMMARY:"+icsEsc(w.plan.title),
+      "DESCRIPTION:"+icsEsc([w.plan.note,w.plan.link,w.votes+" "+(w.votes===1?t("vote"):t("votes")),curTrip.name].filter(Boolean).join("\n")),
+      "LOCATION:"+icsEsc(curTrip.destination||""),"END:VEVENT");
+  });
+  L.push("END:VCALENDAR");
+  const blob=new Blob([L.join("\r\n")],{type:"text/calendar;charset=utf-8"});
+  const a=document.createElement("a"); a.href=URL.createObjectURL(blob);
+  a.download=(curTrip.name||"trip").replace(/[^a-z0-9]+/gi,"-").toLowerCase()+".ics";
+  document.body.appendChild(a); a.click(); a.remove();
+  setTimeout(()=>URL.revokeObjectURL(a.href),2000);
+  toast(t("cal-added",{n:wins.length}));
+}
+/* ============ Firebase data layer ============ */
+const P = p => ref(db, p);
+async function getVal(p){ const s = await get(P(p)); return s.exists()? s.val() : null; }
+const setVal    = (p,v)=> set(P(p), v);
+const updateVal = (p,o)=> update(P(p), o);
+const removeVal = (p)  => remove(P(p));
+/* ============ session ============ */
+const SKEY = "planwise_session";
+function saveSession(u){ try{ localStorage.setItem(SKEY, JSON.stringify({username:u.username})); }catch(e){} }
+function loadSessionLS(){ try{ return JSON.parse(localStorage.getItem(SKEY)); }catch(e){ return null; } }
+const state = { user:null, view:"auth", authTab:"signup", tripId:null };
+let activeListeners = [];
+function clearListeners(){ activeListeners.forEach(u=>{ try{u();}catch(e){} }); activeListeners=[]; }
+const userCache = {};
+async function ensureNames(lowers){
+  await Promise.all([...new Set(lowers)].filter(l=>!userCache[l]).map(async l=>{
+    const u = await getVal("users/"+l); userCache[l] = u ? u.displayName : l;
+  }));
+}
+const nameOf = l => userCache[l] || l;
+const me = () => state.user.username.toLowerCase();
+function getTranslatedCats(){
+  const catKeys = ["eat-drink","sights","neighborhoods","day-trips","nightlife","where-to-stay"];
+  return catKeys.map(k=>t(k));
+}
+function getTranslatedIdeas(){
+  const ideaKeys = ["museum","market","walking-tour","restaurant","sunset","coffee"];
+  return ideaKeys.map(k=>t(k));
+}
+/* ============ auth ============ */
+async function doSignup(name, pass){
+  name = name.trim();
+  if(!name||!pass) return "Fill in every field to continue.";
+  if(pass.length<4) return "Give your password at least 4 characters.";
+  const lower = name.toLowerCase();
+  if(await getVal("users/"+lower)) return "That name is taken — try another.";
+  const user = { username:lower, displayName:name, pass:await sha256(pass), createdAt:Date.now() };
+  await setVal("users/"+lower, user);
+  saveSession(user); state.user=user; return null;
+}
+async function doLogin(name, pass){
+  const lower = name.trim().toLowerCase();
+  const u = await getVal("users/"+lower);
+  if(!u || u.pass !== await sha256(pass)) return "Username or password doesn't match.";
+  saveSession(u); state.user=u; return null;
+}
+async function logout(){ try{ localStorage.removeItem(SKEY); }catch(e){} state.user=null; goAuth(); }
+/* ============ trip + family ops ============ */
+async function createTrip(tripName, dest, famName, startDate, endDate){
+  const m = me();
+  const tripId = uid(), tripCode = genCode();
+  const famId = uid(), famCode = genCode();
+  const days = {};
+  const list = dateList(startDate, endDate);
+  list.forEach((d,i)=> days[i+1] = true); // kept so older clients still see day count
+  const trip = { id:tripId, name:tripName.trim(), destination:(dest.trim()||""),
+    startDate:(startDate||""), endDate:(endDate||startDate||""),
+    owner:m, ownerName:state.user.displayName, createdAt:Date.now(), code:tripCode, families:{[famId]:true}, admins:{}, days };
+  const fam = { id:famId, tripId, name:(famName.trim()||(state.user.displayName+"'s family")),
+    owner:m, ownerName:state.user.displayName, createdAt:Date.now(), code:famCode, members:{[m]:true} };
+  await setVal("trips/"+tripId, trip);
+  await setVal("families/"+famId, fam);
+  await setVal("tripcodes/"+tripCode, tripId);
+  await setVal("famcodes/"+famCode, famId);
+  return tripId;
+}
+async function joinTrip(code, famName){
+  code = code.trim().toUpperCase();
+  if(!code) return "Enter a trip code.";
+  const tripId = await getVal("tripcodes/"+code);
+  if(!tripId) return "That trip code isn't valid.";
+  const trip = await getVal("trips/"+tripId);
+  if(!trip) return "That trip no longer exists.";
+  const m = me();
+  const famId = uid(), famCode = genCode();
+  const fam = { id:famId, tripId, name:(famName.trim()||(state.user.displayName+"'s family")),
+    owner:m, ownerName:state.user.displayName, createdAt:Date.now(), code:famCode, members:{[m]:true} };
+  await setVal("families/"+famId, fam);
+  await setVal("famcodes/"+famCode, famId);
+  await updateVal("trips/"+tripId+"/families", {[famId]:true});
+  return { ok:tripId };
+}
+async function joinFamily(code){
+  code = code.trim().toUpperCase();
+  if(!code) return "Enter a family code.";
+  const famId = await getVal("famcodes/"+code);
+  if(!famId) return "That family code isn't valid.";
+  const fam = await getVal("families/"+famId);
+  if(!fam) return "That family no longer exists.";
+  const m = me();
+  if(fam.members && fam.members[m]) return "You're already in this family.";
+  await updateVal("families/"+famId+"/members", {[m]:true});
+  return { ok:fam.tripId };
+}
+async function updateTrip(tripId, {name, dest, startDate, endDate}){
+  const trip = await getVal("trips/"+tripId);
+  if(!trip) return;
+  trip.name = name.trim() || trip.name;
+  trip.destination = dest.trim() || trip.destination;
+  const list = dateList(startDate, endDate);
+  const days = {}; list.forEach((d,i)=> days[i+1] = true);
+  await updateVal("trips/"+tripId, {name:trip.name, destination:trip.destination,
+    startDate:(startDate||""), endDate:(endDate||startDate||""), days});
+}
+async function regenTripCode(trip){
+  await removeVal("tripcodes/"+trip.code);
+  const code = genCode();
+  await updateVal("trips/"+trip.id, {code});
+  await setVal("tripcodes/"+code, trip.id);
+}
+async function regenFamCode(fam){
+  await removeVal("famcodes/"+fam.code);
+  const code = genCode();
+  await updateVal("families/"+fam.id, {code});
+  await setVal("famcodes/"+code, fam.id);
+}
+async function removeFamily(tripId, fam){
+  await removeVal("famcodes/"+fam.code);
+  await removeVal("families/"+fam.id);
+  await removeVal("trips/"+tripId+"/families/"+fam.id);
+}
+const removeMember = (famId,m)=> removeVal("families/"+famId+"/members/"+m);
+async function setAdmin(tripId, username, isAdmin){
+  if(isAdmin) await setVal("trips/"+tripId+"/admins/"+username, true);
+  else await removeVal("trips/"+tripId+"/admins/"+username);
+}
+const isAdmin = () => curTrip && (curTrip.admins && curTrip.admins[me()] || false);
+async function addPlan(tripId, {title,cat,note,link,img,day}){
+  const m = me(), id = uid();
+  const plan = { title:title.trim(), cat, note:note.trim(),
+    addedBy:m, addedByName:state.user.displayName, createdAt:Date.now(), votes:{[m]:true}, day:(day||"TBD") };
+  if(link) plan.link = link;
+  if(img){
+    if(img.upload){ await setVal("planmedia/"+tripId+"/"+id, img.data); mediaCache[id]=img.data; plan.img="@media"; }
+    else { plan.img = img.url; }
+  }
+  await setVal("plans/"+tripId+"/"+id, plan);
+}
+async function updatePlan(tripId, planId, {title,cat,note,link,img,day}){
+  const updates = { title:title.trim(), cat, note:note.trim(), day:(day||"TBD") };
+  if(link) updates.link = link;
+  if(img){
+    if(img.upload){ await setVal("planmedia/"+tripId+"/"+planId, img.data); mediaCache[planId]=img.data; updates.img="@media"; }
+    else if(img.url) { updates.img = img.url; }
+  } else if(img===false) { 
+    await removeVal("planmedia/"+tripId+"/"+planId); 
+    delete mediaCache[planId]; 
+    updates.img = null; 
+  }
+  await updateVal("plans/"+tripId+"/"+planId, updates);
+}
+async function toggleVote(tripId, planId, voted){
+  const p = "plans/"+tripId+"/"+planId+"/votes/"+me();
+  if(voted) await removeVal(p); else await setVal(p, true);
+}
+const deletePlan = (tripId,planId)=> removeVal("plans/"+tripId+"/"+planId);
+/* ============ header + setup ============ */
+function renderWhoami(){
+  const el = $("#whoami");
+  const picker = $("#lang-picker");
+  if(picker) picker.value = currentLang;
+  if(!state.user){ el.innerHTML=""; return; }
+  el.innerHTML = `<div class="whoami"><span class="dot">${esc(initials(state.user.displayName))}</span>
+    <span>${esc(state.user.displayName)}</span>
+    <button class="btn-link" data-act="logout">${t("logout")}</button></div>`;
+}
+function renderSetup(){
+  app.innerHTML = `<div class="card pad setup" style="margin-top:26px">
+    <p class="eyebrow">One step to go</p>
+    <h2 class="h-sec" style="margin-bottom:10px">Connect your Firebase project</h2>
+    <p class="muted">This planner stores shared accounts, trips, families and votes in Firebase Realtime Database. Add your project's config, then reload.</p>
+    <ol style="margin-top:14px">
+      <li>Create a free project at <code>console.firebase.google.com</code>.</li>
+      <li>Add a <b>Web app</b> and copy its <code>firebaseConfig</code> object.</li>
+      <li>Turn on <b>Realtime Database</b> and paste the rules from <code>database.rules.json</code>.</li>
+      <li>Open <code>planwise.html</code>, replace the <code>firebaseConfig</code> block near the top of the script, and commit.</li>
+    </ol>
+    <p class="muted" style="margin-top:12px">Full walkthrough is in <code>README.md</code>.</p>
+  </div>`;
+}
+/* ============ auth view ============ */
+function viewAuth(){
+  const t_cat = CATS.map(c => t(c.toLowerCase().replace(/\s+/g, '-')));
+  const t_ideas = IDEAS.map(i => t(i.toLowerCase().replace(/\s+/g, '-')));
+  const cat_sel = t_cat.map(c=>`<option>${c}</option>`).join("");
+  const idea_chips = t_ideas.map((i,idx)=>`<button class="chip" data-idea="${esc(i)}">${esc(i)}</button>`).join("");
+  const t_var = state.authTab;
+  app.innerHTML = `
+  <div class="card auth-grid" style="margin-top:26px">
+    <div class="auth-poster">
+      <div>
+        <div style="color:#9FD4CF;font-family:'Space Mono';font-size:11px;letter-spacing:.22em;text-transform:uppercase">${t("plan-together")}</div>
+        <h2>${t("gather-trips")}</h2>
+        <p>${t("start-trip-friends")}</p>
+      </div>
+      <ol class="steps">
+        <li><b>1</b><span>${t("step-1")}</span></li>
+        <li><b>2</b><span>${t("step-2")}</span></li>
+        <li><b>3</b><span>${t("step-3")}</span></li>
+        <li><b>4</b><span>${t("step-4")}</span></li>
+      </ol>
+    </div>
+    <div class="auth-form">
+      <div class="tabs">
+        <button data-tab="signup" class="${t_var==='signup'?'on':''}">${t("sign-up")}</button>
+        <button data-tab="login" class="${t_var==='login'?'on':''}">${t("log-in")}</button>
+      </div>
+      <div id="err" class="err"></div>
+      ${t_var==='signup' ? `
+        <label class="fld"><span>${t("your-name")}</span><input id="f-name" placeholder="Mateo" autocomplete="name"></label>
+        <label class="fld"><span>${t("password")}</span><input id="f-pass" type="password" placeholder="••••••••" autocomplete="new-password"></label>
+        <button class="btn btn-primary" data-act="signup" style="width:100%;justify-content:center">${t("create-account")}</button>
+      ` : `
+        <label class="fld"><span>${t("your-name")}</span><input id="f-user" placeholder="Mateo" autocomplete="name"></label>
+        <label class="fld"><span>${t("password")}</span><input id="f-pass" type="password" placeholder="••••••••" autocomplete="current-password"></label>
+        <button class="btn btn-primary" data-act="login" style="width:100%;justify-content:center">${t("log-in")}</button>
+      `}
+      <p class="faint" style="font-size:12px;margin:16px 0 0">${t("a-casual-planner")}</p>
+    </div>
+  </div>`;
+}
+/* ============ dashboard (trips) ============ */
+let allTrips={}, allFams={}, tripsLoaded=false, famsLoaded=false;
+function dashboardShell(){
+  app.innerHTML = `
+    <div class="dash-top">
+      <div><p class="eyebrow">${t("your-trips")}</p><h2 class="h-sec">${t("plan-the-journey")}</h2></div>
+      <button class="btn btn-primary" data-act="new-trip">${t("new-trip")}</button>
+    </div>
+    <div id="trip-grid-wrap"><p class="muted">${t("loading")}…</p></div>
+    <div id="new-trip-box" class="card pad hide" style="margin-top:22px">
+      <p class="eyebrow">${t("start-a-trip")}</p>
+      <h2 class="h-sec" style="margin-bottom:14px">${t("youll-own")}</h2>
+      <div id="err2" class="err"></div>
+      <label class="fld"><span>${t("trip-name")}</span><input id="nt-name" placeholder="Paris Spring 2026"></label>
+      <label class="fld"><span>${t("destination")}</span><input id="nt-dest" placeholder="Paris, France"></label>
+      <div style="display:flex;gap:10px;flex-wrap:wrap">
+        <label class="fld" style="flex:1;min-width:140px"><span>${t("start-date")}</span><input id="nt-start" type="date"></label>
+        <label class="fld" style="flex:1;min-width:140px"><span>${t("end-date")}</span><input id="nt-end" type="date"></label>
+      </div>
+      <label class="fld"><span>${t("family-name")}</span><input id="nt-fam" placeholder="The Baraldis"></label>
+      <p class="faint" style="font-size:12px;margin:-6px 0 14px">${t("trip-holds")}</p>
+      <div style="display:flex;gap:10px">
+        <button class="btn btn-primary" data-act="create-trip">${t("create-trip")}</button>
+        <button class="btn btn-ghost" data-act="cancel-trip">${t("cancel")}</button>
+      </div>
+    </div>
+    <div class="card pad" style="margin-top:22px">
+      <p class="eyebrow">${t("got-an-invite")}?</p>
+      <h2 class="h-sec" style="margin-bottom:6px">${t("join-with-code")}</h2>
+      <p class="faint" style="font-size:13px;margin:0 0 14px">${t("family-code-desc")}</p>
+      <div id="err3" class="err"></div>
+      <div class="join-row">
+        <label class="fld"><span>${t("family-code")}</span><input id="join-fam" placeholder="TRIP-XXXXXX" style="font-family:'Space Mono';letter-spacing:.1em;text-transform:uppercase"></label>
+        <button class="btn btn-coral" data-act="join-fam">${t("join-family")}</button>
+      </div>
+      <div class="divider">${t("or-bring-family")}</div>
+      <div class="join-row">
+        <label class="fld"><span>${t("trip-code")}</span><input id="join-trip" placeholder="TRIP-XXXXXX" style="font-family:'Space Mono';letter-spacing:.1em;text-transform:uppercase"></label>
+        <label class="fld"><span>${t("family-name")}</span><input id="join-trip-fam" placeholder="The Gómez family"></label>
+        <button class="btn btn-ghost" data-act="join-trip">${t("join-trip")}</button>
+      </div>
+    </div>`;
+}
+function travelersOfTrip(tId){ const s=new Set(); famsOfTrip(tId).forEach(f=>Object.keys(f.members||{}).forEach(x=>s.add(x))); return [...s]; }
+function famsOfTrip(tId){ return Object.values(allFams).filter(f=>f && f.tripId===tId); }
+async function paintTrips(){
+  if(!tripsLoaded||!famsLoaded) return;
+  const wrap = $("#trip-grid-wrap"); if(!wrap) return;
+  const m = me();
+  const myTripIds = new Set(Object.values(allFams).filter(f=>f && f.members && f.members[m]).map(f=>f.tripId));
+  const trips = Object.values(allTrips).filter(t=>t && myTripIds.has(t.id)).sort((a,b)=>(b.createdAt||0)-(a.createdAt||0));
+  if(!trips.length){
+    wrap.innerHTML = `<div class="empty"><div style="font-size:34px">🗺️</div><h3>No trips yet</h3>
+      <p class="muted" style="max-width:42ch;margin:0 auto 4px">Start a trip to gather families and plans — or join one with a code.</p></div>`;
+    return;
+  }
+  await ensureNames(trips.flatMap(t=>travelersOfTrip(t.id)));
+  wrap.innerHTML = `<div class="trip-grid">${trips.map(t=>{
+    const owner = t.owner===m;
+    const fams = famsOfTrip(t.id), trav = travelersOfTrip(t.id);
+    const shown = trav.slice(0,4), extra = trav.length-shown.length;
+    const avs = shown.map(x=>`<span class="av">${esc(initials(nameOf(x)))}</span>`).join("")+(extra>0?`<span class="av more">+${extra}</span>`:"");
+    return `<button class="trip-card" data-open="${t.id}"><div class="band"></div><div class="fc-body">
+      ${owner?`<span class="pill owner">★ You own this</span>`:`<span class="pill">Traveler</span>`}
+      <h3>${esc(t.name)}</h3>
+      <div class="muted" style="font-size:13.5px">📍 ${esc(t.destination)}</div>
+      <div class="faint" style="font-size:12.5px;margin-top:4px">${fams.length} ${fams.length===1?'family':'families'} · ${trav.length} ${trav.length===1?'traveler':'travelers'}</div>
+      <div class="avatars">${avs}</div></div></button>`;
+  }).join("")}</div>`;
+}
+function enterDashboard(){
+  clearListeners(); state.view="dashboard"; state.tripId=null;
+  tripsLoaded=famsLoaded=false; dashboardShell();
+  const onErr = ()=>{ const w=$("#trip-grid-wrap"); if(w) w.innerHTML=`<p class="err">Couldn't reach the database. Check your Firebase config and rules.</p>`; };
+  activeListeners.push(onValue(P("trips"), s=>{ allTrips=s.val()||{}; tripsLoaded=true; paintTrips(); }, onErr));
+  activeListeners.push(onValue(P("families"), s=>{ allFams=s.val()||{}; famsLoaded=true; paintTrips(); }, onErr));
+}
+/* ============ trip view ============ */
+const CATS  = ["Eat & drink","Sights","Neighborhoods","Day trips","Nightlife","Where to stay"];
+const IDEAS = ["Museum or gallery","Local market","Walking tour","Restaurant recommendation","Sunset viewpoint","Coffee or drinks"];
+let curTrip=null, curFams=[], curPlans=[];
+let editingPlanId = null, uploadPlanData = null;
+window.debugInfo = ()=> ({
+  curTrip, me: me(), isAdmin: isAdmin(), 
+  owner: curTrip?.owner, admins: curTrip?.admins
+});
+function tripShell(trip, owner){
+  const t_cats = getTranslatedCats();
+  const t_ideas = getTranslatedIdeas();
+  app.innerHTML = `
+    <button class="back" data-act="back">${t("back")}</button>
+    <div class="fam-hero">
+      <div>
+        <p class="eyebrow">${owner?t("you-own-this"):t("youre-on-this")}</p>
+        <h2>${esc(trip.name)}</h2>
+        <div class="muted" id="hero-count">📍 ${esc(trip.destination)}</div>
+      </div>
+      <div id="edit-btn-wrap"></div>
+    </div>
+    <div id="edit-trip-modal" class="hide" style="position:fixed;top:0;left:0;right:0;bottom:0;background:#0000008a;display:grid;place-items:center;z-index:100">
+      <div class="card pad" style="max-width:400px;width:90%">
+        <p class="eyebrow">${t("edit-trip")}</p>
+        <h3 class="h-sec" style="margin-bottom:14px;font-size:20px">${t("update-details")}</h3>
+        <div id="edit-err" class="err"></div>
+        <label class="fld"><span>${t("trip-name")}</span><input id="ed-name" placeholder="${t("trip-name")}"></label>
+        <label class="fld"><span>${t("destination")}</span><input id="ed-dest" placeholder="${t("destination")}"></label>
+        <div style="display:flex;gap:10px;flex-wrap:wrap">
+          <label class="fld" style="flex:1;min-width:130px"><span>${t("start-date")}</span><input id="ed-start" type="date"></label>
+          <label class="fld" style="flex:1;min-width:130px"><span>${t("end-date")}</span><input id="ed-end" type="date"></label>
+        </div>
+        <div style="display:flex;gap:10px">
+          <button class="btn btn-primary" data-act="save-trip" style="flex:1">${t("save")}</button>
+          <button class="btn btn-ghost" data-act="cancel-edit" style="flex:1">${t("cancel")}</button>
+        </div>
+      </div>
+    </div>
+    <div id="edit-plan-modal" class="hide" style="position:fixed;top:0;left:0;right:0;bottom:0;background:#0000008a;display:grid;place-items:center;z-index:100;overflow-y:auto">
+      <div class="card pad" style="max-width:400px;width:90%;margin:20px auto">
+        <p class="eyebrow">${t("edit-plan")}</p>
+        <h3 class="h-sec" style="margin-bottom:14px;font-size:20px">${t("update-details")}</h3>
+        <div id="plan-edit-err" class="err"></div>
+        <label class="fld"><span>${t("the-plan")}</span><input id="ep-title" placeholder="${t("the-plan")}"></label>
+        <label class="fld"><span>${t("category")}</span><select id="ep-cat">${t_cats.map(c=>`<option>${c}</option>`).join("")}</select></label>
+        <label class="fld"><span>${t("note")} <span class="faint" style="font-weight:400">(${t("optional")})</span></span><textarea id="ep-note" placeholder="${t("note")}…"></textarea></label>
+        <label class="fld"><span>${t("image")} <span class="faint" style="font-weight:400">(${t("optional")})</span></span>
+          <div class="imgfield">
+            <input id="ep-img" placeholder="${t("paste-image")}">
+            <button type="button" class="btn btn-ghost btn-sm" data-act="pick-plan-img">${t("upload")}</button>
+          </div>
+          <input type="file" id="ep-file" accept="image/*" style="display:none">
+        </label>
+        <div id="plan-img-preview"></div>
+        <label class="fld"><span>${t("link")} <span class="faint" style="font-weight:400">(${t("optional")})</span></span><input id="ep-link" placeholder="URL"></label>
+        <label class="fld"><span>${t("day")}</span><select id="ep-day"></select></label>
+        <div style="display:flex;gap:10px">
+          <button class="btn btn-primary" data-act="save-plan" style="flex:1">${t("save")}</button>
+          <button class="btn btn-ghost" data-act="cancel-plan-edit" style="flex:1">${t("cancel")}</button>
+        </div>
+      </div>
+    </div>
+    <div class="layout">
+      <div>
+        <div class="card pad addplan" style="margin-bottom:22px">
+          <p class="eyebrow">${t("add-plan")}</p>
+          <h3 class="h-sec" style="margin-bottom:14px" id="plan-prompt">${t("what-should-we-do")}?</h3>
+          <label class="fld"><span>${t("the-plan")}</span><input id="p-title" placeholder="Sunday almuerzo at Isolina"></label>
+          <label class="fld"><span>${t("category")}</span><select id="p-cat">${t_cats.map(c=>`<option>${c}</option>`).join("")}</select></label>
+          <label class="fld"><span>${t("note")} <span class="faint" style="font-weight:400">(${t("optional")})</span></span><textarea id="p-note" placeholder="${t("note")}…"></textarea></label>
+          <div class="chips" style="margin-bottom:14px"><span class="faint" style="font-size:12px;width:100%;margin-bottom:2px">${t("need-ideas")}?</span>
+            ${t_ideas.map(i=>`<button class="chip" data-idea="${esc(i)}">${esc(i)}</button>`).join("")}</div>
+          <label class="fld"><span>${t("image")} <span class="faint" style="font-weight:400">(${t("optional")})</span></span>
+            <div class="imgfield">
+              <input id="p-img" placeholder="${t("paste-image")}">
+              <button type="button" class="btn btn-ghost btn-sm" data-act="pick-img">${t("upload")}</button>
+            </div>
+            <input type="file" id="p-file" accept="image/*" style="display:none">
+          </label>
+          <div id="img-preview"></div>
+          <label class="fld"><span>${t("link")} <span class="faint" style="font-weight:400">(${t("optional")})</span></span><input id="p-link" placeholder="Maps pin, menu or website"></label>
+          <label class="fld"><span>${t("day")}</span><select id="p-day"></select></label>
+          <button class="btn btn-primary" data-act="add-plan">${t("add-plan")}</button>
+        </div>
+        <div style="display:flex;align-items:baseline;justify-content:space-between;gap:10px">
+          <h3 class="h-sec">${t("the-shortlist")}</h3>
+          <span style="display:flex;align-items:center;gap:10px;margin-left:auto">
+            <span class="faint" style="font-size:13px" id="plan-count"></span>
+            <button class="btn btn-ghost btn-sm" data-act="add-cal" title="${t("cal-note")}">${t("add-calendar")}</button>
+          </span>
+        </div>
+        <p class="sort-note">${t("everyone-votes")}</p>
+        <div id="plan-list"></div>
+      </div>
+      <aside>
+        <div class="card pad" style="margin-bottom:18px" id="tripcode-wrap"></div>
+        <div id="admins-wrap"></div>
+        <div id="make-admin-wrap"></div>
+        <div class="card pad" id="families-wrap"></div>
+      </aside>
+    </div>`;
+}
+function paintHeroCount(){
+  const el = $("#hero-count"); if(!el) return;
+  const trav = new Set(); curFams.forEach(f=>Object.keys(f.members||{}).forEach(x=>trav.add(x)));
+  el.textContent = `📍 ${curTrip.destination} · ${curFams.length} ${curFams.length===1?t("family"):t("families")} · ${trav.size} ${trav.size===1?t("traveler"):t("travelers")}`;
+}
+function paintDaySelector(){
+  const sel = $("#p-day"); if(!sel) return;
+  const keep = sel.value;
+  const days = tripDays(curTrip);
+  sel.innerHTML = `<option value="TBD">${t("tbd")}</option>${days.map(d=>`<option value="${esc(d)}">${esc(dayLabel(d))}</option>`).join("")}`;
+  if(keep) sel.value = keep;
+}
+function paintEditButton(){
+  const el = $("#edit-btn-wrap"); if(!el) return;
+  const m = me();
+  const isOwner = curTrip.owner === m;
+  const isAdminUser = curTrip.admins && curTrip.admins[m];
+  const canEdit = isOwner || isAdminUser;
+  el.innerHTML = canEdit ? `<button class="btn btn-ghost btn-sm" data-act="edit-trip" style="height:fit-content">Edit trip</button>` : '';
+}
+function paintTripCode(owner){
+  const el = $("#tripcode-wrap"); if(!el) return;
+  el.innerHTML = `
+    <p class="eyebrow">${t("add-a-family")}</p>
+    <h3 class="h-sec" style="font-size:18px;margin-bottom:10px">${t("trip-invite-code")}</h3>
+    <div class="code-token"><div class="faint" style="font-size:11px;margin-bottom:4px">${t("share-with-families")}</div>
+      <div class="code">${esc(curTrip.code)}</div></div>
+    <div style="display:flex;gap:8px;margin-top:12px;flex-wrap:wrap">
+      <button class="btn btn-coral btn-sm" data-act="share-trip">${t("share")}</button>
+      <button class="btn btn-ghost btn-sm" data-act="copy-tripcode">${t("copy-code")}</button>
+      ${owner?`<button class="btn btn-ghost btn-sm" data-act="regen-tripcode">${t("new-code")}</button>`:''}
+    </div>
+    <p class="faint" style="font-size:12px;margin:12px 0 0">${t("enter-code-join")}</p>`;
+}
+async function paintAdmins(){
+  const el = $("#admins-wrap"); if(!el) return;
+  const m = me();
+  const admins = Object.keys(curTrip.admins||{});
+  if(!admins.length){ el.innerHTML=""; return; }
+  await ensureNames(admins);
+  el.innerHTML = `<div class="card pad" style="margin-bottom:18px">
+    <p class="eyebrow">${t("admins")}</p>
+    <h3 class="h-sec" style="font-size:18px;margin-bottom:6px">${admins.length} ${admins.length===1?t("admin-singular"):t("admin-plural")}</h3>
+    ${admins.map(a=>`<div class="member"><span class="av">${esc(initials(nameOf(a)))}</span>
+      <div><div class="nm">${esc(nameOf(a))}</div></div>
+      <button class="rm" title="${t("remove-admin-title")}" data-unadmin="${esc(a)}">✕</button></div>`).join("")}</div>`;
+}
+async function paintMakeAdmin(){
+  const el = $("#make-admin-wrap"); if(!el) return;
+  const m = me();
+  const admins = curTrip.admins||{};
+  const nonAdmins = [];
+  curFams.forEach(f=> Object.keys(f.members||{}).forEach(mem=>{
+    if(mem!==curTrip.owner && !admins[mem] && !nonAdmins.includes(mem)) nonAdmins.push(mem);
+  }));
+  if(!nonAdmins.length){ el.innerHTML=""; return; }
+  await ensureNames(nonAdmins);
+  el.innerHTML = `<div class="card pad">
+    <p class="eyebrow">${t("make-admin")}</p>
+    <h3 class="h-sec" style="font-size:18px;margin-bottom:6px">${t("grant-admin")}</h3>
+    ${nonAdmins.map(n=>`<div class="member"><span class="av">${esc(initials(nameOf(n)))}</span>
+      <div><div class="nm">${esc(nameOf(n))}</div></div>
+      <button class="tinybtn" data-mkadmin="${esc(n)}" style="margin-left:auto">${t("make-admin")}</button></div>`).join("")}</div>`;
+}
+function paintFamilies(tripOwner){
+  const el = $("#families-wrap"); if(!el) return;
+  const m = me();
+  const fams = curFams.slice().sort((a,b)=> (a.owner===curTrip.owner?-1:b.owner===curTrip.owner?1:0) || (a.createdAt||0)-(b.createdAt||0));
+  const blocks = fams.map(f=>{
+    const iOwn = f.owner===m;
+    const mems = Object.keys(f.members||{}).sort((a,b)=> (a===f.owner?-1:b===f.owner?1:0));
+    const memRows = mems.map(x=>`<div class="member"><span class="av">${esc(initials(nameOf(x)))}</span>
+      <div><div class="nm">${esc(nameOf(x))} ${x===m?`<span class="faint" style="font-weight:500">· ${t("you-lower")}</span>`:''}</div>
+      <div class="faint" style="font-size:11.5px">${x===f.owner?`<span class="crown">${t("owner-star")}</span>`:t("member")}</div></div>
+      ${(iOwn || isAdmin()) && x!==f.owner ? `<button class="rm" title="${t("remove-title")}" data-rmm="${esc(f.id)}|${esc(x)}">✕</button>`:''}</div>`).join("");
+    const canRemoveFam = (tripOwner || isAdmin()) && f.owner!==curTrip.owner;
+    return `<div class="famblock">
+      <div class="famhead"><span class="famname">${esc(f.name)}</span>
+        <span class="faint" style="font-size:12px">${mems.length} ${mems.length===1?t("person"):t("people")}</span></div>
+      ${memRows}
+      ${iOwn?`<div class="famcode"><span>${t("family-code")} · ${esc(f.code)}</span></div>
+        <div class="famacts">
+          <button class="tinybtn" data-share-fam="${esc(f.id)}">${t("share")}</button>
+          <button class="tinybtn" data-copyfam="${esc(f.id)}">${t("copy-code")}</button>
+          <button class="tinybtn" data-regenfam="${esc(f.id)}">${t("new-code")}</button>
+        </div>`:''}
+      ${canRemoveFam?`<div class="famacts"><button class="tinybtn danger" data-rmfam="${esc(f.id)}">${t("remove-this-family")}</button></div>`:''}
+    </div>`;
+  }).join("");
+  el.innerHTML = `<p class="eyebrow">${t("on-this-trip")}</p>
+    <h3 class="h-sec" style="font-size:18px;margin-bottom:8px">${fams.length} ${fams.length===1?t("family"):t("families")}</h3>${blocks}`;
+}
+function paintPlans(){
+  const list = $("#plan-list"); if(!list) return;
+  const prompt = $("#plan-prompt"); if(prompt) prompt.textContent = t("what-do-in", {place: curTrip ? curTrip.destination : t("this-place")});
+  const m = me(), owner = curTrip.owner===m;
+  paintDaySelector();
+  if(!curPlans.length){
+    list.innerHTML = `<div class="empty"><div style="font-size:30px">🌮</div><h3>${t("no-plans")}</h3>
+      <p class="muted" style="max-width:38ch;margin:0 auto">${t("add-first-idea")}</p></div>`;
+    return;
+  }
+  const cnt = $("#plan-count"); if(cnt) cnt.textContent = `${curPlans.length} ${curPlans.length===1?t("plan-singular"):t("plan-plural")}`;
+  const byDay = {TBD:[]};
+  const days = tripDays(curTrip);
+  days.forEach(d=>{ byDay[d]=[]; });
+  curPlans.forEach(p=>{ const day = p.day||"TBD"; if(!byDay[day]) byDay[day]=[]; byDay[day].push(p); });
+  Object.keys(byDay).forEach(day=>{ 
+    byDay[day].sort((a,b)=>(Object.keys(b.votes||{}).length)-(Object.keys(a.votes||{}).length) || (a.createdAt||0)-(b.createdAt||0));
+  });
+  const allVotes = curPlans.map(p=>Object.keys(p.votes||{}).length);
+  const maxVotes = allVotes.length ? Math.max(...allVotes) : 0;
+  const dayOrder = ["TBD", ...days];
+  // A plan can sit on a day the trip no longer lists — e.g. "Day 1" left over from
+  // before real dates were set. Show those rather than silently swallowing them.
+  Object.keys(byDay).forEach(k => { if(!dayOrder.includes(k) && byDay[k].length) dayOrder.push(k); });
+  let html = "";
+  dayOrder.forEach(dayLabelKey=>{
+    const plans = byDay[dayLabelKey]||[];
+    if(!plans.length) return;
+    const displayLabel = dayLabel(dayLabelKey);
+    html += `<div style="margin-bottom:18px">
+      <h4 style="font-family:'Bricolage Grotesque';font-weight:700;font-size:16px;margin:0 0 10px;color:var(--ocean)">${displayLabel}</h4>`;
+    plans.forEach((p,pi)=>{
+      const votes = Object.keys(p.votes||{}), n = votes.length, voted = votes.includes(m);
+      const dayWinner = pi===0 && n>0 && isISO(dayLabelKey);
+      const canDel = owner || isAdmin() || p.addedBy===m;
+      const isTop = n>0 && n===maxVotes;
+      let imgHtml = "";
+      if(p.img==="@media"){ imgHtml = `<img class="planimg" data-media="${p.id}" alt="">`; }
+      else if(p.img){ imgHtml = `<img class="planimg" src="${esc(p.img)}" alt="" onerror="this.style.display='none'">`; }
+      const linkHtml = p.link ? `<a class="planlink" href="${esc(p.link)}" target="_blank" rel="noopener noreferrer">🔗 ${esc(hostOf(p.link))}</a>` : "";
+      html += `<div class="plan ${isTop?'top':''}">
+        <button class="vote ${voted?'on':''}" data-vote="${p.id}" data-voted="${voted?1:0}" aria-pressed="${voted}">
+          <span class="up">▲</span><span class="n">${n}</span><span class="lbl">${n===1?t("vote"):t("votes")}</span></button>
+        <div class="body">
+          <div class="cat">${dayWinner?`<span class="crown">${t("winning")} · </span>`:(isTop?`<span class="crown">${t("leading")}</span>`:'')}${esc(p.cat||t("idea"))}</div>
+          <h4>${esc(p.title)}</h4>
+          ${p.note?`<p class="note">${esc(p.note)}</p>`:''}
+          ${imgHtml}
+          ${linkHtml}
+          <div class="meta"><span class="who">${esc(p.addedByName||p.addedBy)}</span> ${t("added-this")}
+            ${n>0?`· <span class="voters">${n} ${t("on-board")}</span>`:''}
+            ${canDel?`<button class="edit" data-editplan="${p.id}" style="margin-left:auto;margin-right:6px">${t("edit")}</button><button class="del" data-delplan="${p.id}">${t("remove")}</button>`:''}</div>
+        </div></div>`;
+    });
+    html += `</div>`;
+  });
+  list.innerHTML = html;
+  list.querySelectorAll("[data-media]").forEach(async imgEl=>{
+    const pid = imgEl.dataset.media;
+    if(mediaCache[pid]){ imgEl.src = mediaCache[pid]; return; }
+    const d = await getVal("planmedia/"+state.tripId+"/"+pid);
+    if(d){ mediaCache[pid]=d; imgEl.src=d; } else { imgEl.style.display="none"; }
+  });
+}
+function enterTrip(id){
+  clearListeners(); state.view="trip"; state.tripId=id;
+  curTrip=null; curFams=[]; curPlans=[]; uploadData=null;
+  app.innerHTML = `<p class="muted">${t("loading-dots")}</p>`;
+  const m = me(); let shellDone=false;
+  function tryPaint(){
+    if(!curTrip) return;
+    const owner = curTrip.owner===m;
+    if(!shellDone){ tripShell(curTrip, owner); shellDone=true; }
+    paintHeroCount(); paintEditButton(); paintTripCode(owner); if(owner){ paintAdmins(); paintMakeAdmin(); } paintFamilies(owner); paintPlans();
+  }
+  const onErr = ()=>{ app.innerHTML=`<p class="err">Couldn't reach the database. Check your Firebase config and rules.</p>`; };
+  activeListeners.push(onValue(P("trips/"+id), s=>{
+    const t = s.val();
+    if(!t){ toast(t("trip-no-longer-exists")); goDashboard(); return; }
+    t.id=id; curTrip=t; tryPaint();
+  }, onErr));
+  activeListeners.push(onValue(P("families"), async s=>{
+    const all = s.val()||{};
+    curFams = Object.values(all).filter(f=>f && f.tripId===id);
+    const iAmIn = curFams.some(f=>f.members && f.members[m]);
+    if(curFams.length && !iAmIn){ toast(t("youre-no-longer-on")); goDashboard(); return; }
+    await ensureNames(curFams.flatMap(f=>[f.owner, ...Object.keys(f.members||{})]));
+    tryPaint();
+  }, onErr));
+  activeListeners.push(onValue(P("plans/"+id), s=>{
+    const v = s.val()||{};
+    curPlans = Object.entries(v).map(([pid,p])=>({id:pid,...p}));
+    if(curTrip) paintPlans();
+  }));
+}
+/* ============ navigation ============ */
+function goAuth(){ clearListeners(); state.view="auth"; renderWhoami(); viewAuth(); }
+function goDashboard(){ clearListeners(); renderWhoami(); enterDashboard(); }
+function goTrip(id){ clearListeners(); renderWhoami(); enterTrip(id); }
+/* ============ share modal ============ */
+function openShareModal(link){
+  const modal = $("#share-modal");
+  const input = $("#share-link");
+  if(modal && input){
+    input.value = link;
+    modal.classList.remove("hide");
+    input.select();
+  }
+}
+function closeShareModal(){
+  const modal = $("#share-modal");
+  if(modal) modal.classList.add("hide");
+}
+/* ============ events ============ */
+const val = id => { const el=$("#"+id); return el?el.value:""; };
+const setErr = (id,msg) => { const el=$("#"+id); if(el) el.textContent=msg||""; };
+const famById = id => curFams.find(f=>f.id===id);
+document.addEventListener("click", async (e)=>{
+  const modal = e.target.closest("#edit-trip-modal");
+  if(e.target.id==="edit-trip-modal" && modal){ $("#edit-trip-modal").classList.add("hide"); return; }
+  const tab = e.target.closest("[data-tab]");
+  if(tab){ state.authTab=tab.dataset.tab; viewAuth(); return; }
+  const open = e.target.closest("[data-open]");
+  if(open){ goTrip(open.dataset.open); return; }
+  const vote = e.target.closest("[data-vote]");
+  if(vote){ await toggleVote(state.tripId, vote.dataset.vote, vote.dataset.voted==="1"); return; }
+  const idea = e.target.closest("[data-idea]");
+  if(idea){ const t=$("#p-title"); if(t){ t.value=idea.dataset.idea; t.focus(); } return; }
+  const editp = e.target.closest("[data-editplan]");
+  if(editp){ editingPlanId = editp.dataset.editplan; const plan = curPlans.find(p=>p.id===editingPlanId); 
+    if(plan){
+      const m=$("#edit-plan-modal"); 
+      $("#ep-title").value = plan.title; 
+      $("#ep-cat").value = plan.cat||CATS[0]; 
+      $("#ep-note").value = plan.note||""; 
+      $("#ep-img").value = (plan.img && plan.img!=="@media") ? plan.img : "";
+      $("#ep-link").value = plan.link||""; 
+      $("#ep-day").value = plan.day||"TBD";
+      const daysel = $("#ep-day");
+      if(daysel){
+        daysel.innerHTML = `<option value="TBD">${t("tbd")}</option>${tripDays(curTrip).map(d=>`<option value="${esc(d)}">${esc(dayLabel(d))}</option>`).join("")}`;
+        daysel.value = plan.day||"TBD";
+      }
+      uploadPlanData = null; 
+      setErr("plan-edit-err",""); 
+      if(m) m.classList.remove("hide"); 
+    } return; }
+  const delp = e.target.closest("[data-delplan]");
+  if(delp){ if(confirm(t("confirm-remove-plan"))){ await deletePlan(state.tripId, delp.dataset.delplan); toast(t("plan-removed")); } return; }
+  const copyfam = e.target.closest("[data-copyfam]");
+  if(copyfam){ const f=famById(copyfam.dataset.copyfam); if(f) copyText(f.code); return; }
+  const shareFam = e.target.closest("[data-share-fam]");
+  if(shareFam){ const f=famById(shareFam.dataset.shareFam); if(f){
+    const link = (location.protocol==="file:" ? "https://blockblock2.github.io/planwise.html" : window.location.origin + window.location.pathname) + "?join-fam="+f.code;
+    openShareModal(link);
+  } return; }
+  const regenfam = e.target.closest("[data-regenfam]");
+  if(regenfam){ const f=famById(regenfam.dataset.regenfam);
+    if(f && confirm(t("confirm-new-fam-code"))){ await regenFamCode(f); toast(t("new-family-code")); } return; }
+  const rmfam = e.target.closest("[data-rmfam]");
+  if(rmfam){ const f=famById(rmfam.dataset.rmfam);
+    if(f && confirm(t("confirm-remove-family",{name:f.name}))){ await removeFamily(state.tripId, f); toast(t("family-removed")); } return; }
+  const rmm = e.target.closest("[data-rmm]");
+  if(rmm){ const [fid,mem]=rmm.dataset.rmm.split("|");
+    if(confirm(t("confirm-remove-person"))){ await removeMember(fid, mem); toast(t("removed")); } return; }
+  const mkadmin = e.target.closest("[data-mkadmin]");
+  if(mkadmin){ const u=mkadmin.dataset.mkadmin;
+    if(confirm(t("confirm-make-admin",{name:nameOf(u)}))){ await setAdmin(state.tripId, u, true); toast(t("admin-granted")); } return; }
+  const unadmin = e.target.closest("[data-unadmin]");
+  if(unadmin){ const u=unadmin.dataset.unadmin;
+    if(confirm(t("confirm-remove-admin",{name:nameOf(u)}))){ await setAdmin(state.tripId, u, false); toast(t("admin-removed")); } return; }
+  const act = e.target.closest("[data-act]"); if(!act) return;
+  const a = act.dataset.act;
+  if(a==="logout"){ await logout(); return; }
+  if(a==="signup"){ setErr("err",""); const err=await doSignup(val("f-name"),val("f-pass"));
+    if(err){ setErr("err",err); return; } goDashboard(); toast(t("welcome")+", "+state.user.displayName+"!"); return; }
+  if(a==="login"){ setErr("err",""); const err=await doLogin(val("f-user"),val("f-pass"));
+    if(err){ setErr("err",err); return; } goDashboard(); toast(t("welcome-back")); return; }
+  if(a==="new-trip"){ $("#new-trip-box").classList.remove("hide"); $("#nt-name")?.focus(); return; }
+  if(a==="cancel-trip"){ $("#new-trip-box").classList.add("hide"); return; }
+  if(a==="create-trip"){ setErr("err2","");
+    if(!val("nt-name").trim()){ setErr("err2","Give your trip a name."); return; }
+    const tid=await createTrip(val("nt-name"),val("nt-dest"),val("nt-fam"),val("nt-start"),val("nt-end")); goTrip(tid); toast(t("trip-created")); return; }
+  if(a==="join-fam"){ setErr("err3","");
+    const res=await joinFamily(val("join-fam")); if(typeof res==="string"){ setErr("err3",res); return; }
+    goTrip(res.ok); toast(t("youre-in")); return; }
+  if(a==="join-trip"){ setErr("err3","");
+    const res=await joinTrip(val("join-trip"), val("join-trip-fam")); if(typeof res==="string"){ setErr("err3",res); return; }
+    goTrip(res.ok); toast(t("family-joined")); return; }
+  if(a==="pick-img"){ $("#p-file")?.click(); return; }
+  if(a==="clear-img"){ uploadData=null; const u=$("#p-img"); if(u)u.value=""; const f=$("#p-file"); if(f)f.value=""; refreshImgPreview(); return; }
+  if(a==="clear-plan-img"){ uploadPlanData=null; const u=$("#ep-img"); if(u)u.value=""; const f=$("#ep-file"); if(f)f.value=""; refreshPlanImgPreview(); return; }
+  if(a==="back"){ goDashboard(); return; }
+  if(a==="add-plan"){ const title=val("p-title");
+    if(!title.trim()){ toast(t("give-plan-name")); $("#p-title")?.focus(); return; }
+    const urlImg = val("p-img").trim();
+    const img = uploadData ? {upload:true, data:uploadData} : (urlImg ? {upload:false, url:urlImg} : null);
+    await addPlan(state.tripId, {title, cat:val("p-cat"), note:val("p-note"), link:normalizeLink(val("p-link")), img, day:val("p-day")});
+    uploadData=null;
+    ["p-title","p-note","p-link","p-img"].forEach(id=>{ const el=$("#"+id); if(el) el.value=""; });
+    const f=$("#p-file"); if(f) f.value=""; refreshImgPreview();
+    toast(t("plan-added")); return; }
+  if(a==="add-cal"){ downloadItinerary(); return; }
+  if(a==="copy-tripcode"){ if(curTrip) copyText(curTrip.code); return; }
+  if(a==="share-trip"){ if(curTrip){
+    const link = (location.protocol==="file:" ? "https://blockblock2.github.io/planwise.html" : window.location.origin + window.location.pathname) + "?join-trip="+curTrip.code;
+    openShareModal(link);
+  } return; }
+  if(a==="regen-tripcode"){ if(curTrip && confirm(t("confirm-new-trip-code"))){ await regenTripCode(curTrip); toast(t("new-trip-code")); } return; }
+  if(a==="edit-trip"){ const canEdit = curTrip && (curTrip.owner===me() || (curTrip.admins && curTrip.admins[me()]));
+    if(!canEdit){ toast(t("only-owner-admins")); return; }
+    const m=$("#edit-trip-modal"); if(m){ 
+    $("#ed-name").value = curTrip.name; 
+    $("#ed-dest").value = curTrip.destination||""; 
+    $("#ed-start").value = curTrip.startDate||""; $("#ed-end").value = curTrip.endDate||"";
+    setErr("edit-err",""); m.classList.remove("hide"); } return; }
+  if(a==="cancel-edit"){ const m=$("#edit-trip-modal"); if(m) m.classList.add("hide"); return; }
+  if(a==="save-trip"){ const name=val("ed-name"), dest=val("ed-dest");
+    if(!name.trim()){ setErr("edit-err","Give the trip a name."); return; }
+    const sd=val("ed-start"), ed=val("ed-end");
+    if(sd && ed && ed<sd){ setErr("edit-err","End date can't be before the start date."); return; }
+    await updateTrip(state.tripId, {name, dest, startDate:sd, endDate:ed}); const m=$("#edit-trip-modal"); if(m) m.classList.add("hide"); 
+    toast(t("trip-updated")); return; }
+  if(a==="cancel-plan-edit"){ const m=$("#edit-plan-modal"); if(m) m.classList.add("hide"); editingPlanId=null; uploadPlanData=null; return; }
+  if(a==="save-plan"){ const title=val("ep-title");
+    if(!title.trim()){ setErr("plan-edit-err","Give the plan a name."); return; }
+    const urlImg = val("ep-img").trim();
+    const img = uploadPlanData ? {upload:true, data:uploadPlanData} : (urlImg ? {upload:false, url:urlImg} : null);
+    await updatePlan(state.tripId, editingPlanId, {title, cat:val("ep-cat"), note:val("ep-note"), link:normalizeLink(val("ep-link")), img, day:val("ep-day")});
+    uploadPlanData=null; const m=$("#edit-plan-modal"); if(m) m.classList.add("hide"); editingPlanId=null;
+    toast(t("plan-updated")); return; }
+  if(a==="pick-plan-img"){ $("#ep-file")?.click(); return; }
+  if(a==="copy-share"){ const link=$("#share-link"); if(link) copyText(link.value); return; }
+  if(a==="close-share"){ closeShareModal(); return; }
+});
+document.addEventListener("click", (e)=>{
+  if(e.target.id==="edit-trip-modal"){ $("#edit-trip-modal").classList.add("hide"); }
+  if(e.target.id==="edit-plan-modal"){ $("#edit-plan-modal").classList.add("hide"); editingPlanId=null; uploadPlanData=null; }
+  if(e.target.id==="share-modal"){ closeShareModal(); }
+});
+document.addEventListener("change",(e)=>{ 
+  if(e.target && e.target.id==="lang-picker"){ setLang(e.target.value); }
+  if(e.target && e.target.id==="p-file"){ handleImageFile(e.target.files && e.target.files[0]); }
+  if(e.target && e.target.id==="ep-file"){ handlePlanImageFile(e.target.files && e.target.files[0]); }
+});
+document.addEventListener("input",(e)=>{ 
+  if(e.target && e.target.id==="p-img" && !uploadData){ refreshImgPreview(); }
+  if(e.target && e.target.id==="ep-img" && !uploadPlanData){ refreshPlanImgPreview(); }
+});
+document.addEventListener("keydown",(e)=>{
+  if(e.key!=="Enter") return;
+  const id = e.target && e.target.id;
+  if(id==="f-pass"){ $(`[data-act="${state.authTab}"]`)?.click(); }
+  else if(id==="join-fam"){ $('[data-act="join-fam"]')?.click(); }
+});
+/* ============ boot ============ */
+(async function(){
+  document.documentElement.setAttribute("lang", currentLang);
+  // Translate static share modal
+  const se=$("#share-eyebrow"), st=$("#share-title"), scb=$("#share-copy-btn"), sclb=$("#share-close-btn");
+  if(se) se.textContent=t("share");
+  if(st) st.textContent=t("share-this-link");
+  if(scb) scb.textContent=t("copy-link");
+  if(sclb) sclb.textContent=t("close");
+  renderWhoami();
+  if(NEEDS_SETUP){ renderSetup(); return; }
+  const s = loadSessionLS();
+  if(s && s.username){
+    const u = await getVal("users/"+s.username.toLowerCase());
+    if(u){ state.user=u; goDashboard(); return; }
+  }
+  goAuth();
+})();
+</script>
+</body>
+</html>

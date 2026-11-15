@@ -1,0 +1,11 @@
+{
+  "name": "planwise",
+  "title": "PlanWise",
+  "version": "1.0.0",
+  "description": "Plan trips with your family: PlanWise trip board, PlanwiseER destination ideas, Plany place finder and Plany Live, all in one app with one login.",
+  "main": "planwise.html",
+  "icon": "icon.png",
+  "width": 1200,
+  "height": 820,
+  "dmg": true
+}
